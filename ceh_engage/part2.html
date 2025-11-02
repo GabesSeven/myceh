@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>CEH Engage - Parte II — Tradução + Campos de Resposta</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    :root{
+      --bg:#f7f9fb; --card:#ffffff; --accent:#0b5; --muted:#666;
+      --box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+    }
+    body{font-family:Inter, "Segoe UI", Arial, sans-serif; background:var(--bg); margin:20px; color:#111;}
+    header{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+    h1{margin:0;color:#0a6;}
+    p.lead{margin:6px 0 18px;color:var(--muted);}
+    .container{max-width:980px;margin:0 auto;}
+    .card{background:var(--card);border-radius:10px;padding:18px;margin-bottom:14px;box-shadow:var(--box-shadow);}
+    h2{margin-top:0;color:#066;}
+    .challenge{border-left:4px solid #e6f6ea;padding:12px;margin-bottom:12px;background:linear-gradient(180deg, #fff, #fbfffb);}
+    label{display:block;font-weight:600;margin-bottom:6px;}
+    .hint{font-size:0.9em;color:var(--muted);margin-bottom:8px;}
+    input[type="text"], textarea{width:100%;padding:10px;border:1px solid #e4e7eb;border-radius:8px;font-size:1rem}
+    textarea{min-height:70px;resize:vertical}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .full{grid-column:1/-1}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;border:0;background:#0b5;color:#fff;font-weight:700;cursor:pointer}
+    .btn.secondary{background:#3a7;border:none;color:#033}
+    .small{font-size:0.9rem;color:var(--muted);margin-top:8px}
+    footer{margin-top:18px;color:var(--muted);font-size:0.9rem}
+    .format{font-family:monospace;background:#f0f4f8;padding:4px 6px;border-radius:6px}
+    @media(max-width:720px){ .row{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>CEH Engage — Parte II</h1>
+        <p class="lead">Tradução dos enunciados da Parte 2 + campos para você inserir as respostas de cada desafio.</p>
+      </div>
+    </header>
+
+    <div class="card">
+      <h2>Descrição resumida (PT-BR)</h2>
+      <p>A Parte 2 do CEH Engage cobre: <strong>System Hacking</strong>, <strong>Ameaças de Malware</strong>, <strong>Sniffing</strong>, <strong>Engenharia Social</strong> e <strong>Denial-of-Service</strong>. Nesta parte você deverá explorar vulnerabilidades identificadas na parte anterior e usar várias técnicas de exploração de rede/sistema/humana para obter acesso aos sistemas alvo. É necessário realizar escalonamento de privilégios lateral e vertical, instalar aplicações/utilitários maliciosos para manter acesso e limpar logs para evitar detecção. Você precisará criar e usar aplicações maliciosas contra o alvo e também analisar qualquer malware descoberto. Registre todas as informações encontradas nesta parte para prosseguir nas fases seguintes do ciclo de hacking ético.</p>
+      <p class="small"><strong>Observação:</strong> Execute esta parte somente após completar os primeiros 10 módulos do programa CEH.</p>
+    </div>
+
+    <div class="card">
+      <h2>Flags / Desafios</h2>
+
+      <div class="challenge">
+        <h3>Desafio 1</h3>
+        <p>Você foi designado para executar um ataque de força-bruta em uma máquina Linux da sub-rede <strong>192.168.10.0/24</strong> e quebrar as credenciais FTP do usuário <strong>nick</strong>. Um arquivo de informação de exploração foi salvo no diretório home do servidor FTP. Determine a página inicial do fornecedor (Vendor homepage) da vulnerabilidade FTP especificada no arquivo.</p>
+        <p class="hint">Formato esperado: <span class="format">aaaaa://aaa.aaaaaaaa.aaa/</span></p>
+        <label for="c1">Resposta — Vendor homepage</label>
+        <input id="c1" type="text" placeholder="ex: https://www.fabricante.com/" />
+        <div class="small">Observações / evidências (opcional):</div>
+        <textarea id="c1_note" placeholder="Anote onde encontrou (linha do arquivo, path, etc.)"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 2</h3>
+        <p>Um intruso realizou sniffing de rede em uma máquina da sub-rede <strong>192.168.10.0/24</strong> e obteve credenciais de login do usuário para o site <strong>moviescope.com</strong> usando captura remota de pacotes no Wireshark. Analise o arquivo <code>Mscredremote.pcapng</code> localizado na pasta Downloads da EH Workstation-1 e determine as credenciais obtidas.</p>
+        <p class="hint">Formato: <span class="format">aaaa/aaaaa</span></p>
+        <label for="c2">Resposta — Credenciais</label>
+        <input id="c2" type="text" placeholder="ex: user/password" />
+        <textarea id="c2_note" placeholder="Como extraiu (follow tcp stream, filtros, etc.)"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 3</h3>
+        <p>Analise o arquivo de captura de pacotes <code>ServerDoS.pcapng</code> localizado na pasta Downloads da EH Workstation-2. Determine o protocolo da camada de aplicação, baseado em UDP, que o atacante utilizou para inundar a máquina na rede. Nota: verifique a porta de destino.</p>
+        <p class="hint">Formato: <span class="format">Aaaaa Aaaaaaa Aaaaaaaa</span></p>
+        <label for="c3">Resposta — Protocolo (camada de aplicação)</label>
+        <input id="c3" type="text" placeholder="ex: Chargen Protocol Service" />
+        <textarea id="c3_note" placeholder="Evidência: portas destino, pattern no tráfego"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 4</h3>
+        <p>Um ataque DDoS severo ocorreu em uma organização, degradando a performance de um servidor Ubuntu na rede SKILL.CEH. Analise o arquivo <code>DD_attack.pcapng</code> armazenado na pasta Documents da EH Workstation-2 e determine o endereço IP do atacante que tentou atacar o servidor alvo via UDP.</p>
+        <p class="hint">Formato: <span class="format">NNN.NNN.NN.NNN</span></p>
+        <label for="c4">Resposta — IP do atacante (UDP)</label>
+        <input id="c4" type="text" placeholder="ex: 192.168.10.55" />
+        <textarea id="c4_note" placeholder="Portas/contagem de pacotes/fluxos observados"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 5</h3>
+        <p>Analise o arquivo <code>PyD_attack.pcapng</code> armazenado na pasta Downloads da EH Workstation-2. Determine o IP da máquina atacante que está direcionando o serviço RPC da máquina alvo.</p>
+        <p class="hint">Formato: <span class="format">NNN.NN.NN.NN</span></p>
+        <label for="c5">Resposta — IP do atacante (RPC)</label>
+        <input id="c5" type="text" placeholder="ex: 172.30.10.5" />
+        <textarea id="c5_note" placeholder="Evidência: porta destino RPC, padrões do tráfego"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 6</h3>
+        <p>Um analista de incidentes identificou um ataque DDoS severo na rede e forneceu relatórios usando a ferramenta Anti-DDoS Guardian. Analise os relatórios submetidos pela equipe de IH que estão armazenados em <code>C:\Users\Admin\Documents\Anti-DDoS</code> na EH Workstation-1 e determine o IP do atacante que transmitiu o maior número de pacotes para a máquina alvo.</p>
+        <p class="hint">Formato: <span class="format">NNN.NNN.NN.NNN</span></p>
+        <label for="c6">Resposta — IP com maior número de pacotes enviados</label>
+        <input id="c6" type="text" placeholder="ex: 10.10.10.25" />
+        <textarea id="c6_note" placeholder="Arquivo/relatório e métricas que usou"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 7</h3>
+        <p>Analise o controlador de domínio (domain controller) do sub-rede alvo e realize um ataque AS-REP roasting nas contas de usuário para determinar a senha do usuário vulnerável cuja credencial é obtida. Nota: use os arquivos <code>users.txt</code> e <code>rockyou.txt</code> armazenados no diretório home do atacante durante a quebra de senha.</p>
+        <p class="hint">Formato: <span class="format">aNaaN*NNN</span></p>
+        <label for="c7">Resposta — Senha do usuário vulnerável</label>
+        <input id="c7" type="text" placeholder="ex: aB12c*345" />
+        <textarea id="c7_note" placeholder="Usuário alvo, comando/fluxo de cracking usado"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 8</h3>
+        <p>Uma máquina cliente no domínio do controlador possui uma vulnerabilidade de SQL Server mal configurada. Explore essa vulnerabilidade, recupere o arquivo <code>MSS.txt</code> localizado na pasta Public\Downloads do cliente e determine seu tamanho em bytes.</p>
+        <p class="hint">Formato: <span class="format">N</span></p>
+        <label for="c8">Resposta — Tamanho do MSS.txt em bytes</label>
+        <input id="c8" type="text" placeholder="ex: 12345" />
+        <textarea id="c8_note" placeholder="Como obteve o arquivo e comando para medir o tamanho"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 9</h3>
+        <p>Você foi encarregado de quebrar as credenciais RDP do usuário <strong>Maurice</strong> na sub-rede alvo <strong>192.168.10.0/24</strong> e determinar a senha.</p>
+        <p class="hint">Formato: <span class="format">Aaaaaaa@NNNN</span></p>
+        <label for="c9">Resposta — Senha do Maurice (RDP)</label>
+        <input id="c9" type="text" placeholder="ex: Maurice@1234" />
+        <textarea id="c9_note" placeholder="Ferramenta/wordlist e evidência do login"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 10</h3>
+        <p>Realize uma varredura por malware no arquivo <code>Tools.rar</code> armazenado na pasta Downloads da EH Workstation-2 e determine os quatro últimos dígitos do valor do hash SHA-256 do arquivo.</p>
+        <p class="hint">Formato: <span class="format">aNNN</span></p>
+        <label for="c10">Resposta — Últimos 4 dígitos do SHA-256</label>
+        <input id="c10" type="text" placeholder="ex: a123" />
+        <textarea id="c10_note" placeholder="Comando/hash completo e ferramenta (sha256sum, virustotal)"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 11</h3>
+        <p>Você foi encarregado de monitorar um processo suspeito em uma máquina cujo arquivo de log <code>Logfile.PML</code> está salvo na pasta Pictures da EH Workstation-2. Analise o logfile e determine o Parent PID (PID pai) do processo malicioso <code>H3ll0.exe</code>.</p>
+        <p class="hint">Formato: <span class="format">NNNN</span></p>
+        <label for="c11">Resposta — Parent PID do H3ll0.exe</label>
+        <input id="c11" type="text" placeholder="ex: 4321" />
+        <textarea id="c11_note" placeholder="Trecho do log com o PID pai e contexto"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 12</h3>
+        <p>Analise o executável ELF chamado <code>Tornado.elf</code>, localizado na pasta Downloads da EH Workstation-2. Determine o valor de entropia do arquivo com duas casas decimais.</p>
+        <p class="hint">Formato: <span class="format">N*NN</span> (ex: 7.45)</p>
+        <label for="c12">Resposta — Entropia (2 casas decimais)</label>
+        <input id="c12" type="text" placeholder="ex: 7.45" />
+        <textarea id="c12_note" placeholder="Ferramenta usada (binwalk, ent, etc.) e saída"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 13</h3>
+        <p>Vasculhe as sub-redes alvo para identificar o recurso de captura remota de pacotes (remote packet capture) habilitado para analisar o tráfego remotamente. Faça scan nas sub-redes e determine o endereço IP que está oferecendo o serviço <code>rpcap</code>.</p>
+        <p class="hint">Formato: <span class="format">NNN.NNN.NN.NNN</span></p>
+        <label for="c13">Resposta — IP do serviço rpcap</label>
+        <input id="c13" type="text" placeholder="ex: 192.168.10.77" />
+        <textarea id="c13_note" placeholder="Ferramenta/scan e porta detectada"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 14</h3>
+        <p>Um ataque insider ocorreu na organização e dados confidenciais sobre um evento foram sniffados e criptografados dentro de um arquivo de imagem <code>stealth.jpeg</code> armazenado na área de trabalho (Desktop) da EH Workstation-2. Extraia os dados ocultos dentro do arquivo cover usando a ferramenta <code>steghide</code> e determine o valor da cotação (tender quotation) extraída. (Use <code>azerty@123</code> como passphrase)</p>
+        <p class="hint">Formato: <span class="format">NNNNNNN</span></p>
+        <label for="c14">Resposta — Valor da cotação (tender quotation)</label>
+        <input id="c14" type="text" placeholder="ex: 1234567" />
+        <textarea id="c14_note" placeholder="Comando steghide e arquivo extraído"></textarea>
+      </div>
+
+      <div class="challenge full">
+        <h3>Desafio 15</h3>
+        <p>Realize busca de vulnerabilidades usando a ferramenta <code>searchsploit</code> e determine o caminho do exploit da vulnerabilidade AirDrop 2.0.</p>
+        <p class="hint">Formato: <span class="format">aaaaaaa/aaa/NNNNN.a</span></p>
+        <label for="c15">Resposta — Caminho do exploit (searchsploit)</label>
+        <input id="c15" type="text" placeholder="ex: exploits/macos/12345.c" />
+        <textarea id="c15_note" placeholder="Comando searchsploit e saída relevante"></textarea>
+      </div>
+
+      <div style="margin-top:12px">
+        <button class="btn" id="generate">Gerar arquivo com respostas (download)</button>
+        <button class="btn secondary" id="clear">Limpar campos</button>
+        <div class="small">Ao clicar em "Gerar arquivo", será baixado um arquivo de texto contendo todas as respostas e notas que você inseriu.</div>
+      </div>
+
+    </div>
+
+    <footer>
+      <p>Arquivo gerado para uso educativo/registro. Preserve credenciais e materiais apenas em ambientes autorizados.</p>
+    </footer>
+  </div>
+
+  <script>
+    function collectAnswers(){
+      const out = [];
+      for(let i=1;i<=15;i++){
+        const ans = (document.getElementById('c'+i) || {}).value || '';
+        const note = (document.getElementById('c'+i+'_note') || {}).value || '';
+        out.push('Desafio '+i+':');
+        out.push('Resposta: '+ans);
+        if(note) out.push('Notas: '+note);
+        out.push('----------------------------------------------------');
+      }
+      return out.join('\\n');
+    }
+
+    document.getElementById('generate').addEventListener('click', function(){
+      const content = collectAnswers();
+      const blob = new Blob([content], {type:'text/plain;charset=utf-8'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'ceh_engage_part2_respostas.txt';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    document.getElementById('clear').addEventListener('click', function(){
+      if(!confirm('Limpar todos os campos?')) return;
+      for(let i=1;i<=15;i++){
+        const el = document.getElementById('c'+i);
+        const note = document.getElementById('c'+i+'_note');
+        if(el) el.value='';
+        if(note) note.value='';
+      }
+    });
+  </script>
+</body>
+</html>

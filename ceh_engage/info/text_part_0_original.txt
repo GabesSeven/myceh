@@ -1,0 +1,39 @@
+CEH Engage
+Scenario
+You have been hired as a part of the Red Team at CEHORG, an IT and ITES organization that deals with advanced research and development in the field of information security. It has offices all over the country connected in real-time by its network infrastructure.
+
+Your organization is worried about rising cybersecurity incidents and has entrusted you with a comprehensive security audit of the complete infrastructure.
+
+CEHORG's internal network consists of several subnets housing various organizational units like any large organization. The front office is connected to a separate subnet that connects to the company's public-facing computers. The company has installed multiple kiosks to help customers understand their products and services. The front office also has Wi-Fi connectivity to cater to the users who carry their smartphones and laptops.
+
+The CEHORG's internal network is made up of Militarized and Demilitarized zones. As a security precaution, and by design, all the internal resource zones are configured with different subnet IPs. The militarized zone houses the application servers that provide application frameworks for various departments. The Demilitarized Zone contains public-facing systems of the organization, such as web and mail servers. The headquarter's network topology and protocols are replicated worldwide in all its satellite offices for easy communication with the headquarters.
+
+Description
+CEH Engage is divided into four parts and serves as check points during your study.
+
+CEH Engage Part I: Covers Module 01 to Module 05 of CEH. This is your first milestone check after you complete first five modules of the CEH program.
+
+CEH Engage Part II: Covers Module 06 to Module 10 of CEH. Attempt this part after completing first 10 modules of the CEH program.
+
+CEH Engage Part III: Covers Module 11 to Module 15 of CEH. Attempt this part after completing first 15 modules of the CEH program.
+
+CEH Engage Part IV: Covers Module 16 to Module 20 of CEH. Attempt this part after completing all 20 modules of the CEH program.
+
+All four parts represent a single target organization as described in the scenario. The objective of the Engage practice range is to apply learning from CEH (Certified Ethical Hacker) modules in a real-life scenario to solve challenges you will face in red team assignments in your job roles. The Engage practice range will help you practice the skills acquired in the class and convert them into proficiency.
+
+You will need following information to proceed with CEH Engage:
+
+On the cyber range, you will have access to Ethical Hacker Workstations, EH Workstation - 1 and EH Workstation - 2. EH Workstation - 1 is a Windows 11 machine and EH Workstation - 2 is a Parrot Security machine. You can switch to these machines from the Resources tab.
+
+The credentials to access EH Workstation - 1 (Windows 11) machine are as below:
+
+Username: Admin Password: Pa$$w0rd
+
+The credentials to access EH Workstation - 2 (Parrot Security) are as below:
+Username: attacker Password: toor
+
+If you want to launch OpenVAS, double-click the Start OpenVAS icon on the desktop in EH Workstation-1 machine.
+
+Username: admin Password: admin
+
+You can use username.txt and password.txt available on the Desktop of the EH Workstation - 2 (Parrot Security) machine for any credentials/password cracking attempt.

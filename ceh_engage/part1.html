@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>CEH Engage - Parte I — Tradução + Campos de Resposta</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    :root{
+      --bg:#f7f9fb; --card:#ffffff; --accent:#0b5; --muted:#666;
+      --box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+    }
+    body{font-family:Inter, "Segoe UI", Arial, sans-serif; background:var(--bg); margin:20px; color:#111;}
+    header{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+    h1{margin:0;color:#0a6;}
+    p.lead{margin:6px 0 18px;color:var(--muted);}
+    .container{max-width:980px;margin:0 auto;}
+    .card{background:var(--card);border-radius:10px;padding:18px;margin-bottom:14px;box-shadow:var(--box-shadow);}
+    h2{margin-top:0;color:#066;}
+    .challenge{border-left:4px solid #e6f6ea;padding:12px;margin-bottom:12px;background:linear-gradient(180deg, #fff, #fbfffb);}
+    label{display:block;font-weight:600;margin-bottom:6px;}
+    .hint{font-size:0.9em;color:var(--muted);margin-bottom:8px;}
+    input[type="text"], textarea{width:100%;padding:10px;border:1px solid #e4e7eb;border-radius:8px;font-size:1rem}
+    textarea{min-height:70px;resize:vertical}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .full{grid-column:1/-1}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;border:0;background:#0b5;color:#fff;font-weight:700;cursor:pointer}
+    .btn.secondary{background:#3a7;border:none;color:#033}
+    .small{font-size:0.9rem;color:var(--muted);margin-top:8px}
+    footer{margin-top:18px;color:var(--muted);font-size:0.9rem}
+    .format{font-family:monospace;background:#f0f4f8;padding:4px 6px;border-radius:6px}
+    @media(max-width:720px){ .row{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>CEH Engage — Parte I</h1>
+        <p class="lead">Tradução do enunciado + campos para você inserir as respostas de cada desafio.</p>
+      </div>
+    </header>
+
+    <div class="card">
+      <h2>Descrição resumida (PT-BR)</h2>
+      <p>Parte 1 do CEH Engage cobre: <strong>Footprinting e Reconhecimento</strong>, <strong>Scanning de Redes</strong>, <strong>Enumeração</strong> e <strong>Análise de Vulnerabilidades</strong>. Nesta parte você deverá realizar recon passivo e ativo do alvo, enumerar serviços, shares, usuários, grupos, etc., e fazer análise de vulnerabilidades dos sistemas/redes identificados; registrar todas as informações encontradas para prosseguir nas fases seguintes do ciclo de hacking ético.</p>
+    </div>
+
+    <div class="card">
+      <h2>Flags / Desafios</h2>
+
+      <!-- Challenge template repeated -->
+      <div class="challenge">
+        <h3>Desafio 1</h3>
+        <p>Um atacante fez footprinting em uma aplicação web e salvou o relatório <code>Dumpster.xlsx</code> na pasta Documents da EH Workstation-1. Analise o relatório e identifique o hostname associado ao IP <strong>173.245.59.176</strong>.</p>
+        <p class="hint">Formato esperado: <span class="format">aaaaa.aa.aaaaaaaaaa.aaa</span></p>
+        <label for="c1">Resposta — Hostname</label>
+        <input id="c1" type="text" placeholder="ex: exemplo.ex.empresa.com" />
+        <div class="small">Observações / evidências (opcional):</div>
+        <textarea id="c1_note" placeholder="Anote onde encontrou a informação (linha do relatório, sheet, etc.)"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 2</h3>
+        <p>Identifique o número de máquinas ativas (excluindo o gateway) na sub-rede <strong>192.168.10.0/24</strong>.</p>
+        <p class="hint">Formato: <span class="format">N</span></p>
+        <label for="c2">Resposta — Nº de máquinas vivas (excluindo gateway)</label>
+        <input id="c2" type="text" placeholder="ex: 12" />
+        <div class="small">Método usado: Nmap/arp-scan/etc.</div>
+        <textarea id="c2_note" placeholder="Comando / saída relevante"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 3</h3>
+        <p>Identifique o IP de uma máquina Linux com a porta <strong>22</strong> aberta em <strong>192.168.10.0/24</strong>.</p>
+        <p class="hint">Formato: <span class="format">NNN.NNN.NN.NNN</span></p>
+        <label for="c3">Resposta — IP (porta 22 aberta)</label>
+        <input id="c3" type="text" placeholder="ex: 192.168.10.34" />
+        <textarea id="c3_note" placeholder="Como confirmou que é Linux (banner SSH, fingerprint)"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 4</h3>
+        <p>Encontre o IP do Domain Controller na rede <strong>192.168.0.0/24</strong>.</p>
+        <p class="hint">Formato: <span class="format">NNN.NNN.N.NNN</span></p>
+        <label for="c4">Resposta — IP do Domain Controller</label>
+        <input id="c4" type="text" placeholder="ex: 192.168.0.10" />
+        <textarea id="c4_note" placeholder="Evidência: serviços (LDAP, Kerberos), nomes, etc."></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 5</h3>
+        <p>Realize host discovery e identifique o <strong>NetBIOS_Domain_Name</strong> do host em <strong>192.168.0.222</strong>.</p>
+        <p class="hint">Formato: <span class="format">AAAAA.AAA</span></p>
+        <label for="c5">Resposta — NetBIOS_Domain_Name</label>
+        <input id="c5" type="text" placeholder="ex: CEHORG.LOC" />
+        <textarea id="c5_note" placeholder="Ferramenta/comando usado (nbtstat, smbclient, enum4linux)"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 6</h3>
+        <p>Faça um scan intenso em <strong>192.168.0.222</strong> e descubra o <strong>DNS_Tree_Name</strong> da máquina.</p>
+        <p class="hint">Formato: <span class="format">AAAAA.AAA.aaa</span></p>
+        <label for="c6">Resposta — DNS_Tree_Name</label>
+        <input id="c6" type="text" placeholder="ex: host.corporate.local" />
+        <textarea id="c6_note" placeholder="Saída do nmap / nslookup / enum4linux"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 7</h3>
+        <p>Uma máquina na rede <strong>192.168.10.0/24</strong> está executando OpenSSH e é vulnerável. Identifique a versão do OpenSSH em execução.</p>
+        <p class="hint">Formato: <span class="format">N.NaN</span> (ex: 7.92)</p>
+        <label for="c7">Resposta — Versão OpenSSH</label>
+        <input id="c7" type="text" placeholder="ex: 7.92" />
+        <textarea id="c7_note" placeholder="Banner SSH ou scan que mostrou a versão"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 8</h3>
+        <p>Foi encontrada uma aplicação web vulnerável a blind SQL injection cujo SGBD é MySQL. Determine o sistema operacional da máquina que hospeda o banco. Rede alvo: <strong>172.30.10.0/24</strong>.</p>
+        <p class="hint">Formato: <span class="format">Aaaaaa</span> (ex: Linux)</p>
+        <label for="c8">Resposta — Sistema operacional do servidor de BD</label>
+        <input id="c8" type="text" placeholder="ex: Linux" />
+        <textarea id="c8_note" placeholder="Como identificou (fingerprint, banner, HTTP headers)"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 9</h3>
+        <p>Faça um scan intenso na sub-rede <strong>192.168.10.0/24</strong> e determine o IP da máquina que hospeda o serviço MSSQL.</p>
+        <p class="hint">Formato: <span class="format">NNN.NNN.NN.NNN</span></p>
+        <label for="c9">Resposta — IP do MSSQL</label>
+        <input id="c9" type="text" placeholder="ex: 192.168.10.100" />
+        <textarea id="c9_note" placeholder="Porta (1433?) e evidência do serviço"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 10</h3>
+        <p>Faça enumeração DNS em <strong>www.certifiedhacker.com</strong> e descubra os nameservers usados pelo domínio.</p>
+        <p class="hint">Formato: <span class="format">aaN.aaaaaaaa.aaa, aaN.aaaaaaaa.aaa</span></p>
+        <label for="c10">Resposta — Nameservers (duas entradas)</label>
+        <input id="c10" type="text" placeholder="ex: ns1.exemplo.com, ns2.exemplo.com" />
+        <textarea id="c10_note" placeholder="Comando (dig/nslookup) e saída"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 11</h3>
+        <p>Encontre o IP da máquina que executa serviço SMTP na rede <strong>172.30.10.0/24</strong>.</p>
+        <p class="hint">Formato: <span class="format">NNN.NN.NN.NNN</span></p>
+        <label for="c11">Resposta — IP do SMTP</label>
+        <input id="c11" type="text" placeholder="ex: 172.30.10.15" />
+        <textarea id="c11_note" placeholder="Porta (25/587) e evidência"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 12</h3>
+        <p>Realize enumeração SMB em <strong>172.30.10.200</strong> e verifique se o recurso <em>Message signing</em> é obrigatório.</p>
+        <p class="hint">Resposta: <span class="format">Yes / No</span></p>
+        <label for="c12">Resposta — Message signing é requerido?</label>
+        <input id="c12" type="text" placeholder="Yes ou No" />
+        <textarea id="c12_note" placeholder="Comando / saída que confirmou (smbclient, rpcclient, enum4linux)"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 13</h3>
+        <p>Faça uma análise CWE para o Weakness ID <strong>276</strong> e identifique o nome associado ao ID.</p>
+        <p class="hint">Formato: <span class="format">Aaaaaaaaa Aaaaaaa Aaaaaaaaaaa</span></p>
+        <label for="c13">Resposta — Nome do CWE-276</label>
+        <input id="c13" type="text" placeholder="ex: Example Weakness Name" />
+        <textarea id="c13_note" placeholder="Fonte/URL (cwe.mitre.org)"></textarea>
+      </div>
+
+      <div class="challenge">
+        <h3>Desafio 14</h3>
+        <p>Faça varredura de vulnerabilidades para o host Linux em <strong>192.168.10.0/24</strong> usando OpenVAS e encontre a porcentagem QoD de vulnerabilidades com gravidade <strong>medium</strong>.</p>
+        <p class="hint">Formato: <span class="format">NN</span> (ex: 75)</p>
+        <label for="c14">Resposta — QoD (%) de vulnerabilidades medium</label>
+        <input id="c14" type="text" placeholder="ex: 75" />
+        <textarea id="c14_note" placeholder="Relatório / task do OpenVAS (nome da task)"></textarea>
+      </div>
+
+      <div class="challenge full">
+        <h3>Desafio 15</h3>
+        <p>Realize uma varredura em <strong>192.168.10.144</strong> com OpenVAS e identifique qualquer vulnerabilidade relacionada a FTP encontrada.</p>
+        <p class="hint">Formato: <span class="format">AAA Aaaaaaaaa Aaaaaaaaa Aaaaa</span></p>
+        <label for="c15">Resposta — Nome da vulnerabilidade FTP</label>
+        <input id="c15" type="text" placeholder="ex: FTP Anonymous Login Allowed" />
+        <textarea id="c15_note" placeholder="ID do scanner / descrição / CVE (se aplicável)"></textarea>
+      </div>
+
+      <div style="margin-top:12px">
+        <button class="btn" id="generate">Gerar arquivo com respostas (download)</button>
+        <button class="btn secondary" id="clear">Limpar campos</button>
+        <div class="small">Ao clicar em "Gerar arquivo", será baixado um arquivo de texto contendo todas as respostas e notas que você inseriu.</div>
+      </div>
+
+    </div>
+
+    <footer>
+      <p>Arquivo gerado para uso educativo/registro. Preserve credenciais e materiais apenas em ambientes autorizados.</p>
+    </footer>
+  </div>
+
+  <script>
+    function collectAnswers(){
+      const out = [];
+      for(let i=1;i<=15;i++){
+        const ans = (document.getElementById('c'+i) || {}).value || '';
+        const note = (document.getElementById('c'+i+'_note') || {}).value || '';
+        out.push('Desafio '+i+':');
+        out.push('Resposta: '+ans);
+        if(note) out.push('Notas: '+note);
+        out.push('----------------------------------------------------');
+      }
+      return out.join('\\n');
+    }
+
+    document.getElementById('generate').addEventListener('click', function(){
+      const content = collectAnswers();
+      const blob = new Blob([content], {type:'text/plain;charset=utf-8'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'ceh_engage_part1_respostas.txt';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    document.getElementById('clear').addEventListener('click', function(){
+      if(!confirm('Limpar todos os campos?')) return;
+      for(let i=1;i<=15;i++){
+        const el = document.getElementById('c'+i);
+        const note = document.getElementById('c'+i+'_note');
+        if(el) el.value='';
+        if(note) note.value='';
+      }
+    });
+  </script>
+</body>
+</html>
