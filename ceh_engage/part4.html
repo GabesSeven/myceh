@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CEH Engage — Part IV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <h1>CEH Engage — Part IV</h1>
+
+  <section>
+    <h2>Overview</h2>
+
+    <p>
+      <strong>CEH Engage - Part IV</strong>
+    </p>
+
+    <p>
+      Part 4 of CEH Engage covers Hacking Wireless Networks, Hacking Mobile
+      Platforms, IoT and OT Hacking, Cloud Computing, and Cryptography modules.
+    </p>
+
+    <p>
+      In this part, you must analyze wireless packet captures, use different
+      attack vectors to exploit mobile devices, and audit IoT and OT
+      systems/networks for known threats.
+    </p>
+
+    <p>
+      You need to note all the information discovered in this part of the CEH
+      Engage.
+    </p>
+
+    <p>
+      <strong>Note:</strong> Attempt this part after completing all 20 modules of
+      the CEH program.
+    </p>
+  </section>
+
+  <section>
+    <h2>Flags</h2>
+
+    <h3>Challenge 1</h3>
+    <p>
+      An employee's mobile device within CEHORG has been compromised, leading to
+      an encrypted message <strong>BCtetx.txt</strong> being placed on the
+      Android operating system.
+    </p>
+    <p>
+      The password needed to decrypt the file is saved on EH-workstation-1.
+      As an ethical hacker, your task is to decrypt the file using the password
+      and input the extracted information.
+    </p>
+    <p>
+      <strong>Note:</strong> the password file <strong>pawned.txt</strong> is
+      stored in documents folder.
+    </p>
+    <p><em>Format: *aaaaAN*NaN</em></p>
+
+    <h3>Challenge 2</h3>
+    <p>
+      A compromised Android device is suspected of containing malicious
+      applications.
+    </p>
+    <p>
+      As an ethical hacker, you are tasked with identifying and extracting all
+      installed APK files.
+    </p>
+    <p>
+      Within these APKs, you must locate and extract a specific CRC value ends
+      with <strong>"614c"</strong>.
+    </p>
+    <p>
+      Determine the complete CRC value as answer.
+    </p>
+    <p><em>Format: NNaaNNNa</em></p>
+
+    <h3>Challenge 3</h3>
+    <p>
+      A ZIP archive encompassing redundant images of a physical signature has
+      been compromised <strong>signature.zip</strong> and stored in Documents
+      folder of EH Workstation-1 machine.
+    </p>
+    <p>
+      Your role as an ethical hacker involves a forensic examination of the
+      archive's contents to pinpoint the image file associated with an MD5 hash
+      value ends with sequence <strong>"24CCB"</strong>.
+    </p>
+    <p>
+      Determine the original signature file name as answer.
+    </p>
+    <p><em>Format: aN*aaa</em></p>
+
+    <h3>Challenge 4</h3>
+    <p>
+      As a cybersecurity analyst, you are investigating a potential phishing
+      campaign targeting Ruby, an employee at a local tech company.
+    </p>
+    <p>
+      You have access to Ruby’s call log from the past few days, stored on an
+      Android device within the target subnet
+      <strong>192.168.10.0/24</strong>.
+    </p>
+    <p>
+      Identify the call in the log that is most likely a phishing attempt and
+      provide the suspected phone number.
+    </p>
+    <p><em>Format: +N (NNN) NNN-NNNN</em></p>
+
+    <h3>Challenge 5</h3>
+    <p>
+      An employee's mobile device has reportedly been compromised and is
+      suspected of being used to launch a Denial of Service (DoS) attack against
+      one of the company's internal servers.
+    </p>
+    <p>
+      Conduct a thorough analysis of the network capture file
+      <strong>And_Dos.pcapng</strong> located in the Documents directory of EH
+      workstation-2 machine and identify the severity level/potential impact of
+      the attack performed.
+    </p>
+    <p>
+      <strong>Note:</strong> perform deep down Expert Info analysis.
+    </p>
+    <p><em>Format: Aaaaaaa</em></p>
+
+    <h3>Challenge 6</h3>
+    <p>
+      CEHORG manages multiple IoT devices and sensors to oversee its supply
+      chain fleet.
+    </p>
+    <p>
+      Examine the file <strong>MQTT.pcapng</strong>, located in the Home
+      directory of the EH Workstation - 2 machine.
+    </p>
+    <p>
+      Analyze the packet containing the
+      <strong>"High_humidity"</strong> message and determine the alert percentage
+      specified in the message.
+    </p>
+    <p><em>Format: NN</em></p>
+
+    <h3>Challenge 7</h3>
+    <p>
+      An attacker had sent a file
+      <strong>cryt-128-06encr.hex</strong> containing ransom file password, which
+      is located in documents folder of EH-workstation-2.
+    </p>
+    <p>
+      Decrypt the file using cryp tool, identify the algorithm used for file
+      encryption and hidden text.
+    </p>
+    <p>
+      <strong>Note:</strong> check filename for key length and hex characters.
+    </p>
+    <p><em>Format: Aaaaaaa/**aa**aA*a</em></p>
+
+    <h3>Challenge 8</h3>
+    <p>
+      A VeraCrypt volume file <strong>MyVeracrypt</strong> is stored on the
+      Document folder of the EH Workstation – 1 machine.
+    </p>
+    <p>
+      Decrypt the encrypted volume and determine the number of files stored in
+      the volume folder.
+    </p>
+    <p>
+      <strong>Hint:</strong> Password: veratest
+    </p>
+    <p><em>Format: N</em></p>
+
+    <h3>Challenge 9</h3>
+    <p>
+      An ex-employee of CEHORG is suspected of performing an insider attack.
+    </p>
+    <p>
+      Retrieve the contacts dump from the employee's Android phone.
+    </p>
+    <p>
+      Using PhoneSploit, find the country code of the contact named
+      <strong>"Maddy"</strong>.
+    </p>
+    <p>
+      <strong>Note:</strong> Use option 'N' in PhoneSploit for next page.
+    </p>
+    <p><em>Format: NN</em></p>
+
+    <h3>Challenge 10</h3>
+    <p>
+      Examine the file <strong>MQTT.pcapng</strong> located in the Home directory
+      of the EH Workstation - 2 machine.
+    </p>
+    <p>
+      Analyze the packet containing the
+      <strong>"High_temperature"</strong> message and determine the topic length.
+    </p>
+    <p><em>Format: NN</em></p>
+
+    <h3>Challenge 11</h3>
+    <p>
+      An ex-employee of CEHORG is suspected to be performing insider attack.
+    </p>
+    <p>
+      Attain <strong>KEYCODE-5</strong> used in the employees' mobile phone.
+    </p>
+    <p>
+      <strong>Note:</strong> use option N in PhoneSploit for next page.
+    </p>
+    <p><em>Format: Aaaaa*Aaaaaa</em></p>
+
+    <h3>Challenge 12</h3>
+    <p>
+      An employee in CEHORG has secretly acquired Confidential access ID through
+      an application from the company.
+    </p>
+    <p>
+      He has saved this information on the Music folder of his Android mobile
+      phone.
+    </p>
+    <p>
+      Access the file and delete it covertly.
+    </p>
+    <p>
+      Enter the account information present in the file.
+    </p>
+    <p>
+      <strong>Note:</strong> Only provide the numeric values in the answer field.
+    </p>
+    <p><em>Format: NNNNNNNN</em></p>
+
+    <h3>Challenge 13</h3>
+    <p>
+      An attacker has hacked an employee's Android device at CEHORG and
+      initiated a LOIC attack from the device.
+    </p>
+    <p>
+      Retrieve the screenshot of the attack using PhoneSploit from the
+      compromised mobile device.
+    </p>
+    <p>
+      Determine the number of HTTP packets sent per second.
+    </p>
+    <p><em>Format: NN</em></p>
+
+    <h3>Challenge 14</h3>
+    <p>
+      You have received a folder named <strong>"Archive"</strong> from a vendor.
+    </p>
+    <p>
+      The original hashes of the files are stored in
+      <strong>FileHashes.txt</strong> in the Document folder of the EH Workstation
+      – 2 machine.
+    </p>
+    <p>
+      Compare the MD5 hash values and determine the file name that has been
+      tampered with.
+    </p>
+    <p>
+      <strong>Note:</strong> Exclude the file extension in the answer field. The
+      answer is case-sensitive.
+    </p>
+    <p><em>Format: Aaaaaa</em></p>
+
+    <h3>Challenge 15</h3>
+    <p>
+      A VeraCrypt volume file <strong>secret</strong> is stored on the Document
+      folder in the EH Workstation – 2 machine.
+    </p>
+    <p>
+      Decrypt the encrypted volume and determine the number of files stored in
+      the volume.
+    </p>
+    <p>
+      <strong>Hint:</strong> Password: test
+    </p>
+    <p><em>Format: N</em></p>
+
+  </section>
+
+  <footer>
+    <p>
+      CEH Engage — Part IV | Educational and authorized use only.
+      All activities must be performed in a controlled lab environment.
+    </p>
+  </footer>
+
+</body>
+</html>

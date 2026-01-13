@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CEH Engage — Part III</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <h1>CEH Engage — Part III</h1>
+
+  <section>
+    <h2>Overview</h2>
+
+    <p>
+      <strong>CEH Engage - Part III</strong>
+    </p>
+
+    <p>
+      Part 3 of CEH Engage covers Session Hijacking, Evading IDS, Firewalls, and
+      Honeypots, Hacking Web Servers, Hacking Web Applications, and SQL Injection
+      modules.
+    </p>
+
+    <p>
+      In this part, you must take over active network and application sessions,
+      compromise firewall, IDS, and other perimeter defense mechanisms, and
+      exploit the organization's web applications.
+    </p>
+
+    <p>
+      You need to note all the information discovered in this part of the CEH
+      Engage and proceed to the subsequent phases of the ethical hacking cycle
+      in the next part of the CEH Engage.
+    </p>
+
+    <p>
+      <strong>Note:</strong> Attempt this part after completing first 15 modules
+      of the CEH program.
+    </p>
+  </section>
+
+  <section>
+    <h2>Flags</h2>
+
+    <h3>Challenge 1</h3>
+    <p>
+      An attacker tried to perform session hijacking on a machine from
+      <strong>172.30.10.0/24</strong> subnet.
+    </p>
+    <p>
+      An incident handler found a packet capture file
+      <strong>$_Jack.pcapng</strong> obtained from the victim machine which is
+      stored in Documents folder of EH Workstation -1.
+    </p>
+    <p>
+      You are assigned to analyse the packet capture file and determine the IP
+      of the victim machine targeted by the attacker.
+    </p>
+    <p><em>Format: NNN.NN.NN.NNN</em></p>
+
+    <h3>Challenge 2</h3>
+    <p>
+      An attacker tried to intercept a login session by intercepting the http
+      traffic from the victim machine.
+    </p>
+    <p>
+      The security analyst captured the traffic and stored it in Downloads
+      folder of EH Workstation -1 as
+      <strong>Intercep_$niffer.pcapng</strong>.
+    </p>
+    <p>
+      Analyse the pcap file and determine the credentials captured by the
+      attacker.
+    </p>
+    <p><em>Format: aaa/aaaa</em></p>
+
+    <h3>Challenge 3</h3>
+    <p>
+      A honeypot has been set up on a machine within the
+      <strong>192.168.10.0/24</strong> subnet to monitor and detect malicious
+      network activity.
+    </p>
+    <p>
+      Your task is to analyze the honeypot log file,
+      <strong>cowrie.log</strong>, located in the Downloads folder of EH
+      Workstation -2, and determine the attacker IP trying to access the target
+      machine.
+    </p>
+    <p><em>Format: NNN*NN*NN*NN</em></p>
+
+    <h3>Challenge 4</h3>
+    <p>
+      Conduct a footprinting analysis on the target website
+      <strong>www.certifiedhacker.com</strong> to identify the web server
+      technology used by the site.
+    </p>
+    <p><em>Format: Aaaaaa</em></p>
+
+    <h3>Challenge 5</h3>
+    <p>
+      You’re a cybersecurity investigator assigned to a high-priority case.
+      Martin is suspected of engaging in illegal crypto activities, and it’s
+      believed that he has stored his crypto account password in a file named
+      <strong>$ollers.txt</strong>.
+    </p>
+    <p>
+      Your mission is to crack the SSH credentials for Martin’s machine within
+      the <strong>192.168.10.0/24</strong> subnet and retrieve the password from
+      the <strong>$ollers.txt</strong> file.
+    </p>
+    <p>
+      <strong>Hint:</strong> Search in the folders present on the Desktop to find
+      the target file.
+    </p>
+    <p><em>Format: aNaa**NNNNNAA*</em></p>
+
+    <h3>Challenge 6</h3>
+    <p>
+      Attackers have identified a vulnerable website and stored the details of
+      this website on one of the machines within the
+      <strong>192.168.10.0/24</strong> subnet.
+    </p>
+    <p>
+      As a cybersecurity investigator you have been tasked to crack the FTP
+      credentials of user <strong>nick</strong> and determine the ID of the
+      domain.
+    </p>
+    <p>
+      The information you need has been gathered and stored in the
+      <strong>w_domain.txt</strong> file.
+    </p>
+    <p><em>Format: NNNNNNNNNN</em></p>
+
+    <h3>Challenge 7</h3>
+    <p>
+      You have identified a vulnerable web application on a Linux server at
+      port <strong>8080</strong>.
+    </p>
+    <p>
+      Exploit the web application vulnerability, gain access to the server and
+      enter the content of <strong>RootFlag.txt</strong> as the answer.
+    </p>
+    <p><em>Format: Aa*aaNNNN</em></p>
+
+    <h3>Challenge 8</h3>
+    <p>
+      You are a penetration tester assigned to a new task.
+    </p>
+    <p>
+      A list of websites is stored in the <strong>webpent.txt</strong> file on
+      the target machine with the IP address
+      <strong>192.168.10.101</strong>.
+    </p>
+    <p>
+      Your objective is to find the Meta-Author of the website that is
+      highlighted in the list.
+    </p>
+    <p>
+      <strong>Hint:</strong> Use SMB service.
+    </p>
+    <p><em>Format: AA-Aaaaaaa</em></p>
+
+    <h3>Challenge 9</h3>
+    <p>
+      You have recently joined GoodShopping Inc. as a web application security
+      administrator.
+    </p>
+    <p>
+      Your task is to identify the attack category of the oldest Common
+      Vulnerabilities and Exposures (CVEs) affected the website
+      <strong>www.goodshopping.com</strong>.
+    </p>
+    <p><em>Format: aaaaa*aaaa aaaaaaaaaa (AAA)</em></p>
+
+    <h3>Challenge 10</h3>
+    <p>
+      You are a web penetration tester hired to assess the security of the
+      website <strong>www.goodshopping.com</strong>.
+    </p>
+    <p>
+      Identify the type of security policies is missing to detect and mitigate
+      Cross-Site Scripting (XSS) and SQL Injection attacks.
+    </p>
+    <p><em>Format: Aaaaaaa Aaaaaaaa Aaaaaa</em></p>
+
+    <h3>Challenge 11</h3>
+    <p>
+      As part of an internal vulnerability assessment, a potentially
+      misconfigured website was identified within the organization's network.
+    </p>
+    <p>
+      A security scan was conducted using smart scanner tool, and the resulting
+      report <strong>w_report.pdf</strong> was stored on a Windows Server 2019
+      machine within the <strong>192.168.10.0/24</strong> subnet.
+    </p>
+    <p>
+      Access the target server, retrieve the scan report, and analyze its
+      contents to determine the total number of directory listing entries
+      identified on the scanned website.
+    </p>
+    <p><em>Format: NN</em></p>
+
+    <h3>Challenge 12</h3>
+    <p>
+      Perform a bruteforce attack on <strong>www.cehorg.com</strong> and find the
+      password of user <strong>adam</strong>.
+    </p>
+    <p><em>Format: aaaaaaNNNN</em></p>
+
+    <h3>Challenge 13</h3>
+    <p>
+      As a cybersecurity analyst, your task is to identify potential
+      vulnerabilities on the <strong>moviescope.com</strong> website.
+    </p>
+    <p>
+      Your manager has requested a specific number of risk categories.
+    </p>
+    <p>
+      The required HTML file is located on EH Workstation 1.
+    </p>
+    <p><em>Format: N</em></p>
+
+    <h3>Challenge 14</h3>
+    <p>
+      Perform a SQL Injection attack on <strong>www.moviescope.com</strong> and
+      find out the number of users available in the database.
+    </p>
+    <p><em>Format: N</em></p>
+
+    <h3>Challenge 15</h3>
+    <p>
+      Perform a SQL Injection vulnerability scan on the target website
+      <strong>www.moviescope.com</strong> and determine the WASC ID for SQL
+      Injection.
+    </p>
+    <p><em>Format: NN</em></p>
+
+  </section>
+
+  <footer>
+    <p>
+      CEH Engage — Part III | Educational and authorized use only.
+      All activities must be performed in a controlled lab environment.
+    </p>
+  </footer>
+
+</body>
+</html>

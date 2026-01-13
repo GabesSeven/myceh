@@ -1,0 +1,5 @@
+.credentials {
+  background: var(--ceh-bg-warning);
+  padding: 12px;
+  border-left: 4px solid var(--ceh-border-warning);
+}
