@@ -9,14 +9,30 @@
 </head>
 <body>
 
+<nav class="sidebar">
+  <h2>CEH Engage</h2>
+  <ul>
+    <li><a href="part0.html">Introdução</a></li>
+    <li><a href="part1.html">Part I — Recon & Scanning</a></li>
+    <li><a href="part2.html">Part II — Enumeration & Exploitation</a></li>
+    <li><a href="part3.html">Part III — Post-Exploitation</a></li>
+    <li><a href="part4.html">Part IV — Advanced Attacks</a></li>
+  </ul>
+</nav>
+
+<div class="main-content">
   <h1>CEH Engage — Part III</h1>
 
+  <!-- ================= Overview ================= -->
   <section>
     <h2>Overview</h2>
 
-    <p>
-      <strong>CEH Engage - Part III</strong>
-    </p>
+    <p><strong>CEH Engage - Part III</strong></p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p><strong>CEH Engage - Parte III</strong></p>
+    </details>
 
     <p>
       Part 3 of CEH Engage covers Session Hijacking, Evading IDS, Firewalls, and
@@ -24,11 +40,29 @@
       modules.
     </p>
 
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        A Parte 3 do CEH Engage cobre os módulos de Sequestro de Sessão, Evasão de
+        IDS, Firewalls e Honeypots, Hacking de Servidores Web, Hacking de Aplicações
+        Web e SQL Injection.
+      </p>
+    </details>
+
     <p>
       In this part, you must take over active network and application sessions,
       compromise firewall, IDS, and other perimeter defense mechanisms, and
       exploit the organization's web applications.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Nesta parte, você deverá assumir sessões ativas de rede e aplicações,
+        comprometer firewalls, IDS e outros mecanismos de defesa de perímetro,
+        além de explorar as aplicações web da organização.
+      </p>
+    </details>
 
     <p>
       You need to note all the information discovered in this part of the CEH
@@ -36,69 +70,178 @@
       in the next part of the CEH Engage.
     </p>
 
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Você deve registrar todas as informações descobertas nesta parte do CEH
+        Engage e prosseguir para as fases subsequentes do ciclo de ethical hacking
+        na próxima parte do CEH Engage.
+      </p>
+    </details>
+
     <p>
       <strong>Note:</strong> Attempt this part after completing first 15 modules
       of the CEH program.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        <strong>Nota:</strong> Tente esta parte após concluir os primeiros 15
+        módulos do programa CEH.
+      </p>
+    </details>
   </section>
 
+  <!-- ================= Flags ================= -->
   <section>
     <h2>Flags</h2>
 
+    <!-- Challenge 1 -->
     <h3>Challenge 1</h3>
     <p>
       An attacker tried to perform session hijacking on a machine from
       <strong>172.30.10.0/24</strong> subnet.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Um atacante tentou realizar um sequestro de sessão em uma máquina da
+        sub-rede <strong>172.30.10.0/24</strong>.
+      </p>
+    </details>
+
     <p>
       An incident handler found a packet capture file
       <strong>$_Jack.pcapng</strong> obtained from the victim machine which is
       stored in Documents folder of EH Workstation -1.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Um analista de incidentes encontrou um arquivo de captura de pacotes
+        <strong>$_Jack.pcapng</strong>, obtido da máquina vítima e armazenado na
+        pasta Documents da EH Workstation-1.
+      </p>
+    </details>
+
     <p>
       You are assigned to analyse the packet capture file and determine the IP
       of the victim machine targeted by the attacker.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Você foi designado para analisar o arquivo de captura de pacotes e
+        determinar o endereço IP da máquina vítima alvo do atacante.
+      </p>
+    </details>
+
     <p><em>Format: NNN.NN.NN.NNN</em></p>
 
+    <!-- Challenge 2 -->
     <h3>Challenge 2</h3>
     <p>
       An attacker tried to intercept a login session by intercepting the http
       traffic from the victim machine.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Um atacante tentou interceptar uma sessão de login ao capturar o tráfego
+        HTTP da máquina vítima.
+      </p>
+    </details>
+
     <p>
       The security analyst captured the traffic and stored it in Downloads
       folder of EH Workstation -1 as
       <strong>Intercep_$niffer.pcapng</strong>.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        O analista de segurança capturou o tráfego e o armazenou na pasta Downloads
+        da EH Workstation-1 como
+        <strong>Intercep_$niffer.pcapng</strong>.
+      </p>
+    </details>
+
     <p>
       Analyse the pcap file and determine the credentials captured by the
       attacker.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Analise o arquivo pcap e determine as credenciais capturadas pelo atacante.
+      </p>
+    </details>
+
     <p><em>Format: aaa/aaaa</em></p>
 
+    <!-- Challenge 3 -->
     <h3>Challenge 3</h3>
     <p>
       A honeypot has been set up on a machine within the
       <strong>192.168.10.0/24</strong> subnet to monitor and detect malicious
       network activity.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Um honeypot foi configurado em uma máquina dentro da sub-rede
+        <strong>192.168.10.0/24</strong> para monitorar e detectar atividades de
+        rede maliciosas.
+      </p>
+    </details>
+
     <p>
       Your task is to analyze the honeypot log file,
       <strong>cowrie.log</strong>, located in the Downloads folder of EH
       Workstation -2, and determine the attacker IP trying to access the target
       machine.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Sua tarefa é analisar o arquivo de log do honeypot,
+        <strong>cowrie.log</strong>, localizado na pasta Downloads da EH
+        Workstation-2, e determinar o IP do atacante que tentou acessar a
+        máquina alvo.
+      </p>
+    </details>
+
     <p><em>Format: NNN*NN*NN*NN</em></p>
 
+    <!-- Challenge 4 -->
     <h3>Challenge 4</h3>
     <p>
       Conduct a footprinting analysis on the target website
       <strong>www.certifiedhacker.com</strong> to identify the web server
       technology used by the site.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Realize uma análise de footprinting no site alvo
+        <strong>www.certifiedhacker.com</strong> para identificar a tecnologia de
+        servidor web utilizada.
+      </p>
+    </details>
+
     <p><em>Format: Aaaaaa</em></p>
 
+    <!-- Challenge 5 -->
     <h3>Challenge 5</h3>
     <p>
       You’re a cybersecurity investigator assigned to a high-priority case.
@@ -106,138 +249,380 @@
       believed that he has stored his crypto account password in a file named
       <strong>$ollers.txt</strong>.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Você é um investigador de cibersegurança designado para um caso de alta
+        prioridade. Martin é suspeito de envolvimento em atividades ilegais com
+        criptomoedas, e acredita-se que ele tenha armazenado a senha de sua conta
+        cripto em um arquivo chamado <strong>$ollers.txt</strong>.
+      </p>
+    </details>
+
     <p>
       Your mission is to crack the SSH credentials for Martin’s machine within
       the <strong>192.168.10.0/24</strong> subnet and retrieve the password from
       the <strong>$ollers.txt</strong> file.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Sua missão é quebrar as credenciais SSH da máquina de Martin dentro da
+        sub-rede <strong>192.168.10.0/24</strong> e recuperar a senha contida no
+        arquivo <strong>$ollers.txt</strong>.
+      </p>
+    </details>
+
     <p>
       <strong>Hint:</strong> Search in the folders present on the Desktop to find
       the target file.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        <strong>Dica:</strong> Procure nas pastas presentes na área de trabalho
+        para localizar o arquivo alvo.
+      </p>
+    </details>
+
     <p><em>Format: aNaa**NNNNNAA*</em></p>
 
+    <!-- Challenge 6 -->
     <h3>Challenge 6</h3>
     <p>
       Attackers have identified a vulnerable website and stored the details of
       this website on one of the machines within the
       <strong>192.168.10.0/24</strong> subnet.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Atacantes identificaram um site vulnerável e armazenaram os detalhes
+        desse site em uma das máquinas da sub-rede
+        <strong>192.168.10.0/24</strong>.
+      </p>
+    </details>
+
     <p>
       As a cybersecurity investigator you have been tasked to crack the FTP
       credentials of user <strong>nick</strong> and determine the ID of the
       domain.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Como investigador de cibersegurança, você foi designado para quebrar as
+        credenciais FTP do usuário <strong>nick</strong> e determinar o ID do
+        domínio.
+      </p>
+    </details>
+
     <p>
       The information you need has been gathered and stored in the
       <strong>w_domain.txt</strong> file.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        As informações necessárias foram coletadas e armazenadas no arquivo
+        <strong>w_domain.txt</strong>.
+      </p>
+    </details>
+
     <p><em>Format: NNNNNNNNNN</em></p>
 
+    <!-- Challenge 7 -->
     <h3>Challenge 7</h3>
     <p>
       You have identified a vulnerable web application on a Linux server at
       port <strong>8080</strong>.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Você identificou uma aplicação web vulnerável em um servidor Linux na
+        porta <strong>8080</strong>.
+      </p>
+    </details>
+
     <p>
       Exploit the web application vulnerability, gain access to the server and
       enter the content of <strong>RootFlag.txt</strong> as the answer.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Explore a vulnerabilidade da aplicação web, obtenha acesso ao servidor e
+        insira o conteúdo do arquivo <strong>RootFlag.txt</strong> como resposta.
+      </p>
+    </details>
+
     <p><em>Format: Aa*aaNNNN</em></p>
 
+    <!-- Challenge 8 -->
     <h3>Challenge 8</h3>
     <p>
       You are a penetration tester assigned to a new task.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Você é um testador de invasão designado para uma nova tarefa.
+      </p>
+    </details>
+
     <p>
       A list of websites is stored in the <strong>webpent.txt</strong> file on
       the target machine with the IP address
       <strong>192.168.10.101</strong>.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Uma lista de sites está armazenada no arquivo
+        <strong>webpent.txt</strong> na máquina alvo com o endereço IP
+        <strong>192.168.10.101</strong>.
+      </p>
+    </details>
+
     <p>
       Your objective is to find the Meta-Author of the website that is
       highlighted in the list.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Seu objetivo é encontrar o Meta-Author do site que está destacado na
+        lista.
+      </p>
+    </details>
+
     <p>
       <strong>Hint:</strong> Use SMB service.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        <strong>Dica:</strong> Utilize o serviço SMB.
+      </p>
+    </details>
+
     <p><em>Format: AA-Aaaaaaa</em></p>
 
+    <!-- Challenge 9 -->
     <h3>Challenge 9</h3>
     <p>
       You have recently joined GoodShopping Inc. as a web application security
       administrator.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Você ingressou recentemente na GoodShopping Inc. como administrador de
+        segurança de aplicações web.
+      </p>
+    </details>
+
     <p>
       Your task is to identify the attack category of the oldest Common
       Vulnerabilities and Exposures (CVEs) affected the website
       <strong>www.goodshopping.com</strong>.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Sua tarefa é identificar a categoria de ataque das CVEs mais antigas que
+        afetaram o site <strong>www.goodshopping.com</strong>.
+      </p>
+    </details>
+
     <p><em>Format: aaaaa*aaaa aaaaaaaaaa (AAA)</em></p>
 
+    <!-- Challenge 10 -->
     <h3>Challenge 10</h3>
     <p>
       You are a web penetration tester hired to assess the security of the
       website <strong>www.goodshopping.com</strong>.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Você é um testador de invasão web contratado para avaliar a segurança do
+        site <strong>www.goodshopping.com</strong>.
+      </p>
+    </details>
+
     <p>
       Identify the type of security policies is missing to detect and mitigate
       Cross-Site Scripting (XSS) and SQL Injection attacks.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Identifique o tipo de políticas de segurança que estão ausentes para
+        detectar e mitigar ataques de Cross-Site Scripting (XSS) e SQL Injection.
+      </p>
+    </details>
+
     <p><em>Format: Aaaaaaa Aaaaaaaa Aaaaaa</em></p>
 
+    <!-- Challenge 11 -->
     <h3>Challenge 11</h3>
     <p>
       As part of an internal vulnerability assessment, a potentially
       misconfigured website was identified within the organization's network.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Como parte de uma avaliação interna de vulnerabilidades, um site
+        potencialmente mal configurado foi identificado na rede da organização.
+      </p>
+    </details>
+
     <p>
       A security scan was conducted using smart scanner tool, and the resulting
       report <strong>w_report.pdf</strong> was stored on a Windows Server 2019
       machine within the <strong>192.168.10.0/24</strong> subnet.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Uma varredura de segurança foi realizada usando a ferramenta smart
+        scanner, e o relatório resultante <strong>w_report.pdf</strong> foi
+        armazenado em um servidor Windows Server 2019 dentro da sub-rede
+        <strong>192.168.10.0/24</strong>.
+      </p>
+    </details>
+
     <p>
       Access the target server, retrieve the scan report, and analyze its
       contents to determine the total number of directory listing entries
       identified on the scanned website.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Acesse o servidor alvo, recupere o relatório de varredura e analise seu
+        conteúdo para determinar o número total de entradas de listagem de
+        diretórios identificadas no site escaneado.
+      </p>
+    </details>
+
     <p><em>Format: NN</em></p>
 
+    <!-- Challenge 12 -->
     <h3>Challenge 12</h3>
     <p>
       Perform a bruteforce attack on <strong>www.cehorg.com</strong> and find the
       password of user <strong>adam</strong>.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Realize um ataque de força bruta no site
+        <strong>www.cehorg.com</strong> e descubra a senha do usuário
+        <strong>adam</strong>.
+      </p>
+    </details>
+
     <p><em>Format: aaaaaaNNNN</em></p>
 
+    <!-- Challenge 13 -->
     <h3>Challenge 13</h3>
     <p>
       As a cybersecurity analyst, your task is to identify potential
       vulnerabilities on the <strong>moviescope.com</strong> website.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Como analista de cibersegurança, sua tarefa é identificar possíveis
+        vulnerabilidades no site <strong>moviescope.com</strong>.
+      </p>
+    </details>
+
     <p>
       Your manager has requested a specific number of risk categories.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Seu gerente solicitou um número específico de categorias de risco.
+      </p>
+    </details>
+
     <p>
       The required HTML file is located on EH Workstation 1.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        O arquivo HTML necessário está localizado na EH Workstation-1.
+      </p>
+    </details>
+
     <p><em>Format: N</em></p>
 
+    <!-- Challenge 14 -->
     <h3>Challenge 14</h3>
     <p>
       Perform a SQL Injection attack on <strong>www.moviescope.com</strong> and
       find out the number of users available in the database.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Realize um ataque de SQL Injection no site
+        <strong>www.moviescope.com</strong> e descubra o número de usuários
+        disponíveis no banco de dados.
+      </p>
+    </details>
+
     <p><em>Format: N</em></p>
 
+    <!-- Challenge 15 -->
     <h3>Challenge 15</h3>
     <p>
       Perform a SQL Injection vulnerability scan on the target website
       <strong>www.moviescope.com</strong> and determine the WASC ID for SQL
       Injection.
     </p>
-    <p><em>Format: NN</em></p>
 
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        Realize uma varredura de vulnerabilidades de SQL Injection no site alvo
+        <strong>www.moviescope.com</strong> e determine o WASC ID referente a SQL
+        Injection.
+      </p>
+    </details>
+
+    <p><em>Format: NN</em></p>
   </section>
 
   <footer>
@@ -245,7 +630,18 @@
       CEH Engage — Part III | Educational and authorized use only.
       All activities must be performed in a controlled lab environment.
     </p>
+
+    <details class="translation">
+      <summary>Ver tradução (PT-BR)</summary>
+      <p>
+        CEH Engage — Parte III | Uso exclusivamente educacional e autorizado.
+        Todas as atividades devem ser realizadas em ambiente de laboratório
+        controlado.
+      </p>
+    </details>
   </footer>
+
+</div>
 
 </body>
 </html>

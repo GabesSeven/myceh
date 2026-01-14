@@ -8,248 +8,315 @@
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
+  <nav class="sidebar">
+    <h2>CEH Engage</h2>
+    <ul>
+      <li><a href="part0.html">Introdução</a></li>
+      <li><a href="part1.html">Part I — Recon & Scanning</a></li>
+      <li><a href="part2.html">Part II — Enumeration & Exploitation</a></li>
+      <li><a href="part3.html">Part III — Post-Exploitation</a></li>
+      <li><a href="part4.html">Part IV — Advanced Attacks</a></li>
+    </ul>
+  </nav>
 
-  <h1>CEH Engage — Part II</h1>
+  <div class="main-content">
+    <h1>CEH Engage — Part II</h1>
 
-  <section>
-    <h2>Overview</h2>
+    <!-- ================= Overview ================= -->
+    <section>
+      <h2>Overview</h2>
 
-    <p>
-      <strong>CEH Engage - Part II</strong>
-    </p>
+      <p><strong>CEH Engage - Part II</strong></p>
 
-    <p>
-      Part 2 of CEH Engage covers System Hacking, Malware Threats, Sniffing,
-      Social Engineering, and Denial-of-Service modules.
-    </p>
+      <p>
+        Part 2 of CEH Engage covers System Hacking, Malware Threats, Sniffing,
+        Social Engineering, and Denial-of-Service modules.
+      </p>
 
-    <p>
-      In this part, you must exploit vulnerabilities identified in the last part
-      and use various network/system/human exploitation techniques to gain access
-      to the target's systems.
-    </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          A Parte 2 do CEH Engage aborda os módulos de Invasão de Sistemas,
+          Ameaças de Malware, Sniffing, Engenharia Social e
+          Ataques de Negação de Serviço (DoS).
+        </p>
+      </details>
 
-    <p>
-      You have to perform lateral and vertical privilege escalations and install
-      malicious apps and utilities to maintain access and clear logs to avoid
-      detection.
-    </p>
+      <p>
+        In this part, you must exploit vulnerabilities identified in the last part
+        and use various network/system/human exploitation techniques to gain access
+        to the target's systems.
+      </p>
 
-    <p>
-      You will need to create and use malicious applications against the target
-      and will also be required to analyze any malware discovered on any of the
-      targets.
-    </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Nesta parte, você deve explorar as vulnerabilidades identificadas na etapa
+          anterior e utilizar diversas técnicas de exploração de rede, sistema e
+          fator humano para obter acesso aos sistemas do alvo.
+        </p>
+      </details>
 
-    <p>
-      You need to note all the information discovered in this part of the CEH
-      Engage and proceed to the subsequent phases of the ethical hacking cycle
-      in the next part of the CEH Engage.
-    </p>
+      <p>
+        You have to perform lateral and vertical privilege escalations and install
+        malicious apps and utilities to maintain access and clear logs to avoid detection.
+      </p>
 
-    <p>
-      <strong>Note:</strong> Attempt this part after completing first 10 modules
-      of the CEH program.
-    </p>
-  </section>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Você deverá realizar escalonamento de privilégios lateral e vertical,
+          instalar aplicações e utilitários maliciosos para manter o acesso
+          e limpar logs para evitar detecção.
+        </p>
+      </details>
 
-  <section>
-    <h2>Flags</h2>
+      <p>
+        You will need to create and use malicious applications against the target
+        and will also be required to analyze any malware discovered on any of the targets.
+      </p>
 
-    <h3>Challenge 1</h3>
-    <p>
-      You are assigned to perform brute-force attack on a linux machine from
-      <strong>192.168.10.0/24</strong> subnet and crack the FTP credentials of user
-      <strong>nick</strong>.
-    </p>
-    <p>
-      An exploitation information file is saved in the home directory of the FTP
-      server. Determine the Vendor homepage of the FTP vulnerability specified in
-      the file.
-    </p>
-    <p><em>Format: aaaaa://aaa.aaaaaaaa.aaa/</em></p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Será necessário criar e utilizar aplicações maliciosas contra o alvo,
+          além de analisar qualquer malware descoberto nos sistemas comprometidos.
+        </p>
+      </details>
 
-    <h3>Challenge 2</h3>
-    <p>
-      An intruder performed network sniffing on a machine from
-      <strong>192.168.10.0/24</strong> subnet and obtained login credentials of the
-      user for <strong>moviescope.com</strong> website using remote packet capture
-      in wireshark.
-    </p>
-    <p>
-      You are assigned to analyse the <strong>Mscredremote.pcapng</strong> file
-      located in Downloads folder of EH Workstation-1 and determine the
-      credentials obtained.
-    </p>
-    <p><em>Format: aaaa/aaaaa</em></p>
+      <p>
+        <strong>Note:</strong> Attempt this part after completing first 10 modules
+        of the CEH program.
+      </p>
 
-    <h3>Challenge 3</h3>
-    <p>
-      You are assigned to analyse a packet capture file
-      <strong>ServerDoS.pcapng</strong> located in Downloads folder of EH
-      Workstation-2 machine.
-    </p>
-    <p>
-      Determine the UDP based application layer protocol which attacker employed
-      to flood the machine in targeted network.
-    </p>
-    <p>
-      <strong>Note:</strong> Check for target Destination port.
-    </p>
-    <p><em>Format: Aaaaa Aaaaaaa Aaaaaaaa</em></p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          <strong>Nota:</strong> Execute esta parte somente após concluir
+          os primeiros 10 módulos do programa CEH.
+        </p>
+      </details>
+    </section>
 
-    <h3>Challenge 4</h3>
-    <p>
-      A severe DDoS attack is occurred in an organization, degrading the
-      performance of a ubuntu server machine in the <strong>SKILL.CEH</strong>
-      network.
-    </p>
-    <p>
-      You are assigned to analyse the <strong>DD_attack.pcapng</strong> file
-      stored in Documents folder of EH workstation -2 and determine the IP
-      address of the attacker trying to attack the target server through UDP.
-    </p>
-    <p><em>Format: NNN.NNN.NN.NNN</em></p>
+    <!-- ================= Flags ================= -->
+    <section>
+      <h2>Flags</h2>
 
-    <h3>Challenge 5</h3>
-    <p>
-      You are assigned to analyse <strong>PyD_attack.pcapng</strong> file stored
-      in Downloads folder of EH Workstation -2 machine.
-    </p>
-    <p>
-      Determine the attacker IP machine which is targeting the RPC service of
-      the target machine.
-    </p>
-    <p><em>Format: NNN.NN.NN.NN</em></p>
+      <h3>Challenge 1</h3>
+      <p>
+        You are assigned to perform brute-force attack on a linux machine from
+        192.168.10.0/24 subnet and crack the FTP credentials of user nick.
+        An exploitation information file is saved in the home directory of the FTP server.
+        Determine the Vendor homepage of the FTP vulnerability specified in the file.
+      </p>
+      <details class="translation"><summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Você deve realizar um ataque de força bruta em uma máquina Linux da sub-rede
+          192.168.10.0/24 e quebrar as credenciais FTP do usuário nick.
+          Um arquivo com informações da exploração está salvo no diretório home
+          do servidor FTP. Determine o site do fornecedor da vulnerabilidade FTP.
+        </p>
+      </details>
+      <p><em>Format: aaaaa://aaa.aaaaaaaa.aaa/</em></p>
 
-    <h3>Challenge 6</h3>
-    <p>
-      An incident handler identified severe DDoS attack on a network and
-      provided report using Anti-DDoS Guardian tool.
-    </p>
-    <p>
-      You are assigned to analyse the reports submitted by the IH team which
-      are stored in
-      <strong>C:\Users\Admin\Documents\Anti-DDoS</strong> directory of the EH
-      Workstation-1 and determine the attacker IP which has transmitted more
-      number of packets to the target machine.
-    </p>
-    <p><em>Format: NNN.NNN.NN.NNN</em></p>
+      <h3>Challenge 2</h3>
+      <p>
+        An intruder performed network sniffing on a machine from 192.168.10.0/24 subnet
+        and obtained login credentials of the user for moviescope.com website using
+        remote packet capture in wireshark.
+      </p>
+      <details class="translation"><summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Um invasor realizou sniffing de rede em uma máquina da sub-rede 192.168.10.0/24
+          e obteve credenciais de login do site moviescope.com por captura remota de pacotes.
+        </p>
+      </details>
+      <p>
+        You are assigned to analyse the Mscredremote.pcapng file located in Downloads
+        folder of EH Workstation-1 and determine the credentials obtained.
+      </p>
+      <details class="translation"><summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Analise o arquivo Mscredremote.pcapng na pasta Downloads da EH Workstation-1
+          e determine as credenciais obtidas.
+        </p>
+      </details>
+      <p><em>Format: aaaa/aaaaa</em></p>
 
-    <h3>Challenge 7</h3>
-    <p>
-      You are assigned to analyse the domain controller from the target subnet
-      and perform AS-REP roasting attack on the user accounts and determine the
-      password of the vulnerable user whose credentials are obtained.
-    </p>
-    <p>
-      <strong>Note:</strong> use <strong>users.txt</strong> and
-      <strong>rockyou.txt</strong> files stored in attacker home directory while
-      cracking the credentials.
-    </p>
-    <p><em>Format: aNaaN*NNN</em></p>
+      <h3>Challenge 3</h3>
+      <p>
+        You are assigned to analyse a packet capture file ServerDoS.pcapng located
+        in Downloads folder of EH Workstation-2 machine.
+      </p>
+      <details class="translation"><summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Você deve analisar o arquivo de captura ServerDoS.pcapng localizado
+          na pasta Downloads da EH Workstation-2.
+        </p>
+      </details>
+      <p>
+        Determine the UDP based application layer protocol which attacker employed
+        to flood the machine in targeted network.
+      </p>
+      <p><strong>Note:</strong> Check for target Destination port.</p>
+      <details class="translation"><summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Determine o protocolo de camada de aplicação baseado em UDP utilizado
+          para inundar a máquina alvo. Verifique a porta de destino.
+        </p>
+      </details>
+      <p><em>Format: Aaaaa Aaaaaaa Aaaaaaaa</em></p>
 
-    <h3>Challenge 8</h3>
-    <p>
-      A client machine under the target domain controller has a misconfigured
-      SQL server vulnerability.
-    </p>
-    <p>
-      Your task is to exploit this vulnerability, retrieve the
-      <strong>MSS.txt</strong> file located in the Public Downloads folder on the
-      client machine and determine its size in bytes as answer.
-    </p>
-    <p>
-      <strong>Note:</strong> use users.txt and rockyou.txt files stored in attacker
-      home directory while cracking the credentials.
-    </p>
-    <p><em>Format: N</em></p>
+      <h3>Challenge 4</h3>
+      <p>
+        Analyse DD_attack.pcapng and determine the IP address of the attacker
+        trying to attack the target server through UDP.
+      </p>
+      <details class="translation"><summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Analise o arquivo DD_attack.pcapng e determine o IP do atacante
+          realizando ataque UDP contra o servidor.
+        </p>
+      </details>
+      <p><em>Format: NNN.NNN.NN.NNN</em></p>
 
-    <h3>Challenge 9</h3>
-    <p>
-      You are assigned to crack RDP credentials of user <strong>Maurice</strong>
-      from the target subnet <strong>192.168.10.0/24</strong> and determine the
-      password as answer.
-    </p>
-    <p>
-      <strong>Note:</strong> use users.txt and rockyou.txt files stored in attacker
-      home directory while cracking the credentials.
-    </p>
-    <p><em>Format: Aaaaaaa@NNNN</em></p>
+      <h3>Challenge 5</h3>
+      <p>
+        Analyse PyD_attack.pcapng and determine the attacker IP targeting
+        the RPC service.
+      </p>
+      <details class="translation"><summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Analise o arquivo PyD_attack.pcapng e identifique o IP do atacante
+          direcionado ao serviço RPC.
+        </p>
+      </details>
+      <p><em>Format: NNN.NN.NN.NN</em></p>
 
-    <h3>Challenge 10</h3>
-    <p>
-      You are assigned to perform malware scanning on a malware file
-      <strong>Tools.rar</strong> stored in Downloads folder of EH workstation-2
-      machine and determine the last four digits of the file’s SHA-256 hash value.
-    </p>
-    <p><em>Format: aNNN</em></p>
+      <h3>Challenge 6</h3>
+      <p>
+        Analyse Anti-DDoS Guardian reports and determine the attacker IP
+        transmitting the highest number of packets.
+      </p>
+      <details class="translation"><summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Analise os relatórios do Anti-DDoS Guardian e identifique o IP
+          que enviou o maior número de pacotes.
+        </p>
+      </details>
+      <p><em>Format: NNN.NNN.NN.NNN</em></p>
 
-    <h3>Challenge 11</h3>
-    <p>
-      You are assigned to monitor a suspicious process running in a machine whose
-      log file <strong>Logfile.PML</strong> is saved in Pictures folder of the EH
-      Workstation -2.
-    </p>
-    <p>
-      Analyse the logfile and determine the Parent PID of the malicious file
-      <strong>H3ll0.exe</strong> process from the log file.
-    </p>
-    <p><em>Format: NNNN</em></p>
+      <h3>Challenge 7</h3>
+      <p>
+        Perform AS-REP roasting attack and determine the cracked password
+        of the vulnerable user.
+      </p>
+      <details class="translation"><summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Realize um ataque AS-REP roasting e determine a senha do usuário vulnerável.
+        </p>
+      </details>
+      <p><em>Format: aNaaN*NNN</em></p>
 
-    <h3>Challenge 12</h3>
-    <p>
-      You are tasked with analyzing the ELF executable file named
-      <strong>Tornado.elf</strong>, located in the Downloads folder of EH
-      Workstation-2.
-    </p>
-    <p>
-      Determine the entropy value of the file up to two decimal places.
-    </p>
-    <p><em>Format: N*NN</em></p>
+      <h3>Challenge 8</h3>
+      <p>
+        Exploit misconfigured SQL server, retrieve MSS.txt and determine its size in bytes.
+      </p>
+      <details class="translation"><summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Explore a falha no SQL Server, recupere o arquivo MSS.txt
+          e determine seu tamanho em bytes.
+        </p>
+      </details>
+      <p><em>Format: N</em></p>
 
-    <h3>Challenge 13</h3>
-    <p>
-      You are assigned to scan the target subnets to identify the remote packet
-      capture feature that is enabled to analyse the traffic on the target
-      machine remotely.
-    </p>
-    <p>
-      Scan the target subnets and determine the IP address using
-      <strong>rpcap</strong> service.
-    </p>
-    <p><em>Format: NNN.NNN.NN.NNN</em></p>
+      <h3>Challenge 9</h3>
+      <p>
+        Crack RDP credentials of user Maurice and determine the password.
+      </p>
+      <details class="translation"><summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Quebre as credenciais RDP do usuário Maurice e determine a senha.
+        </p>
+      </details>
+      <p><em>Format: Aaaaaaa@NNNN</em></p>
 
-    <h3>Challenge 14</h3>
-    <p>
-      An insider attack occurred in an organization and the confidential data
-      regarding an upcoming event is sniffed and encrypted in a image file
-      <strong>stealth.jpeg</strong> stored in Desktop of EH Workstation -2 machine.
-    </p>
-    <p>
-      You are assigned to extract the hidden data inside the cover file using
-      <strong>steghide</strong> tool and determine the tender quotation value.
-    </p>
-    <p>
-      (Use <strong>azerty@123</strong> for passphrase)
-    </p>
-    <p><em>Format: NNNNNNN</em></p>
+      <h3>Challenge 10</h3>
+      <p>
+        Scan Tools.rar malware file and determine last four digits of SHA-256 hash.
+      </p>
+      <details class="translation"><summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Analise o malware Tools.rar e determine os últimos quatro dígitos do hash SHA-256.
+        </p>
+      </details>
+      <p><em>Format: aNNN</em></p>
 
-    <h3>Challenge 15</h3>
-    <p>
-      Perform vulnerability search using <strong>searchsploit</strong> tool and
-      determine the path of AirDrop 2.0 vulnerability.
-    </p>
-    <p><em>Format: aaaaaaa/aaa/NNNNN.a</em></p>
+      <h3>Challenge 11</h3>
+      <p>
+        Analyse Logfile.PML and determine the Parent PID of H3ll0.exe.
+      </p>
+      <details class="translation"><summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Analise o arquivo Logfile.PML e determine o PID pai do processo H3ll0.exe.
+        </p>
+      </details>
+      <p><em>Format: NNNN</em></p>
 
-  </section>
+      <h3>Challenge 12</h3>
+      <p>
+        Analyse Tornado.elf and determine entropy value.
+      </p>
+      <details class="translation"><summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Analise o arquivo Tornado.elf e determine o valor de entropia.
+        </p>
+      </details>
+      <p><em>Format: N*NN</em></p>
 
-  <footer>
-    <p>
-      CEH Engage — Part II | Educational and authorized use only.
-      All activities must be performed in a controlled lab environment.
-    </p>
-  </footer>
+      <h3>Challenge 13</h3>
+      <p>
+        Scan target subnets and determine IP using rpcap service.
+      </p>
+      <details class="translation"><summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Escaneie as sub-redes alvo e determine o IP utilizando o serviço rpcap.
+        </p>
+      </details>
+      <p><em>Format: NNN.NNN.NN.NNN</em></p>
+
+      <h3>Challenge 14</h3>
+      <p>
+        Extract hidden data from stealth.jpeg using steghide and determine quotation value.
+      </p>
+      <details class="translation"><summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Extraia os dados ocultos do arquivo stealth.jpeg usando steghide
+          e determine o valor da cotação.
+        </p>
+      </details>
+      <p><em>Format: NNNNNNN</em></p>
+
+      <h3>Challenge 15</h3>
+      <p>
+        Perform vulnerability search and determine the path of AirDrop 2.0 vulnerability.
+      </p>
+      <details class="translation"><summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Realize uma busca por vulnerabilidades e determine o caminho
+          da vulnerabilidade AirDrop 2.0.
+        </p>
+      </details>
+      <p><em>Format: aaaaaaa/aaa/NNNNN.a</em></p>
+    </section>
+
+    <footer>
+      <p>
+        CEH Engage — Part II | Educational and authorized use only.
+        All activities must be performed in a controlled lab environment.
+      </p>
+    </footer>
+  </div>
 
 </body>
 </html>

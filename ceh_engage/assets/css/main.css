@@ -1,109 +1,11 @@
-/*
-  CEH Engage – Global Styles
-  Estilo relatório técnico / Red Team
-  Paleta inspirada no CEH / EC-Council (vermelho & preto)
-*/
+@import url("base/variables.css");
+/* @import url("base/reset.css"); */
+/* @import url("base/typography.css"); */
 
-:root {
-  /* Paleta CEH */
-  --ceh-red: #b11217;           /* vermelho CEH */
-  --ceh-red-dark: #7d0c10;
-  --ceh-black: #0f0f0f;
-  --ceh-gray-dark: #1c1c1c;
-  --ceh-gray: #2a2a2a;
-  --ceh-gray-light: #e6e6e6;
+@import url("layout/layout.css");
+@import url("layout/sidebar.css");
 
-  --ceh-text: #111;
-  --ceh-muted: #666;
-
-  --ceh-bg: #ffffff;
-  --ceh-section-bg: #f7f7f7;
-
-  --ceh-pre-bg: #111;
-  --ceh-pre-text: #eaeaea;
-
-  --ceh-border: #d0d0d0;
-}
-
-/* Reset mínimo */
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  margin: 24px;
-  background: var(--ceh-bg);
-  color: var(--ceh-text);
-}
-
-/* Headings */
-h1,
-h2,
-h3 {
-  color: var(--ceh-red);
-  margin-top: 0;
-}
-
-h1 {
-  border-bottom: 3px solid var(--ceh-black);
-  padding-bottom: 6px;
-}
-
-h2 {
-  border-left: 5px solid var(--ceh-red);
-  padding-left: 10px;
-}
-
-/* Sections */
-section {
-  margin-bottom: 22px;
-  padding: 14px 16px;
-  background: var(--ceh-section-bg);
-  border: 1px solid var(--ceh-border);
-  border-radius: 4px;
-}
-
-/* Lists */
-ul {
-  margin-left: 1.2em;
-}
-
-/* Code / credentials blocks */
-pre {
-  background: var(--ceh-pre-bg);
-  color: var(--ceh-pre-text);
-  padding: 14px;
-  border-radius: 4px;
-  overflow: auto;
-  font-family: Consolas, "Courier New", monospace;
-  font-size: 0.95rem;
-  border-left: 4px solid var(--ceh-red);
-}
-
-/* Inline code */
-code {
-  background: #f0f0f0;
-  padding: 2px 5px;
-  border-radius: 3px;
-  font-family: Consolas, "Courier New", monospace;
-  font-size: 0.95em;
-}
-
-/* Destaque de aviso / observação */
-.alert {
-  background: #fff3f3;
-  border-left: 4px solid var(--ceh-red);
-  padding: 10px 12px;
-  margin: 12px 0;
-}
-
-/* Footer */
-footer {
-  margin-top: 30px;
-  padding-top: 10px;
-  border-top: 2px solid var(--ceh-black);
-  font-size: 0.9em;
-  color: var(--ceh-muted);
-}
+/* @import url("components/code.css"); */
+/* @import url("components/alerts.css"); */
+/* @import url("components/credentials.css"); */
+@import url("components/translation.css");

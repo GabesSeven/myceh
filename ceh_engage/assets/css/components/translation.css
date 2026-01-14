@@ -1,0 +1,29 @@
+.translation {
+  margin: 6px 0 14px;
+  padding-left: 12px;
+  border-left: 3px solid var(--ceh-red);
+}
+
+.translation summary {
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--ceh-red);
+  font-weight: bold;
+  list-style: none;
+}
+
+.translation summary::before {
+  content: "[+] ";
+}
+.translation[open] summary::before {
+  content: "[-] ";
+}
+
+.translation p {
+  margin-top: 6px;
+  background: var(--ceh-pt-bg);
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #333;
+}

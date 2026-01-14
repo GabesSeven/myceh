@@ -1,77 +1,179 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>CEH Engage — Tradução</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CEH Engage — Scenario</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/pages/intro.css">
 </head>
+
 <body>
-
-  <h1>CEH Engage — Tradução</h1>
-
-  <section>
-    <h2>Cenário</h2>
-    <p>Você foi contratado como parte do Red Team na CEHORG, uma organização de TI e ITES que trabalha com pesquisa e desenvolvimento avançado na área de segurança da informação. A CEHORG possui escritórios por todo o país, conectados em tempo real por sua infraestrutura de rede.</p>
-
-    <p>Sua organização está preocupada com o aumento de incidentes de cibersegurança e confiou a você uma auditoria de segurança abrangente de toda a infraestrutura.</p>
-
-    <p>A rede interna da CEHORG consiste em vários sub-redes que abrigam diversas unidades organizacionais, como em qualquer grande organização. A recepção (front office) está conectada a uma sub-rede separada que dá acesso aos computadores voltados ao público. A empresa instalou vários quiosques para ajudar os clientes a entenderem seus produtos e serviços. A recepção também possui conectividade Wi-Fi para atender usuários que trazem smartphones e laptops.</p>
-
-    <p>A rede interna da CEHORG é composta por Zonas Militarizadas e Desmilitarizadas. Como precaução de segurança, e por design, todos os zones de recursos internos são configurados com IPs de sub-rede diferentes. A zona militarizada abriga os servidores de aplicação que fornecem frameworks de aplicação para vários departamentos. A Zona Desmilitarizada (DMZ) contém sistemas voltados ao público da organização, tais como servidores web e de e-mail. A topologia de rede e os protocolos da matriz são replicados em todo o mundo em todos os escritórios satélites para facilitar a comunicação com a sede.</p>
-  </section>
-
-  <section>
-    <h2>Descrição</h2>
-    <p>O CEH Engage é dividido em quatro partes e serve como pontos de verificação durante seu estudo.</p>
-
+  <nav class="sidebar">
+    <h2>CEH Engage</h2>
     <ul>
-      <li><strong>CEH Engage Parte I:</strong> Cobre os Módulos 01 a 05 do CEH. Este é seu primeiro marco de verificação após completar os primeiros cinco módulos do programa CEH.</li>
-      <li><strong>CEH Engage Parte II:</strong> Cobre os Módulos 06 a 10 do CEH. Tente esta parte após concluir os primeiros 10 módulos do programa CEH.</li>
-      <li><strong>CEH Engage Parte III:</strong> Cobre os Módulos 11 a 15 do CEH. Tente esta parte após concluir os primeiros 15 módulos do programa CEH.</li>
-      <li><strong>CEH Engage Parte IV:</strong> Cobre os Módulos 16 a 20 do CEH. Tente esta parte após concluir todos os 20 módulos do programa CEH.</li>
+      <li><a href="part0.html">Introduction</a></li>
+      <li><a href="part1.html">Part I — Recon & Scanning</a></li>
+      <li><a href="part2.html">Part II — Enumeration & Exploitation</a></li>
+      <li><a href="part3.html">Part III — Post-Exploitation</a></li>
+      <li><a href="part4.html">Part IV — Advanced Attacks</a></li>
     </ul>
+  </nav>
 
-    <p>Todas as quatro partes representam uma única organização alvo, conforme descrito no cenário. O objetivo do ambiente de prática Engage é aplicar o aprendizado dos módulos do CEH em um cenário de vida real para resolver desafios que você enfrentará em atribuições de red team em suas funções profissionais. O ambiente de prática Engage ajudará a praticar as habilidades adquiridas em aula e a convertê-las em proficiência.</p>
+  <main class="main-content">
+    <h1>CEH Engage</h1>
 
-    <h3>Recursos disponibilizados no ambiente (cyber range)</h3>
-    <p>No cyber range, você terá acesso a Workstations de Ethical Hacker, <strong>EH Workstation - 1</strong> e <strong>EH Workstation - 2</strong>. A <em>EH Workstation - 1</em> é uma máquina com Windows 11 e a <em>EH Workstation - 2</em> é uma máquina Parrot Security. Você pode alternar para essas máquinas na aba <strong>Resources</strong>.</p>
+    <!-- ================= Scenario ================= -->
+    <section>
+      <h2>Scenario</h2>
 
-    <h3>Credenciais</h3>
-    <div class="credentials">
-      <p><strong>Credenciais para acessar a EH Workstation - 1 (Windows 11):</strong></p>
-      <pre>
+      <p>
+        You have been hired as a part of the Red Team at CEHORG, an IT and ITES organization
+        that deals with advanced research and development in the field of information security.
+        It has offices all over the country connected in real-time by its network infrastructure.
+      
+        Your organization is worried about rising cybersecurity incidents and has entrusted you
+        with a comprehensive security audit of the complete infrastructure.
+        
+        CEHORG's internal network consists of several subnets housing various organizational
+        units like any large organization. The front office is connected to a separate subnet
+        that connects to the company's public-facing computers.
+
+        The company has installed multiple kiosks to help customers understand their products
+        and services. The front office also has Wi-Fi connectivity to cater to the users who
+        carry their smartphones and laptops.
+
+        The CEHORG's internal network is made up of Militarized and Demilitarized zones.
+        The militarized zone houses the application servers, while the Demilitarized Zone
+        contains public-facing systems such as web and mail servers.
+      </p>
+
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Você foi contratado como parte do Red Team na CEHORG, uma organização de TI e ITES
+          que atua com pesquisa e desenvolvimento avançado na área de segurança da informação.
+          A CEHORG possui escritórios por todo o país, conectados em tempo real por sua infraestrutura de rede.
+          
+          Sua organização está preocupada com o aumento de incidentes de cibersegurança
+          e confiou a você uma auditoria de segurança abrangente de toda a infraestrutura.
+
+          A rede interna da CEHORG consiste em várias sub-redes que abrigam diversas unidades
+          organizacionais, como em qualquer grande organização. A recepção está conectada a
+          uma sub-rede separada que dá acesso aos computadores voltados ao público.
+
+          A empresa instalou vários quiosques para ajudar os clientes a entenderem seus produtos
+          e serviços. A recepção também possui conectividade Wi-Fi para atender usuários que
+          utilizam smartphones e laptops.
+
+          A rede interna da CEHORG é composta por zonas Militarizadas e Desmilitarizadas.
+          A zona militarizada abriga os servidores de aplicação, enquanto a DMZ contém
+          sistemas voltados ao público, como servidores web e de e-mail.
+        </p>
+      </details>
+    </section>
+
+    <!-- ================= Description ================= -->
+    <section>
+      <h2>Description</h2>
+
+      <p>
+        CEH Engage is divided into four parts and serves as check points during your study.
+      </p>
+
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          O CEH Engage é dividido em quatro partes e serve como pontos de verificação durante seus estudos.
+        </p>
+      </details>
+
+      <ul>
+        <li><strong>CEH Engage Part I:</strong> Covers Module 01 to Module 05 of CEH.</li>
+        <li><strong>CEH Engage Part II:</strong> Covers Module 06 to Module 10 of CEH.</li>
+        <li><strong>CEH Engage Part III:</strong> Covers Module 11 to Module 15 of CEH.</li>
+        <li><strong>CEH Engage Part IV:</strong> Covers Module 16 to Module 20 of CEH.</li>
+      </ul>
+
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          As quatro partes cobrem, respectivamente, os módulos 01–05, 06–10, 11–15 e 16–20
+          do programa CEH.
+        </p>
+      </details>
+
+      <p>
+        The objective of the Engage practice range is to apply CEH learning in a real-life
+        scenario to solve challenges faced in red team assignments.
+      </p>
+
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          O objetivo do ambiente Engage é aplicar o aprendizado do CEH em um cenário real,
+          resolvendo desafios enfrentados em atribuições de red team.
+        </p>
+      </details>
+
+      <h3>Cyber Range Resources</h3>
+
+      <p>
+        You will have access to Ethical Hacker Workstations, EH Workstation - 1 (Windows 11)
+        and EH Workstation - 2 (Parrot Security).
+      </p>
+
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Você terá acesso às Workstations de Ethical Hacker: EH Workstation - 1 (Windows 11)
+          e EH Workstation - 2 (Parrot Security).
+        </p>
+      </details>
+
+      <h3>Credentials</h3>
+
+      <div class="credentials">
+        <pre>
 Username: Admin
 Password: Pa$$w0rd
-      </pre>
+        </pre>
 
-      <p><strong>Credenciais para acessar a EH Workstation - 2 (Parrot Security):</strong></p>
-      <pre>
+        <pre>
 Username: attacker
 Password: toor
-      </pre>
+        </pre>
 
-      <p>Se você quiser iniciar o OpenVAS, dê um duplo clique no ícone <em>Start OpenVAS</em> na área de trabalho da máquina EH Workstation - 1.</p>
-
-      <pre>
+        <pre>
 Username: admin
 Password: admin
-      </pre>
+        </pre>
+      </div>
+    </section>
 
-      <p>Você pode usar os arquivos <code>username.txt</code> e <code>password.txt</code> disponíveis na área de trabalho da EH Workstation - 2 (Parrot Security) para qualquer tentativa de quebra de credenciais/senhas.</p>
-    </div>
-  </section>
+    <!-- ================= Objective ================= -->
+    <section>
+      <h2>Objective</h2>
 
-  <section>
-    <h2>Objetivo</h2>
-    <p>Monte uma auditoria prática aplicando os conhecimentos dos módulos do CEH conforme as partes descritas, utilizando as workstations e ferramentas disponíveis no ambiente para executar atividades de red team, testes de vulnerabilidade e avaliação de segurança da infraestrutura descrita.</p>
-  </section>
+      <p>
+        Perform a practical security audit using CEH methodologies, tools, and techniques
+        across the provided infrastructure.
+      </p>
 
-  <footer>
-    <p>Documento traduzido automaticamente para uso em estudos de CEH. Preserve as credenciais e o ambiente apenas para fins educacionais e autorizados.</p>
-  </footer>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Realizar uma auditoria prática de segurança utilizando metodologias, ferramentas
+          e técnicas do CEH sobre a infraestrutura fornecida.
+        </p>
+      </details>
+    </section>
 
+    <footer>
+      <p>
+        This document is intended for educational and authorized CEH practice only.
+      </p>
+    </footer>
+  </main>
 </body>
 </html>

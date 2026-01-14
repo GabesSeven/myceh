@@ -8,284 +8,756 @@
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
+  <nav class="sidebar">
+    <h2>CEH Engage</h2>
+    <ul>
+      <li><a href="part0.html">Introdução</a></li>
+      <li><a href="part1.html">Part I — Recon & Scanning</a></li>
+      <li><a href="part2.html">Part II — Enumeration & Exploitation</a></li>
+      <li><a href="part3.html">Part III — Post-Exploitation</a></li>
+      <li><a href="part4.html">Part IV — Advanced Attacks</a></li>
+    </ul>
+  </nav>
 
-  <h1>CEH Engage — Part IV</h1>
+  <div class="main-content">
+    <h1>CEH Engage — Part IV</h1>
+    
+    <!-- ================= Overview ================= -->
+    <section>
+      <h2>Overview</h2>
 
-  <section>
-    <h2>Overview</h2>
+      <p><strong>CEH Engage - Part IV</strong></p>
 
-    <p>
-      <strong>CEH Engage - Part IV</strong>
-    </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p><strong>CEH Engage – Parte IV</strong></p>
+      </details>
 
-    <p>
-      Part 4 of CEH Engage covers Hacking Wireless Networks, Hacking Mobile
-      Platforms, IoT and OT Hacking, Cloud Computing, and Cryptography modules.
-    </p>
+      <p>
+        Part 4 of CEH Engage covers Hacking Wireless Networks, Hacking Mobile
+        Platforms, IoT and OT Hacking, Cloud Computing, and Cryptography modules.
+      </p>
 
-    <p>
-      In this part, you must analyze wireless packet captures, use different
-      attack vectors to exploit mobile devices, and audit IoT and OT
-      systems/networks for known threats.
-    </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          A Parte 4 do CEH Engage aborda Hacking de Redes Sem Fio, Hacking de
+          Plataformas Móveis, Hacking de IoT e OT, Computação em Nuvem e módulos
+          de Criptografia.
+        </p>
+      </details>
 
-    <p>
-      You need to note all the information discovered in this part of the CEH
-      Engage.
-    </p>
+      <p>
+        In this part, you must analyze wireless packet captures, use different
+        attack vectors to exploit mobile devices, and audit IoT and OT
+        systems/networks for known threats.
+      </p>
 
-    <p>
-      <strong>Note:</strong> Attempt this part after completing all 20 modules of
-      the CEH program.
-    </p>
-  </section>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Nesta parte, você deve analisar capturas de pacotes sem fio, utilizar
+          diferentes vetores de ataque para explorar dispositivos móveis e
+          auditar sistemas e redes IoT e OT em busca de ameaças conhecidas.
+        </p>
+      </details>
 
-  <section>
-    <h2>Flags</h2>
+      <p>
+        You need to note all the information discovered in this part of the CEH
+        Engage.
+      </p>
 
-    <h3>Challenge 1</h3>
-    <p>
-      An employee's mobile device within CEHORG has been compromised, leading to
-      an encrypted message <strong>BCtetx.txt</strong> being placed on the
-      Android operating system.
-    </p>
-    <p>
-      The password needed to decrypt the file is saved on EH-workstation-1.
-      As an ethical hacker, your task is to decrypt the file using the password
-      and input the extracted information.
-    </p>
-    <p>
-      <strong>Note:</strong> the password file <strong>pawned.txt</strong> is
-      stored in documents folder.
-    </p>
-    <p><em>Format: *aaaaAN*NaN</em></p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Você deve registrar todas as informações descobertas nesta parte do
+          CEH Engage.
+        </p>
+      </details>
 
-    <h3>Challenge 2</h3>
-    <p>
-      A compromised Android device is suspected of containing malicious
-      applications.
-    </p>
-    <p>
-      As an ethical hacker, you are tasked with identifying and extracting all
-      installed APK files.
-    </p>
-    <p>
-      Within these APKs, you must locate and extract a specific CRC value ends
-      with <strong>"614c"</strong>.
-    </p>
-    <p>
-      Determine the complete CRC value as answer.
-    </p>
-    <p><em>Format: NNaaNNNa</em></p>
+      <p>
+        <strong>Note:</strong> Attempt this part after completing all 20 modules of
+        the CEH program.
+      </p>
 
-    <h3>Challenge 3</h3>
-    <p>
-      A ZIP archive encompassing redundant images of a physical signature has
-      been compromised <strong>signature.zip</strong> and stored in Documents
-      folder of EH Workstation-1 machine.
-    </p>
-    <p>
-      Your role as an ethical hacker involves a forensic examination of the
-      archive's contents to pinpoint the image file associated with an MD5 hash
-      value ends with sequence <strong>"24CCB"</strong>.
-    </p>
-    <p>
-      Determine the original signature file name as answer.
-    </p>
-    <p><em>Format: aN*aaa</em></p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          <strong>Nota:</strong> Execute esta parte somente após concluir todos os
+          20 módulos do programa CEH.
+        </p>
+      </details>
+    </section>
 
-    <h3>Challenge 4</h3>
-    <p>
-      As a cybersecurity analyst, you are investigating a potential phishing
-      campaign targeting Ruby, an employee at a local tech company.
-    </p>
-    <p>
-      You have access to Ruby’s call log from the past few days, stored on an
-      Android device within the target subnet
-      <strong>192.168.10.0/24</strong>.
-    </p>
-    <p>
-      Identify the call in the log that is most likely a phishing attempt and
-      provide the suspected phone number.
-    </p>
-    <p><em>Format: +N (NNN) NNN-NNNN</em></p>
+    <!-- ================= Flags ================= -->
+    <section>
+      <h2>Flags</h2>
 
-    <h3>Challenge 5</h3>
-    <p>
-      An employee's mobile device has reportedly been compromised and is
-      suspected of being used to launch a Denial of Service (DoS) attack against
-      one of the company's internal servers.
-    </p>
-    <p>
-      Conduct a thorough analysis of the network capture file
-      <strong>And_Dos.pcapng</strong> located in the Documents directory of EH
-      workstation-2 machine and identify the severity level/potential impact of
-      the attack performed.
-    </p>
-    <p>
-      <strong>Note:</strong> perform deep down Expert Info analysis.
-    </p>
-    <p><em>Format: Aaaaaaa</em></p>
+      <!-- Challenge 1 -->
+      <h3>Challenge 1</h3>
 
-    <h3>Challenge 6</h3>
-    <p>
-      CEHORG manages multiple IoT devices and sensors to oversee its supply
-      chain fleet.
-    </p>
-    <p>
-      Examine the file <strong>MQTT.pcapng</strong>, located in the Home
-      directory of the EH Workstation - 2 machine.
-    </p>
-    <p>
-      Analyze the packet containing the
-      <strong>"High_humidity"</strong> message and determine the alert percentage
-      specified in the message.
-    </p>
-    <p><em>Format: NN</em></p>
+      <p>
+        An employee's mobile device within CEHORG has been compromised, leading to
+        an encrypted message <strong>BCtetx.txt</strong> being placed on the
+        Android operating system.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          O dispositivo móvel de um funcionário da CEHORG foi comprometido,
+          resultando na colocação de uma mensagem criptografada
+          <strong>BCtetx.txt</strong> no sistema operacional Android.
+        </p>
+      </details>
 
-    <h3>Challenge 7</h3>
-    <p>
-      An attacker had sent a file
-      <strong>cryt-128-06encr.hex</strong> containing ransom file password, which
-      is located in documents folder of EH-workstation-2.
-    </p>
-    <p>
-      Decrypt the file using cryp tool, identify the algorithm used for file
-      encryption and hidden text.
-    </p>
-    <p>
-      <strong>Note:</strong> check filename for key length and hex characters.
-    </p>
-    <p><em>Format: Aaaaaaa/**aa**aA*a</em></p>
+      <p>
+        The password needed to decrypt the file is saved on EH-workstation-1.
+        As an ethical hacker, your task is to decrypt the file using the password
+        and input the extracted information.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          A senha necessária para descriptografar o arquivo está salva na
+          EH-workstation-1. Como hacker ético, sua tarefa é descriptografar o
+          arquivo usando a senha e inserir a informação extraída.
+        </p>
+      </details>
 
-    <h3>Challenge 8</h3>
-    <p>
-      A VeraCrypt volume file <strong>MyVeracrypt</strong> is stored on the
-      Document folder of the EH Workstation – 1 machine.
-    </p>
-    <p>
-      Decrypt the encrypted volume and determine the number of files stored in
-      the volume folder.
-    </p>
-    <p>
-      <strong>Hint:</strong> Password: veratest
-    </p>
-    <p><em>Format: N</em></p>
+      <p>
+        <strong>Note:</strong> the password file <strong>pawned.txt</strong> is
+        stored in documents folder.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          <strong>Nota:</strong> o arquivo de senha <strong>pawned.txt</strong> está
+          armazenado na pasta Documents.
+        </p>
+      </details>
 
-    <h3>Challenge 9</h3>
-    <p>
-      An ex-employee of CEHORG is suspected of performing an insider attack.
-    </p>
-    <p>
-      Retrieve the contacts dump from the employee's Android phone.
-    </p>
-    <p>
-      Using PhoneSploit, find the country code of the contact named
-      <strong>"Maddy"</strong>.
-    </p>
-    <p>
-      <strong>Note:</strong> Use option 'N' in PhoneSploit for next page.
-    </p>
-    <p><em>Format: NN</em></p>
+      <p><em>Format: *aaaaAN*NaN</em></p>
 
-    <h3>Challenge 10</h3>
-    <p>
-      Examine the file <strong>MQTT.pcapng</strong> located in the Home directory
-      of the EH Workstation - 2 machine.
-    </p>
-    <p>
-      Analyze the packet containing the
-      <strong>"High_temperature"</strong> message and determine the topic length.
-    </p>
-    <p><em>Format: NN</em></p>
+      <!-- Challenge 2 -->
+      <h3>Challenge 2</h3>
 
-    <h3>Challenge 11</h3>
-    <p>
-      An ex-employee of CEHORG is suspected to be performing insider attack.
-    </p>
-    <p>
-      Attain <strong>KEYCODE-5</strong> used in the employees' mobile phone.
-    </p>
-    <p>
-      <strong>Note:</strong> use option N in PhoneSploit for next page.
-    </p>
-    <p><em>Format: Aaaaa*Aaaaaa</em></p>
+      <p>
+        A compromised Android device is suspected of containing malicious
+        applications.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Um dispositivo Android comprometido é suspeito de conter aplicações
+          maliciosas.
+        </p>
+      </details>
 
-    <h3>Challenge 12</h3>
-    <p>
-      An employee in CEHORG has secretly acquired Confidential access ID through
-      an application from the company.
-    </p>
-    <p>
-      He has saved this information on the Music folder of his Android mobile
-      phone.
-    </p>
-    <p>
-      Access the file and delete it covertly.
-    </p>
-    <p>
-      Enter the account information present in the file.
-    </p>
-    <p>
-      <strong>Note:</strong> Only provide the numeric values in the answer field.
-    </p>
-    <p><em>Format: NNNNNNNN</em></p>
+      <p>
+        As an ethical hacker, you are tasked with identifying and extracting all
+        installed APK files.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Como hacker ético, você deve identificar e extrair todos os arquivos APK
+          instalados.
+        </p>
+      </details>
 
-    <h3>Challenge 13</h3>
-    <p>
-      An attacker has hacked an employee's Android device at CEHORG and
-      initiated a LOIC attack from the device.
-    </p>
-    <p>
-      Retrieve the screenshot of the attack using PhoneSploit from the
-      compromised mobile device.
-    </p>
-    <p>
-      Determine the number of HTTP packets sent per second.
-    </p>
-    <p><em>Format: NN</em></p>
+      <p>
+        Within these APKs, you must locate and extract a specific CRC value ends
+        with <strong>"614c"</strong>.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Dentro desses APKs, você deve localizar e extrair um valor CRC específico
+          que termina com <strong>"614c"</strong>.
+        </p>
+      </details>
 
-    <h3>Challenge 14</h3>
-    <p>
-      You have received a folder named <strong>"Archive"</strong> from a vendor.
-    </p>
-    <p>
-      The original hashes of the files are stored in
-      <strong>FileHashes.txt</strong> in the Document folder of the EH Workstation
-      – 2 machine.
-    </p>
-    <p>
-      Compare the MD5 hash values and determine the file name that has been
-      tampered with.
-    </p>
-    <p>
-      <strong>Note:</strong> Exclude the file extension in the answer field. The
-      answer is case-sensitive.
-    </p>
-    <p><em>Format: Aaaaaa</em></p>
+      <p>
+        Determine the complete CRC value as answer.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Determine o valor completo do CRC como resposta.
+        </p>
+      </details>
 
-    <h3>Challenge 15</h3>
-    <p>
-      A VeraCrypt volume file <strong>secret</strong> is stored on the Document
-      folder in the EH Workstation – 2 machine.
-    </p>
-    <p>
-      Decrypt the encrypted volume and determine the number of files stored in
-      the volume.
-    </p>
-    <p>
-      <strong>Hint:</strong> Password: test
-    </p>
-    <p><em>Format: N</em></p>
+      <p><em>Format: NNaaNNNa</em></p>
 
-  </section>
+      <!-- Challenge 3 -->
+      <h3>Challenge 3</h3>
 
-  <footer>
-    <p>
-      CEH Engage — Part IV | Educational and authorized use only.
-      All activities must be performed in a controlled lab environment.
-    </p>
-  </footer>
+      <p>
+        A ZIP archive encompassing redundant images of a physical signature has
+        been compromised <strong>signature.zip</strong> and stored in Documents
+        folder of EH Workstation-1 machine.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Um arquivo ZIP contendo imagens redundantes de uma assinatura física foi
+          comprometido (<strong>signature.zip</strong>) e armazenado na pasta
+          Documents da EH Workstation-1.
+        </p>
+      </details>
 
+      <p>
+        Your role as an ethical hacker involves a forensic examination of the
+        archive's contents to pinpoint the image file associated with an MD5 hash
+        value ends with sequence <strong>"24CCB"</strong>.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Seu papel como hacker ético envolve uma análise forense do conteúdo do
+          arquivo para identificar o arquivo de imagem associado a um hash MD5
+          que termina com a sequência <strong>"24CCB"</strong>.
+        </p>
+      </details>
+
+      <p>
+        Determine the original signature file name as answer.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Determine o nome original do arquivo da assinatura como resposta.
+        </p>
+      </details>
+
+      <p><em>Format: aN*aaa</em></p>
+
+      <!-- Challenge 4 -->
+      <h3>Challenge 4</h3>
+
+      <p>
+        As a cybersecurity analyst, you are investigating a potential phishing
+        campaign targeting Ruby, an employee at a local tech company.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Como analista de cibersegurança, você está investigando uma possível
+          campanha de phishing direcionada a Ruby, funcionária de uma empresa
+          de tecnologia local.
+        </p>
+      </details>
+
+      <p>
+        You have access to Ruby’s call log from the past few days, stored on an
+        Android device within the target subnet
+        <strong>192.168.10.0/24</strong>.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Você tem acesso ao registro de chamadas de Ruby dos últimos dias,
+          armazenado em um dispositivo Android dentro da sub-rede alvo
+          <strong>192.168.10.0/24</strong>.
+        </p>
+      </details>
+
+      <p>
+        Identify the call in the log that is most likely a phishing attempt and
+        provide the suspected phone number.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Identifique a chamada no registro que mais provavelmente representa
+          uma tentativa de phishing e forneça o número de telefone suspeito.
+        </p>
+      </details>
+
+      <p><em>Format: +N (NNN) NNN-NNNN</em></p>
+
+      <!-- Challenge 5 -->
+      <h3>Challenge 5</h3>
+
+      <p>
+        An employee's mobile device has reportedly been compromised and is
+        suspected of being used to launch a Denial of Service (DoS) attack against
+        one of the company's internal servers.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          O dispositivo móvel de um funcionário foi comprometido e é suspeito de
+          ter sido utilizado para lançar um ataque de Negação de Serviço (DoS)
+          contra um dos servidores internos da empresa.
+        </p>
+      </details>
+
+      <p>
+        Conduct a thorough analysis of the network capture file
+        <strong>And_Dos.pcapng</strong> located in the Documents directory of EH
+        workstation-2 machine and identify the severity level/potential impact of
+        the attack performed.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Realize uma análise detalhada do arquivo de captura de rede
+          <strong>And_Dos.pcapng</strong>, localizado no diretório Documents da
+          EH Workstation-2, e identifique o nível de severidade ou impacto
+          potencial do ataque realizado.
+        </p>
+      </details>
+
+      <p>
+        <strong>Note:</strong> perform deep down Expert Info analysis.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          <strong>Nota:</strong> realize uma análise aprofundada usando a seção
+          Expert Info.
+        </p>
+      </details>
+
+      <p><em>Format: Aaaaaaa</em></p>
+
+      <!-- Challenge 6 -->
+      <h3>Challenge 6</h3>
+
+      <p>
+        CEHORG manages multiple IoT devices and sensors to oversee its supply
+        chain fleet.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          A CEHORG gerencia múltiplos dispositivos IoT e sensores para supervisionar
+          sua frota da cadeia de suprimentos.
+        </p>
+      </details>
+
+      <p>
+        Examine the file <strong>MQTT.pcapng</strong>, located in the Home
+        directory of the EH Workstation - 2 machine.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Examine o arquivo <strong>MQTT.pcapng</strong>, localizado no diretório
+          Home da EH Workstation-2.
+        </p>
+      </details>
+
+      <p>
+        Analyze the packet containing the
+        <strong>"High_humidity"</strong> message and determine the alert percentage
+        specified in the message.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Analise o pacote que contém a mensagem
+          <strong>"High_humidity"</strong> e determine a porcentagem de alerta
+          especificada.
+        </p>
+      </details>
+
+      <p><em>Format: NN</em></p>
+
+      <!-- Challenge 7 -->
+      <h3>Challenge 7</h3>
+
+      <p>
+        An attacker had sent a file
+        <strong>cryt-128-06encr.hex</strong> containing ransom file password, which
+        is located in documents folder of EH-workstation-2.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Um atacante enviou um arquivo
+          <strong>cryt-128-06encr.hex</strong> contendo a senha de um arquivo de
+          ransomware, localizado na pasta Documents da EH Workstation-2.
+        </p>
+      </details>
+
+      <p>
+        Decrypt the file using cryp tool, identify the algorithm used for file
+        encryption and hidden text.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Descriptografe o arquivo usando a ferramenta cryp e identifique o
+          algoritmo utilizado para criptografia e o texto oculto.
+        </p>
+      </details>
+
+      <p>
+        <strong>Note:</strong> check filename for key length and hex characters.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          <strong>Nota:</strong> verifique o nome do arquivo para identificar o
+          tamanho da chave e os caracteres hexadecimais.
+        </p>
+      </details>
+
+      <p><em>Format: Aaaaaaa/**aa**aA*a</em></p>
+
+      <!-- Challenge 8 -->
+      <h3>Challenge 8</h3>
+
+      <p>
+        A VeraCrypt volume file <strong>MyVeracrypt</strong> is stored on the
+        Document folder of the EH Workstation – 1 machine.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Um volume VeraCrypt <strong>MyVeracrypt</strong> está armazenado na pasta
+          Documents da EH Workstation-1.
+        </p>
+      </details>
+
+      <p>
+        Decrypt the encrypted volume and determine the number of files stored in
+        the volume folder.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Descriptografe o volume criptografado e determine o número de arquivos
+          armazenados dentro dele.
+        </p>
+      </details>
+
+      <p>
+        <strong>Hint:</strong> Password: veratest
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          <strong>Dica:</strong> Senha: veratest
+        </p>
+      </details>
+
+      <p><em>Format: N</em></p>
+
+      <!-- Challenge 9 -->
+      <h3>Challenge 9</h3>
+
+      <p>
+        An ex-employee of CEHORG is suspected of performing an insider attack.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Um ex-funcionário da CEHORG é suspeito de realizar um ataque interno.
+        </p>
+      </details>
+
+      <p>
+        Retrieve the contacts dump from the employee's Android phone.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Recupere o dump de contatos do telefone Android do funcionário.
+        </p>
+      </details>
+
+      <p>
+        Using PhoneSploit, find the country code of the contact named
+        <strong>"Maddy"</strong>.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Usando o PhoneSploit, encontre o código do país do contato chamado
+          <strong>"Maddy"</strong>.
+        </p>
+      </details>
+
+      <p>
+        <strong>Note:</strong> Use option 'N' in PhoneSploit for next page.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          <strong>Nota:</strong> Utilize a opção 'N' no PhoneSploit para avançar
+          para a próxima página.
+        </p>
+      </details>
+
+      <p><em>Format: NN</em></p>
+
+      <!-- Challenge 10 -->
+      <h3>Challenge 10</h3>
+
+      <p>
+        Examine the file <strong>MQTT.pcapng</strong> located in the Home directory
+        of the EH Workstation - 2 machine.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Examine o arquivo <strong>MQTT.pcapng</strong> localizado no diretório Home
+          da EH Workstation-2.
+        </p>
+      </details>
+
+      <p>
+        Analyze the packet containing the
+        <strong>"High_temperature"</strong> message and determine the topic length.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Analise o pacote que contém a mensagem
+          <strong>"High_temperature"</strong> e determine o comprimento do tópico.
+        </p>
+      </details>
+
+      <p><em>Format: NN</em></p>
+
+      <!-- Challenge 11 -->
+      <h3>Challenge 11</h3>
+
+      <p>
+        An ex-employee of CEHORG is suspected to be performing insider attack.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Um ex-funcionário da CEHORG é suspeito de estar realizando um ataque interno.
+        </p>
+      </details>
+
+      <p>
+        Attain <strong>KEYCODE-5</strong> used in the employees' mobile phone.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Obtenha o <strong>KEYCODE-5</strong> utilizado no telefone móvel do
+          funcionário.
+        </p>
+      </details>
+
+      <p>
+        <strong>Note:</strong> use option N in PhoneSploit for next page.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          <strong>Nota:</strong> use a opção N no PhoneSploit para avançar para a
+          próxima página.
+        </p>
+      </details>
+
+      <p><em>Format: Aaaaa*Aaaaaa</em></p>
+
+      <!-- Challenge 12 -->
+      <h3>Challenge 12</h3>
+
+      <p>
+        An employee in CEHORG has secretly acquired Confidential access ID through
+        an application from the company.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Um funcionário da CEHORG adquiriu secretamente um ID de acesso
+          confidencial por meio de uma aplicação da empresa.
+        </p>
+      </details>
+
+      <p>
+        He has saved this information on the Music folder of his Android mobile
+        phone.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Ele salvou essa informação na pasta Music de seu telefone Android.
+        </p>
+      </details>
+
+      <p>
+        Access the file and delete it covertly.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Acesse o arquivo e exclua-o de forma discreta.
+        </p>
+      </details>
+
+      <p>
+        Enter the account information present in the file.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Insira a informação da conta presente no arquivo.
+        </p>
+      </details>
+
+      <p>
+        <strong>Note:</strong> Only provide the numeric values in the answer field.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          <strong>Nota:</strong> Forneça apenas os valores numéricos no campo de
+          resposta.
+        </p>
+      </details>
+
+      <p><em>Format: NNNNNNNN</em></p>
+
+      <!-- Challenge 13 -->
+      <h3>Challenge 13</h3>
+
+      <p>
+        An attacker has hacked an employee's Android device at CEHORG and
+        initiated a LOIC attack from the device.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Um atacante invadiu o dispositivo Android de um funcionário da CEHORG e
+          iniciou um ataque LOIC a partir do dispositivo.
+        </p>
+      </details>
+
+      <p>
+        Retrieve the screenshot of the attack using PhoneSploit from the
+        compromised mobile device.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Recupere a captura de tela do ataque usando o PhoneSploit no dispositivo
+          móvel comprometido.
+        </p>
+      </details>
+
+      <p>
+        Determine the number of HTTP packets sent per second.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Determine o número de pacotes HTTP enviados por segundo.
+        </p>
+      </details>
+
+      <p><em>Format: NN</em></p>
+
+      <!-- Challenge 14 -->
+      <h3>Challenge 14</h3>
+
+      <p>
+        You have received a folder named <strong>"Archive"</strong> from a vendor.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Você recebeu uma pasta chamada <strong>"Archive"</strong> de um fornecedor.
+        </p>
+      </details>
+
+      <p>
+        The original hashes of the files are stored in
+        <strong>FileHashes.txt</strong> in the Document folder of the EH Workstation
+        – 2 machine.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Os hashes originais dos arquivos estão armazenados em
+          <strong>FileHashes.txt</strong> na pasta Documents da EH Workstation-2.
+        </p>
+      </details>
+
+      <p>
+        Compare the MD5 hash values and determine the file name that has been
+        tampered with.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Compare os valores de hash MD5 e determine o nome do arquivo que foi
+          adulterado.
+        </p>
+      </details>
+
+      <p>
+        <strong>Note:</strong> Exclude the file extension in the answer field. The
+        answer is case-sensitive.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          <strong>Nota:</strong> Exclua a extensão do arquivo no campo de resposta.
+          A resposta diferencia maiúsculas de minúsculas.
+        </p>
+      </details>
+
+      <p><em>Format: Aaaaaa</em></p>
+
+      <!-- Challenge 15 -->
+      <h3>Challenge 15</h3>
+
+      <p>
+        A VeraCrypt volume file <strong>secret</strong> is stored on the Document
+        folder in the EH Workstation – 2 machine.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Um volume VeraCrypt <strong>secret</strong> está armazenado na pasta
+          Documents da EH Workstation-2.
+        </p>
+      </details>
+
+      <p>
+        Decrypt the encrypted volume and determine the number of files stored in
+        the volume.
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Descriptografe o volume criptografado e determine o número de arquivos
+          armazenados nele.
+        </p>
+      </details>
+
+      <p>
+        <strong>Hint:</strong> Password: test
+      </p>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          <strong>Dica:</strong> Senha: test
+        </p>
+      </details>
+
+      <p><em>Format: N</em></p>
+    </section>
+
+    
+    <footer>
+      <p>
+        CEH Engage — Part IV | Educational and authorized use only.
+        All activities must be performed in a controlled lab environment.
+      </p>
+    </footer>
+  </div>
+    
 </body>
 </html>

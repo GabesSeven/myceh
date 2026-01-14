@@ -4,176 +4,335 @@
   <meta charset="utf-8">
   <title>CEH Engage — Part I</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
+
 <body>
-
-  <h1>CEH Engage — Part I</h1>
-
-  <section>
-    <h2>Overview</h2>
-
-    <p>
-      <strong>CEH Engage - Part I</strong>
-    </p>
-
-    <p>
-      Part 1 of CEH Engage covers Footprinting and Reconnaissance, Scanning Networks,
-      Enumeration, and Vulnerability Analysis modules.
-    </p>
-
-    <p>
-      In this part, you are required to perform passive and active reconnaissance of
-      the target organization, enumerating services, shares, users, user groups, etc.,
-      and perform vulnerability analysis of the identified systems/networks on the target.
-    </p>
-
-    <p>
-      You need to note all the information discovered in this part of the CEH Engage
-      and proceed to the subsequent phases of the ethical hacking cycle in the next part
-      of the CEH Engage.
-    </p>
-  </section>
-
-  <section>
-    <h2>Flags</h2>
-
-    <h3>Challenge 1</h3>
-    <p>
-      An attacker conducted footprinting on a web application and saved the resulting
-      report <strong>Dumpster.xlsx</strong> in the documents folder of EH Workstation-1.
-      Your task is to analyze this report and identify the hostname associated with the
-      IP address <strong>173.245.59.176</strong>.
-    </p>
-    <p><em>Format: aaaaa.aa.aaaaaaaaaa.aaa</em></p>
-
-    <h3>Challenge 2</h3>
-    <p>
-      Identify the number of live machines excluding the gateway in
-      <strong>192.168.10.0/24</strong> subnet.
-    </p>
-    <p><em>Format: N</em></p>
-
-    <h3>Challenge 3</h3>
-    <p>
-      Identify the IP address of a Linux-based machine with port <strong>22</strong>
-      open in the target network <strong>192.168.10.0/24</strong>.
-    </p>
-    <p><em>Format: NNN.NNN.NN.NNN</em></p>
-
-    <h3>Challenge 4</h3>
-    <p>
-      Find the IP address of the Domain Controller machine in
-      <strong>192.168.0.0/24</strong>.
-    </p>
-    <p><em>Format: NNN.NNN.N.NNN</em></p>
-
-    <h3>Challenge 5</h3>
-    <p>
-      Perform a host discovery scanning and identify the
-      <strong>NetBIOS_Domain_Name</strong> of the host at
-      <strong>192.168.0.222</strong>.
-    </p>
-    <p><em>Format: AAAAA.AAA</em></p>
-
-    <h3>Challenge 6</h3>
-    <p>
-      Perform an intense scan on <strong>192.168.0.222</strong> and find out the
-      <strong>DNS_Tree_Name</strong> of the machine in the network.
-    </p>
-    <p><em>Format: AAAAA.AAA.aaa</em></p>
-
-    <h3>Challenge 7</h3>
-    <p>
-      While performing a security assessment against the CEHORG network, you came to
-      know that one machine in the network is running <strong>OpenSSH</strong> and is
-      vulnerable. Identify the version of the OpenSSH running on the machine.
-    </p>
-    <p>
-      <strong>Note:</strong> Target network <strong>192.168.10.0/24</strong>.
-    </p>
-    <p><em>Format: N.NaN</em></p>
-
-    <h3>Challenge 8</h3>
-    <p>
-      During a security assessment, it was found that a server was hosting a website
-      that was susceptible to blind SQL injection attacks. Further investigation
-      revealed that the underlying database management system of the site was
-      <strong>MySQL</strong>. Determine the machine OS that hosted the database.
-    </p>
-    <p>
-      <strong>Note:</strong> Target network <strong>172.30.10.0/24</strong>
-    </p>
-    <p><em>Format: Aaaaaa</em></p>
-
-    <h3>Challenge 9</h3>
-    <p>
-      Perform an intense scan on target subnet <strong>192.168.10.0/24</strong> and
-      determine the IP address of the machine hosting the
-      <strong>MSSQL database service</strong>.
-    </p>
-    <p><em>Format: NNN.NNN.NN.NNN</em></p>
-
-    <h3>Challenge 10</h3>
-    <p>
-      Perform a DNS enumeration on <strong>www.certifiedhacker.com</strong> and find
-      out the name servers used by the domain.
-    </p>
-    <p><em>Format: aaN.aaaaaaaa.aaa, aaN.aaaaaaaa.aaa</em></p>
-
-    <h3>Challenge 11</h3>
-    <p>
-      Find the IP address of the machine running <strong>SMTP</strong> service on the
-      <strong>172.30.10.0/24</strong> network.
-    </p>
-    <p><em>Format: NNN.NN.NN.NNN</em></p>
-
-    <h3>Challenge 12</h3>
-    <p>
-      Perform an SMB Enumeration on <strong>172.30.10.200</strong> and check whether
-      the <strong>Message signing</strong> feature is required.
-    </p>
-    <p>
-      Give your response as:
-    </p>
+  <nav class="sidebar">
+    <h2>CEH Engage</h2>
     <ul>
-      <li>Yes</li>
-      <li>No</li>
+      <li><a href="part0.html">Introduction</a></li>
+      <li><a href="part1.html" class="active">Part I — Recon & Scanning</a></li>
+      <li><a href="part2.html">Part II — Enumeration & Exploitation</a></li>
+      <li><a href="part3.html">Part III — Post-Exploitation</a></li>
+      <li><a href="part4.html">Part IV — Advanced Attacks</a></li>
     </ul>
+  </nav>
 
-    <h3>Challenge 13</h3>
-    <p>
-      Conduct a Common Weakness Enumeration on the Weakness ID
-      <strong>276</strong> and identify the name associated with the ID.
-    </p>
-    <p><em>Format: Aaaaaaaaa Aaaaaaa Aaaaaaaaaaa</em></p>
+  <main class="main-content">
+    <h1>CEH Engage — Part I</h1>
 
-    <h3>Challenge 14</h3>
-    <p>
-      Perform vulnerability scanning for the Linux host in the
-      <strong>192.168.10.0/24</strong> network using <strong>OpenVAS</strong> and find
-      the QoD percentage of vulnerability with severity level as
-      <strong>medium</strong>.
-    </p>
-    <p><em>Format: NN</em></p>
+    <!-- ================= Overview ================= -->
+    <section>
+      <h2>Overview</h2>
 
-    <h3>Challenge 15</h3>
-    <p>
-      Perform a vulnerability scan on the host at
-      <strong>192.168.10.144</strong> using <strong>OpenVAS</strong> and identify any
-      FTP-related vulnerability.
-    </p>
-    <p><em>Format: AAA Aaaaaaaaa Aaaaaaaaa Aaaaa</em></p>
+      <p><strong>CEH Engage - Part I</strong></p>
 
-  </section>
+      <p>
+        Part 1 of CEH Engage covers Footprinting and Reconnaissance,
+        Scanning Networks, Enumeration, and Vulnerability Analysis modules.
+      </p>
 
-  <footer>
-    <p>
-      CEH Engage — Part I | Educational and authorized use only.
-      All activities must be performed in a controlled lab environment.
-    </p>
-  </footer>
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          A Parte 1 do CEH Engage cobre os módulos de Footprinting e Reconhecimento,
+          Varredura de Redes, Enumeração e Análise de Vulnerabilidades.
+        </p>
+      </details>
 
+      <p>
+        In this part, you are required to perform passive and active reconnaissance
+        of the target organization, enumerating services, shares, users, user groups,
+        etc., and perform vulnerability analysis of the identified systems/networks.
+      </p>
+
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Nesta parte, você deve realizar reconhecimento passivo e ativo da organização alvo,
+          enumerando serviços, compartilhamentos, usuários, grupos de usuários e executando
+          análise de vulnerabilidades.
+        </p>
+      </details>
+
+      <p>
+        You need to note all the information discovered in this part of the CEH Engage
+        and proceed to the subsequent phases of the ethical hacking cycle.
+      </p>
+
+      <details class="translation">
+        <summary>Ver tradução (PT-BR)</summary>
+        <p>
+          Você deve registrar todas as informações descobertas nesta parte e avançar
+          para as próximas fases do ciclo de ethical hacking.
+        </p>
+      </details>
+    </section>
+
+    <!-- ================= Flags ================= -->
+    <section>
+      <h2>Flags</h2>
+
+      <!-- Challenge 1 -->
+      <article class="challenge">
+        <h3>Challenge 1</h3>
+        <p>
+          An attacker conducted footprinting on a web application and saved the report
+          <strong>Dumpster.xlsx</strong> in EH Workstation-1 documents folder.
+          Identify the hostname associated with IP <strong>173.245.59.176</strong>.
+        </p>
+        <details class="translation">
+          <summary>Ver tradução (PT-BR)</summary>
+          <p>
+            Um atacante realizou footprinting em uma aplicação web e salvou o relatório
+            <strong>Dumpster.xlsx</strong>. Identifique o hostname associado ao IP
+            <strong>173.245.59.176</strong>.
+          </p>
+        </details>
+        <p><em>Format: aaaaa.aa.aaaaaaaaaa.aaa</em></p>
+      </article>
+
+      <!-- Challenge 2 -->
+      <article class="challenge">
+        <h3>Challenge 2</h3>
+        <p>
+          Identify the number of live machines excluding the gateway in
+          <strong>192.168.10.0/24</strong>.
+        </p>
+        <details class="translation">
+          <summary>Ver tradução (PT-BR)</summary>
+          <p>
+            Identifique o número de máquinas ativas, excluindo o gateway,
+            na sub-rede <strong>192.168.10.0/24</strong>.
+          </p>
+        </details>
+        <p><em>Format: N</em></p>
+      </article>
+
+      <!-- Challenge 3 -->
+      <article class="challenge">
+        <h3>Challenge 3</h3>
+        <p>
+          Identify the IP address of a Linux-based machine with port
+          <strong>22</strong> open in <strong>192.168.10.0/24</strong>.
+        </p>
+        <details class="translation">
+          <summary>Ver tradução (PT-BR)</summary>
+          <p>
+            Identifique o IP de uma máquina Linux com a porta
+            <strong>22</strong> aberta na rede <strong>192.168.10.0/24</strong>.
+          </p>
+        </details>
+        <p><em>Format: NNN.NNN.NN.NNN</em></p>
+      </article>
+
+      <!-- Challenge 4 -->
+      <article class="challenge">
+        <h3>Challenge 4</h3>
+        <p>
+          Find the IP address of the Domain Controller machine in
+          <strong>192.168.0.0/24</strong>.
+        </p>
+        <details class="translation">
+          <summary>Ver tradução (PT-BR)</summary>
+          <p>
+            Encontre o endereço IP do Domain Controller na rede
+            <strong>192.168.0.0/24</strong>.
+          </p>
+        </details>
+        <p><em>Format: NNN.NNN.N.NNN</em></p>
+      </article>
+
+      <!-- Challenge 5 -->
+      <article class="challenge">
+        <h3>Challenge 5</h3>
+        <p>
+          Perform host discovery and identify the
+          <strong>NetBIOS_Domain_Name</strong> of
+          <strong>192.168.0.222</strong>.
+        </p>
+        <details class="translation">
+          <summary>Ver tradução (PT-BR)</summary>
+          <p>
+            Execute descoberta de hosts e identifique o
+            <strong>NetBIOS_Domain_Name</strong> do host
+            <strong>192.168.0.222</strong>.
+          </p>
+        </details>
+        <p><em>Format: AAAAA.AAA</em></p>
+      </article>
+
+      <!-- Challenge 6 -->
+      <article class="challenge">
+        <h3>Challenge 6</h3>
+        <p>
+          Perform an intense scan on <strong>192.168.0.222</strong> and find the
+          <strong>DNS_Tree_Name</strong>.
+        </p>
+        <details class="translation">
+          <summary>Ver tradução (PT-BR)</summary>
+          <p>
+            Execute uma varredura intensa e identifique o
+            <strong>DNS_Tree_Name</strong>.
+          </p>
+        </details>
+        <p><em>Format: AAAAA.AAA.aaa</em></p>
+      </article>
+
+      <!-- Challenge 7 -->
+      <article class="challenge">
+        <h3>Challenge 7</h3>
+        <p>
+          Identify the vulnerable <strong>OpenSSH</strong> version running in
+          <strong>192.168.10.0/24</strong>.
+        </p>
+        <details class="translation">
+          <summary>Ver tradução (PT-BR)</summary>
+          <p>
+            Identifique a versão vulnerável do <strong>OpenSSH</strong> em execução.
+          </p>
+        </details>
+        <p><em>Format: N.NaN</em></p>
+      </article>
+
+      <!-- Challenge 8 -->
+      <article class="challenge">
+        <h3>Challenge 8</h3>
+        <p>
+          A website vulnerable to blind SQL injection uses
+          <strong>MySQL</strong>. Determine the OS hosting the database in
+          <strong>172.30.10.0/24</strong>.
+        </p>
+        <details class="translation">
+          <summary>Ver tradução (PT-BR)</summary>
+          <p>
+            Um site vulnerável a SQL Injection cego usa
+            <strong>MySQL</strong>. Determine o sistema operacional do host.
+          </p>
+        </details>
+        <p><em>Format: Aaaaaa</em></p>
+      </article>
+
+      <!-- Challenge 9 -->
+      <article class="challenge">
+        <h3>Challenge 9</h3>
+        <p>
+          Identify the IP hosting the <strong>MSSQL</strong> service in
+          <strong>192.168.10.0/24</strong>.
+        </p>
+        <details class="translation">
+          <summary>Ver tradução (PT-BR)</summary>
+          <p>
+            Identifique o IP do host que executa o serviço <strong>MSSQL</strong>.
+          </p>
+        </details>
+        <p><em>Format: NNN.NNN.NN.NNN</em></p>
+      </article>
+
+      <!-- Challenge 10 -->
+      <article class="challenge">
+        <h3>Challenge 10</h3>
+        <p>
+          Perform DNS enumeration on
+          <strong>www.certifiedhacker.com</strong> and identify the name servers.
+        </p>
+        <details class="translation">
+          <summary>Ver tradução (PT-BR)</summary>
+          <p>
+            Execute enumeração DNS e identifique os name servers do domínio.
+          </p>
+        </details>
+        <p><em>Format: aaN.aaaaaaaa.aaa, aaN.aaaaaaaa.aaa</em></p>
+      </article>
+
+      <!-- Challenge 11 -->
+      <article class="challenge">
+        <h3>Challenge 11</h3>
+        <p>
+          Identify the IP running <strong>SMTP</strong> service in
+          <strong>172.30.10.0/24</strong>.
+        </p>
+        <details class="translation">
+          <summary>Ver tradução (PT-BR)</summary>
+          <p>
+            Identifique o IP que executa o serviço <strong>SMTP</strong>.
+          </p>
+        </details>
+        <p><em>Format: NNN.NN.NN.NNN</em></p>
+      </article>
+
+      <!-- Challenge 12 -->
+      <article class="challenge">
+        <h3>Challenge 12</h3>
+        <p>
+          Perform SMB Enumeration on <strong>172.30.10.200</strong> and determine
+          whether message signing is required.
+        </p>
+        <details class="translation">
+          <summary>Ver tradução (PT-BR)</summary>
+          <p>
+            Execute enumeração SMB e verifique se o Message Signing é obrigatório.
+          </p>
+        </details>
+        <ul><li>Yes</li><li>No</li></ul>
+      </article>
+
+      <!-- Challenge 13 -->
+      <article class="challenge">
+        <h3>Challenge 13</h3>
+        <p>
+          Conduct a Common Weakness Enumeration for ID <strong>276</strong>.
+        </p>
+        <details class="translation">
+          <summary>Ver tradução (PT-BR)</summary>
+          <p>
+            Realize uma enumeração CWE para o ID <strong>276</strong>.
+          </p>
+        </details>
+        <p><em>Format: Aaaaaaaaa Aaaaaaa Aaaaaaaaaaa</em></p>
+      </article>
+
+      <!-- Challenge 14 -->
+      <article class="challenge">
+        <h3>Challenge 14</h3>
+        <p>
+          Using <strong>OpenVAS</strong>, identify the QoD percentage of a medium
+          severity vulnerability on Linux host in
+          <strong>192.168.10.0/24</strong>.
+        </p>
+        <details class="translation">
+          <summary>Ver tradução (PT-BR)</summary>
+          <p>
+            Usando OpenVAS, identifique a porcentagem QoD de vulnerabilidade média.
+          </p>
+        </details>
+        <p><em>Format: NN</em></p>
+      </article>
+
+      <!-- Challenge 15 -->
+      <article class="challenge">
+        <h3>Challenge 15</h3>
+        <p>
+          Perform an OpenVAS scan on <strong>192.168.10.144</strong> and identify
+          any FTP-related vulnerability.
+        </p>
+        <details class="translation">
+          <summary>Ver tradução (PT-BR)</summary>
+          <p>
+            Execute uma varredura OpenVAS e identifique vulnerabilidade FTP.
+          </p>
+        </details>
+        <p><em>Format: AAA Aaaaaaaaa Aaaaaaaaa Aaaaa</em></p>
+      </article>
+    </section>
+
+    <footer>
+      <p>
+        CEH Engage — Part I | Educational and authorized use only.
+        All activities must be performed in a controlled lab environment.
+      </p>
+    </footer>
+  </main>
 </body>
 </html>
