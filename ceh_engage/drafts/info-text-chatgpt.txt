@@ -1,0 +1,14 @@
+Esse é o desafio 4 da part 2
+
+You are assigned to analyse PyD_attack.pcapng file stored in Downloads folder of EH Workstation -2 machine. Determine the attacker IP machine which is targeting the RPC service of the target machine. (Format: NNN.NN.NN.NN)
+Eu resolvi ele buscando essas informações dentro do wireshark
+
+
+#### ~/Downloads/PyD_attack.pcapng
+wireshark ~/Downloads/PyD_attack.pcapng
+### FILTER: tcp.port == 135
+### Statistics → Conversations
+### INFO: Address A → 172.30.10.99
+
+
+Me explique a lógica de busca e se tem como otimizar e o pq de cada passo. Também me explique o que é RPC e pq ele está como contexto nesse cenário
