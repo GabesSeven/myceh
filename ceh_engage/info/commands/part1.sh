@@ -87,9 +87,7 @@ cat ~/anotacoes/1_6.txt
 
 #------------------------------#
 
-Zone transfer:
 
-Se o servido
 # PART I - Challenge 8  💬ANSWER: Ubuntu💬
 nmap -p 3306 --open -T4 172.30.10.0/24
 nmap -p 22 -sV 172.30.10.99

