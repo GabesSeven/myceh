@@ -198,33 +198,42 @@ sha256sum ~/Downloads/Tools.rar
 #------------------------------#
 
 
-# ⚠️ PART II - Challenge 11 💬ANSWER: 6952💬
+# PART II - Challenge 11 💬ANSWER: 6952💬
 #### ~/Pictures/Logfile.PML
 cd ~/Pictures
 python3 -m http.server 8000
 ifconfig
 
-#### GOOGLE-CHROME - WORKSATION-1: 172.25.0.10:8000 # Baixar Logfile.PML
+#### GOOGLE-CHROME - WORKSATION-1: http://172.25.0.10:8000 # Baixar Logfile.PML
 #### C:\Users\Admin\Downloads\Logfile.PML
-#### E:\CEH-Tools\CEHv13 Module 07 Malware Threats\Malware Analisys\Procmon.exe # Abrir Logfile.PML com essa ferramenta
-### File → Open → C:\Users\Admin\Downloads\Logfile.PML → Event Properties
-### INFO: 11:36:...   H3ll0.exe   8688   Process Profiling   SUCCESS   User Time: 0.3437...
-### INFO: Parent PID → 6952
+#### E:\CEH-Tools\CEHv13 Module 07 Malware Threats\Malware Analysis Tools\Dynamic Malware Analysis Tools\Process Monitoring Tools\ProcessMonitor\Procmon.exe # Abrir Logfile.PML com essa ferramenta
+### PATH: Procmon.exe → File → Open → C:\Users\Admin\Downloads\Logfile.PML
+### PATH: Filter → Filter... (Ctrl + L) → 
+###                                        Process Name is H3ll0.exe → Include
+###                                        Operation is Process Create → Include
+###                                        Operation is Process Profiling → Include
+### INFO: Time | Process Name | PID | Operation | Path | Result | Detail
+### INFO: Operation → Process Create # Processo foi criado, Contém Parent PID ⭐
+### INFO: Operation → Process Profiling # Processo começou a executar, Contém Parent PID ⭐
+### INFO: Operation → TCP Connect / TCP Reconnect / TCP Disconnect # Comunicação de Rede, nesse caso contém Parent PID ⭐. No entanto: ⚠️ Não é confiável. ⚠️ Não é o método esperado pela prova CEH. 
+### PATH: Event Properties → Process → Parent PID → 6952
 
 
 #------------------------------#
 
 
-# ⚠️ PART II - Challenge 12 💬ANSWER: 2.87💬
+# PART II - Challenge 12 💬ANSWER: 2.87💬
 #### ~/Downloads/Tornado
-cd ~/Downloads
-python3 -m http.server 8000
-ifconfig
+sudo apt install ent -y
+ent ~/Downloads/Tornado
+### INFO: Entropy = 2.878860 bits per byte.
 
-#### GOOGLE-CHROME - WORKSATION-1: 172.25.0.10:8000 # Baixar Tornado
+# cd ~/Downloads
+# python3 -m http.server 8000
+#### GOOGLE-CHROME - WORKSATION-1: http://172.25.0.10:8000 # Baixar Tornado
 #### C:\Users\Admin\Downloads\Tornado
-#### E:\CEH-Tools\CEHv13 Module 07 Malware Threats\Malware Analisys\DIE\diel.exe # Abrir Tornado com essa ferramenta
-### File → Open file... → C:\Users\Admin\Downloads\Tornado → ELF
+#### E:\CEH-Tools\CEHv13 Module 07 Malware Threats\Malware Analysis Tools\Static Malware Analysis Tools\Packaging and Obfuscation Tools\DIE\die.exe # Abrir Tornado com essa ferramenta
+### File name → ... → Open file... → C:\Users\Admin\Downloads\Tornado → Entropy
 ### INFO: Total → 2.87903
 
 
@@ -232,8 +241,11 @@ ifconfig
 
 
 # PART II - Challenge 13 💬ANSWER: 192.168.10.144💬
-nmap -p 2002 192.168.10.0/24
-### INFO: 2002/tcp open globe
+nmap -p 2002 -iL ~/anotacoes/1_2.txt --open
+nmap -p 2002 -sV 192.168.10.144
+### INFO: 2002/tcp open rpcapd WinPcap remote packet capture daemon
+### INFO: Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+# nc 192.168.10.144 2002 -vvv
 
 
 #------------------------------#
@@ -241,9 +253,11 @@ nmap -p 2002 192.168.10.0/24
 
 # PART II - Challenge 14 💬ANSWER: 3965222💬
 #### ~/Desktop/stealth.jpeg
-steghide extract -sf ~/Desktop/stealth.jpeg
-### PASSWORD: azerty@123
-open hidden.txt
+steghide info ~/Desktop/stealth.jpeg -p azerty@123
+steghide extract -sf ~/Desktop/stealth.jpeg -p azerty@123 -q 
+# steghide extract -sf ~/Desktop/stealth.jpeg -xf output.txt
+cat hidden.txt
+# open hidden.txt
 ### INFO: Tender quote for techiquest event 2024: 3965222
 
 
@@ -253,3 +267,6 @@ open hidden.txt
 # PART II - Challenge 15 💬ANSWER: android/dos/46445.c💬
 searchsploit AirDrop 2.0
 ### INFO: AirDrop 2.0 - Denial of Service (DoS) android/dos/46445.c
+
+# searchsploit -p -w "AirDrop 2.0" # Mostra o caminho completo; Busca por string exata 
+# searchsploit -m 46445 # Copia para o o exploit para o diretório atual 

@@ -146,3 +146,198 @@ Quanto menor `users.txt`, melhor o Hydra funciona.
 -t 4 → ideal para RDP
 -V → debug visual
 ```
+
+
+---
+
+# 🧠 O que é Remote Packet Capture (rpcap)
+
+**rpcap (Remote Packet Capture Protocol)** é um **protocolo de rede** que permite **capturar pacotes de uma interface de rede que está em OUTRA máquina**, como se você estivesse rodando o Wireshark localmente nela.
+
+📌 Em resumo:
+
+> **rpcap permite sniffing remoto de tráfego de rede**
+
+---
+
+# 🧩 Onde o rpcap se encaixa
+
+Ele faz parte do ecossistema:
+
+* **libpcap** (Linux / Unix)
+* **WinPcap / Npcap** (Windows)
+* **Wireshark**
+* **tcpdump remoto**
+
+📌 Sem rpcap, o Wireshark **não consegue capturar tráfego remotamente**.
+
+---
+
+# 🧱 Arquitetura do rpcap
+
+## 🖥️ Modelo Cliente–Servidor
+
+```
+[ Wireshark ]  --->  [ rpcap daemon ]  --->  [ Interface de rede ]
+      Cliente             Servidor              eth0 / wlan0
+```
+
+### Componentes:
+
+| Papel         | Função                  |
+| ------------- | ----------------------- |
+| **Cliente**   | Wireshark / tcpdump     |
+| **Servidor**  | rpcap daemon            |
+| **Interface** | NIC que será monitorada |
+
+---
+
+# 🔌 Porta padrão
+
+| Serviço | Porta        |
+| ------- | ------------ |
+| rpcap   | **2002/TCP** |
+
+📌 Porta fixa → fácil de identificar via scan
+📌 Exatamente por isso cai em prova CEH
+
+---
+
+# ⚙️ Como funciona tecnicamente
+
+1️⃣ O cliente se conecta ao servidor rpcap
+2️⃣ O servidor lista as interfaces disponíveis
+3️⃣ O cliente escolhe qual interface capturar
+4️⃣ O servidor começa a enviar os pacotes
+5️⃣ O cliente analisa os pacotes em tempo real
+
+📌 Tudo isso acontece **via TCP**.
+
+---
+
+# 🔐 Autenticação no rpcap
+
+O rpcap **PODE** usar autenticação, mas:
+
+* ❌ Muitas instalações **não usam**
+* ❌ Muitas aceitam conexão sem senha
+* ❌ Algumas usam **credenciais fracas**
+
+### Modos possíveis:
+
+* Sem autenticação (muito comum)
+* Usuário/senha em texto claro
+* NTLM (em Windows)
+
+📌 Em ambientes mal configurados = **risco altíssimo**
+
+---
+
+# 🚨 Por que rpcap é extremamente perigoso
+
+Se um atacante encontra rpcap aberto:
+
+### Ele pode:
+
+* Capturar senhas em texto claro
+* Roubar cookies de sessão
+* Fazer MITM passivo
+* Espionar comunicações internas
+* Obter hashes, tokens e credenciais
+
+📌 **É pior que um serviço web vulnerável**, porque:
+
+* Não deixa logs claros
+* Atua passivamente
+* É difícil de detectar
+
+---
+
+# 🎯 rpcap no contexto de ataques
+
+## 🟥 Fase do ataque onde rpcap aparece
+
+| Fase              | Uso                      |
+| ----------------- | ------------------------ |
+| Recon             | Descobrir rpcap ativo    |
+| Sniffing          | Capturar tráfego         |
+| Credential Access | Roubo de senhas          |
+| Lateral Movement  | Captura de autenticações |
+| Persistence       | Monitoramento contínuo   |
+
+📌 rpcap é uma ferramenta de **pós-comprometimento**.
+
+---
+
+# 🔎 Como identificar rpcap na rede
+
+## 🥇 Scan direcionado (CEH)
+
+```bash
+nmap -p 2002 --open 192.168.10.0/24
+```
+
+## 🥈 Detectar serviço
+
+```bash
+nmap -p 2002 -sV 192.168.10.0/24
+```
+
+## 🥉 Banner grabbing
+
+```bash
+nc <IP> 2002
+```
+
+---
+
+# 🧪 Exemplo prático (Wireshark)
+
+No Wireshark:
+
+1️⃣ Capture → Options
+2️⃣ Manage Interfaces
+3️⃣ Remote Interfaces
+4️⃣ Inserir IP remoto
+5️⃣ Se rpcap estiver aberto → interfaces aparecem
+
+📌 Isso **sem login** em muitos ambientes de laboratório.
+
+---
+
+# 🆚 rpcap vs outros métodos
+
+| Tecnologia | Função                  | Porta |
+| ---------- | ----------------------- | ----- |
+| rpcap      | Sniffing remoto         | 2002  |
+| NetFlow    | Estatísticas de tráfego | 2055  |
+| SPAN       | Espelhamento físico     | —     |
+| tcpdump    | Sniffing local          | —     |
+
+📌 rpcap é o **único** que permite sniffing remoto **sem acesso físico**.
+
+---
+
+# 🧠 CEH – Como a prova cobra
+
+### Perguntas típicas:
+
+* “Which service allows remote packet capture?”
+* “Identify the machine running rpcap service”
+* “Which port is used by rpcap?”
+
+📌 Respostas:
+
+* **Remote Packet Capture**
+* **rpcap**
+* **Port 2002**
+
+---
+
+# 🔒 Mitigações (visão defensiva)
+
+* Desabilitar rpcap se não necessário
+* Restringir acesso por firewall
+* Usar autenticação forte
+* Monitorar porta 2002
+* IDS/IPS para sniffing suspeito
