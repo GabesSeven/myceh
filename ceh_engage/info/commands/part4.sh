@@ -19,6 +19,10 @@ curl "http://172.25.0.10:8080/BCtetx.txt" -o "BCtext.txt"
 ### File → Open file... → C:\Users\Admin\Downloads\BCtext.txt # Arquivo que contém hash
 ### INFO: (ryptD3(0d3
 
+
+#------------------------------#
+
+
 # PART IV - Challenge 2 💬ANSWER: 53ac614c💬
 #### ~/PhoneSploit-Pro/phonesploitpro.py
 sudo python ~/PhoneSploit-Pro/phonesploitpro.py
@@ -28,6 +32,10 @@ sudo apt install libarchive-tools
 crc32 com_cxinvector_file_explorer.apk
 ### INFO: 53ac614c
 
+
+#------------------------------#
+
+
 # ⚠️ PART IV - Challenge 3  💬ANSWER: k4.png💬
 #### C:\Users\Admin\Documents\signature.zip # Descompactar arquivo
 cd C:\Users\Admin\Documents\signature\signature krish
@@ -35,6 +43,10 @@ Get-FileHash -Algorithm
 ### INFO: Hash → ...24CCB
 dir
 ### INFO: Name → k4.png
+
+
+#------------------------------#
+
 
 # ⚠️ PART IV - Challenge 4  💬ANSWER: +1 (555) 678-9012💬
 cat call_log_dump.log.txt
@@ -46,11 +58,19 @@ cat call_log_dump.log.txt
 # grep 678- call_log_dump.log.txt
 # grep "Unknown" call_log_dump.log.txt
 
+
+#------------------------------#
+
+
 # PART IV - Challenge 5  💬ANSWER: Warning💬
 #### ~/Documents/And_Dos.pcapng
 wireshark ~/Documents/And_Dos.pcapng
 ### Analyze → Expert Information
 ### INFO: Warning ...
+
+
+#------------------------------#
+
 
 # PART IV - Challenge 6  💬ANSWER: 50💬
 #### ~/MQTT.pcapng
@@ -60,10 +80,18 @@ wireshark ~/MQTT.pcapng
 ### Follow → TCP Stream
 ### INFO: High_humidity..Alert for rise in humidity(50 percentage)@...P...b...
 
+
+#------------------------------#
+
+
 # ⚠️ PART IV - Challenge 7  💬ANSWER: Twofish/@!ph@|tE*t💬
 #### ~/Documents/Cryt-128-06encr.hex
-cd ~/Documents
+sudo apt install ent -y
+ent ~/Documents/Cryt-128-06encr.hex
+stat -c%s ~/Documents/Cryt-128-06encr.hex
+
 python3 -m http.server 8000
+cd ~/Documents
 
 #### GOOGLE-CHROME - WORKSATION-1: 172.25.0.10:8080 # Baixar Cryt-128-06encr.hex
 #### C:\Users\Admin\Downloads\Cryt-128-06encr.hex
@@ -72,8 +100,9 @@ python3 -m http.server 8000
 ### INFO: Twofish decryption of <Cryt-128-06encr.hex>, key <06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06>
 ### INFO: @!ph@|tE*t
 
-ent ~/Documents/Cryt-128-06encr.hex
-stat -c%s ~/Documents/Cryt-128-06encr.hex
+
+#------------------------------#
+
 
 # PART IV - Challenge 8  💬ANSWER: 4💬
 #### E:\CEH-Tools\CEHv13 Module 20 Cryptography\Disk Encryption ...\VeraCrypt Setup 1.26.7.exe # Abrir Logfile.PML com essa ferramenta
@@ -82,6 +111,10 @@ stat -c%s ~/Documents/Cryt-128-06encr.hex
 ### PASSWORD: veratest
 #### A:\s2
 ### INFO: daemcrossover.exe  dexterroll.exe  hell.exe  schedupdate.exe
+
+
+#------------------------------#
+
 
 # PART IV - Challenge 9  💬ANSWER: 61💬
 #### ~/PhoneSploit-Pro/phonesploitpro.py
@@ -92,6 +125,10 @@ cd ~/PhoneSploit-Pro/Downloaded-Files
 cat contacts_dump-2025-12-7-13-38-35.txt
 ### INFO: Low: 2 display_name=Maddy, number=+61 934758565556
 
+
+#------------------------------#
+
+
 # PART IV - Challenge 10  💬ANSWER: 16💬
 #### ~/MQTT.pcapng
 wireshark ~/MQTT.pcapng
@@ -100,11 +137,19 @@ wireshark ~/MQTT.pcapng
 #### MQ Telemetry Transport Protocol, Publish Message
 ####    Topic Length: 16
 
+
+#------------------------------#
+
+
 # PART IV - Challenge 11 💬ANSWER: Power Button💬
 #### ~/PhoneSploit-Pro/phonesploitpro.py
 sudo python ~/PhoneSploit-Pro/phonesploitpro.py
 ### N → N → 39 → 5 → 0
 ### INFO: 5. Power Button
+
+
+#------------------------------#
+
 
 # PART IV - Challenge 12 💬ANSWER: 80099889💬
 #### ~/Music/confidential.txt
@@ -112,11 +157,19 @@ find . -type f -name "*.txt"
 cat ~/Music/confidential.txt
 #### INFO: 80099889
 
+
+#------------------------------#
+
+
 # PART IV - Challenge 13 💬ANSWER: 23💬
 #### ~/Music/2024-09-11_11-52-05.png
 find . -type f -name "*.png"
 xdg-open ~/Music/2024-09-11_11-52-05.png
 #### INFO: Packets/sec:23
+
+
+#------------------------------#
+
 
 # PART IV - Challenge 14 💬ANSWER: Quotes💬
 #### ~/Documents/FileHashes.png
@@ -126,6 +179,10 @@ md5sum *
 ### INFO: ...84bc Quotes.txt
 cat ~/Documents/FileHashes.png
 ### INFO: Quotes: ...1A24
+
+
+#------------------------------#
+
 
 # PART IV - Challenge 15 💬ANSWER: 6💬
 #### ~/Documents/secret

@@ -1,14 +1,9 @@
-Esse é o desafio 6 da part 2
-
-An incident handler identified severe DDoS attack on a network and provided report using Anti-DDoS Guardian tool. You are assigned to analyse the reports submitted by the IH team which are stored in "C:\Users\Admin\Documents\Anti-DDoS" directory of the EH Workstation-1 and determine the attacker IP which has transmitted more number of packets to the target machine. (Format: NNN.NNN.NN.NNN)
-
-
-Eu resolvi o exercicio dessa forma:
-
-Mas de longe está correto, como vocês fariam?
+Esse é o desafio 2 da part 3
 
 
 
-#### C:\Users\Admin\Documents\report export.txt
-Get-Content '.\report export.txt' -TotalCount 20
-### INFO: Remote IP Address → 192.168.10.222
+Eu resolvi ele da seguinte maneira
+
+
+
+Me explique o contexto todo e ve se tem formas mais orimizadas

