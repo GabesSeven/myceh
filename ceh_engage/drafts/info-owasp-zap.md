@@ -224,3 +224,173 @@ Ver só:
 * Se existe `Content-Security-Policy`
 
 Sem scan completo.
+
+---
+
+# 🔴 CVE-2020-11022
+
+### 📌 O que é
+
+Uma **vulnerabilidade de Cross-Site Scripting (XSS)** no **jQuery** (antes da versão 3.5.0).
+
+---
+
+### 🧠 Causa técnica
+
+O jQuery permitia que **HTML não confiável** fosse interpretado como código executável ao usar funções como:
+
+```js
+.html()
+.append()
+.before()
+.after()
+```
+
+Se dados do usuário fossem passados diretamente para essas funções → **XSS**.
+
+---
+
+### 💥 Impacto
+
+* Execução de JavaScript malicioso
+* Roubo de cookies
+* Sequestro de sessão
+* Keylogging
+
+---
+
+### 🧪 Exemplo simplificado
+
+```js
+$("#div").html("<img src=x onerror=alert(1)>")
+```
+
+---
+
+### 🎯 Classificação
+
+* **Tipo:** Cross-Site Scripting
+* **Gravidade:** Alta
+* **Categoria CEH:** Client-side attack
+
+---
+
+# 🔴 CVE-2020-11023
+
+### 📌 O que é
+
+Outra **XSS no jQuery**, muito parecida com a anterior, mas **em outro caminho de parsing**.
+
+---
+
+### 🧠 Diferença em relação à 11022
+
+* Explora **manipulação de atributos HTML**
+* Bypass de sanitização
+* Ataques mais “silenciosos”
+
+---
+
+### 💥 Impacto
+
+Mesmos efeitos:
+
+* Execução arbitrária de JS
+* Sessão comprometida
+* Phishing via DOM
+
+---
+
+### 🎯 Classificação
+
+* **Tipo:** Cross-Site Scripting
+* **Relacionada diretamente à CVE-2020-11022**
+
+📌 **Na prova:** se aparecer uma, pense automaticamente em **XSS via jQuery**.
+
+---
+
+# 🔴 CVE-2015-9251
+
+### 📌 O que é
+
+Uma **XSS MUITO antiga** (2015) também relacionada ao **jQuery**.
+
+---
+
+### 🧠 Causa técnica
+
+O jQuery aceitava **URLs do tipo `javascript:`** ao usar:
+
+```js
+jQuery.ajax()
+```
+
+Isso permitia:
+
+```js
+$.ajax("javascript:alert(1)")
+```
+
+😬 Resultado: XSS.
+
+---
+
+### 💥 Impacto
+
+* Execução de código
+* Ataques persistentes
+* Muito explorada em apps antigos
+
+---
+
+### 🎯 Importância histórica
+
+Essa CVE é frequentemente citada como:
+
+> **Uma das XSS mais antigas e exploradas do jQuery**
+
+Perfeita para **Challenge 9 da Part 3**.
+
+---
+
+## 🧠 CONEXÃO DIRETA COM SEU DESAFIO
+
+| CVE            | Tipo |
+| -------------- | ---- |
+| CVE-2020-11022 | XSS  |
+| CVE-2020-11023 | XSS  |
+| CVE-2015-9251  | XSS  |
+
+📌 **Todas levam à mesma resposta:**
+
+```
+cross-site scripting (XSS)
+```
+
+---
+
+## 🧠 POR QUE ISSO CAI NA CEH?
+
+Porque:
+
+* jQuery está em **milhões de sites**
+* XSS é **OWASP Top 10 recorrente**
+* CVEs antigas = **arquiteturas legadas**
+* CSP ausente = vulnerável
+
+---
+
+## 🧩 LIGAÇÃO COM O DESAFIO 10
+
+| Vulnerabilidade | Defesa                  |
+| --------------- | ----------------------- |
+| XSS             | Content Security Policy |
+| JS Injection    | CSP                     |
+| DOM-based XSS   | CSP                     |
+
+---
+
+## 🧠 FRASE DE PROVA (SE PEDIR DESCRITIVO)
+
+> *The CVEs are related to Cross-Site Scripting (XSS) vulnerabilities in jQuery that allow execution of arbitrary JavaScript code.*

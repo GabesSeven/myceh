@@ -20,13 +20,14 @@ cat ~/anotacoes/1_1.txt
 
 # PART I - Challenge 2 💬ANSWER: 5💬
 nmap -sn -PR -T5 -n 192.168.10.0/24 > ~/anotacoes/1_2.txt
-# nmap -sn -PR -T5 -n 192.168.10.0/24 -oG - | awk '/Up$/{print $2}' > ~/anotacoes/1_2.txt
-# nmap -sn -PR -n --exclude 192.168.10.1 192.168.10.0/24
 
 ## 🗒️ NOTES
 echo -e "192.168.10.1\n192.168.10.111\n192.168.10.121\n192.168.10.144\n192.168.10.222" > ~/anotacoes/1_2.txt
 cat ~/anotacoes/1_2.txt
 
+# ⚠️ COMANDOS IMPORTANTES
+# nmap -sn -PR -T5 -n 192.168.10.0/24 -oG - | awk '/Up$/{print $2}' > ~/anotacoes/1_2.txt
+# nmap -sn -PR -n --exclude 192.168.10.1 192.168.10.0/24
 
 #------------------------------#
 
