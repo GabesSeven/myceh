@@ -1,23 +1,29 @@
-# ⚠️ PART IV - Challenge 1  💬ANSWER: (ryptD3(0d3💬
-ip a
-nmap -p 5555 172.25.0.0/24
-nmap -p 5555 192.168.10.0/24 --open
-nmap -p 5555 192.168.10.0/24
+#------------------------------#
+
+
+# PART IV - Challenge 1  💬ANSWER: (ryptD3(0d3💬
+nmap -p 5555 192.168.10.0/24 --open 192.168.10.111 192.168.10.121 192.168.10.144 192.168.10.222
 adb connect 192.168.10.121
-adb pull /sdcard
-ls -lt
-find . -type f -name "*.txt"
-cd Download
-python3 -m http.server 8080
+adb pull /sdcard/Download/BCtetx.txt
+python3 -m http.server 8000
 
 #### GOOGLE-CHROME - WORKSATION-1: 172.25.0.10:8080/BCtetx.txt # Selecionar toda chave 
-curl "http://172.25.0.10:8080/BCtetx.txt" -o "BCtext.txt" 
-#### C:\Users\Admin\Downloads\BCtext.txt
-#### E:\CEH-Tools\CEHv13 Module 20 Cryptography\Cryptography T...\BCTextEncoder.exe # Abrir Tornado com essa ferramenta
-### File → Open file... → C:\Users\Admin\Downloads\pawned.txt # Arquivo que contém senha
+curl "http://172.25.0.10:8000/BCtetx.txt" -o "BCtext.txt" 
+#### C:\Users\Admin\Documents\pawned.txt
+#### C:\Users\Admin\Documents\BCtext.txt
+#### E:\CEH-Tools\CEHv13 Module 20 Cryptography\Cryptography Tools\BCTextEncoder\BCTextEncoder.exe # Abrir Tornado com essa ferramenta
+### File → Open → C:\Users\Admin\Documents\pawned.txt # Arquivo que contém senha
 ### INFO: Pa$$w0rd
-### File → Open file... → C:\Users\Admin\Downloads\BCtext.txt # Arquivo que contém hash
+### File → Open → C:\Users\Admin\Documents\BCtext.txt → Password: Pa$$w0rd → OK # Arquivo que contém hash
 ### INFO: (ryptD3(0d3
+
+# ⚠️ COMANDOS IMPORTANTES
+# adb devices
+# adb shell
+# adb shell id
+# ls /sdcard
+# ls /sdcard/Download
+# exit
 
 
 #------------------------------#
@@ -25,38 +31,53 @@ curl "http://172.25.0.10:8080/BCtetx.txt" -o "BCtext.txt"
 
 # PART IV - Challenge 2 💬ANSWER: 53ac614c💬
 #### ~/PhoneSploit-Pro/phonesploitpro.py
-sudo python ~/PhoneSploit-Pro/phonesploitpro.py
-### 1 → 192.168.10.121 → N → N → 36 → 1 → 2 → 0
+sudo python3 ~/PhoneSploit-Pro/phonesploitpro.py
+### PASSWORD: toor
+### [Y] Yes → [1] Connect a Device Install an APK → [192.168.10.121] → [N] Next Page → [N] Next Page → [36] Use Keycodes (Control Device) → [1] Select from App List → [2] com.cxinvetor.file.explorer → [0] Exit
+### INFO: Saving APK file to PhoneSploit-Pro/Downloaded-Files
 ### INFO: Extracting APK... /data/app/com/cxinvector.file.explorer-gXzSE009r9D...d, 0 skipped. 33.7 MB/s (6368578 bytes in 0.180s)
-sudo apt install libarchive-tools
-crc32 com_cxinvector_file_explorer.apk
+crc32 ~/PhoneSploit-Pro/Downloaded-Files/com_cxinvector_file_explorer.apk
 ### INFO: 53ac614c
+
+# ⚠️ COMANDOS IMPORTANTES
+# adb shell pm list packages
+# adb shell pm path <package>
+# adb pull <path>
 
 
 #------------------------------#
 
 
-# ⚠️ PART IV - Challenge 3  💬ANSWER: k4.png💬
+# PART IV - Challenge 3  💬ANSWER: k4.png💬
 #### C:\Users\Admin\Documents\signature.zip # Descompactar arquivo
+### Extract All... → C:\Users\Admin\Documents\signature → Extract 
 cd C:\Users\Admin\Documents\signature\signature krish
-Get-FileHash -Algorithm
+Get-FileHash -Algorithm MD5 *
 ### INFO: Hash → ...24CCB
 dir
 ### INFO: Name → k4.png
 
+# ⚠️ COMANDOS IMPORTANTES
+# Get-ChildItem *.png | Get-FileHash -Algorithm MD5
+# Get-ChildItem *.png | Get-FileHash -Algorithm MD5 | Where-Object { $_.Hash -like "*24CCB" }
+# md5sum *.png | grep 24CCB
+
 
 #------------------------------#
 
 
-# ⚠️ PART IV - Challenge 4  💬ANSWER: +1 (555) 678-9012💬
-cat call_log_dump.log.txt
+# PART IV - Challenge 4  💬ANSWER: +1 (555) 678-9012💬
+adb connect 192.168.10.121
+adb pull /sdcard/Calls/call_log_dump.log.txt
+cat call_log_dump.log.txt 
+### INFO: Encontrar solicitação de SSN; Linguagem mal escrita; Urgência implícita
 ### INFO: ... +1 (555) 678-9012,+1 (555) 987-6543,Incoming,Hi mam call World bank cloud you please verify you SSN number. 
 
-# cut -d',' -f5 call_log_dump.log.txt
-# cut -d',' -f5 call_log_dump.log.txt | sort | uniq | wc -l
-# cut -d',' -f5 call_log_dump.log.txt | sort | uniq | sort -nr
-# grep 678- call_log_dump.log.txt
-# grep "Unknown" call_log_dump.log.txt
+# ⚠️ COMANDOS IMPORTANTES
+# cut -d',' -f4 call_log_dump.log.txt | sort | uniq | wc -l # Contagem de mensagens únicas
+# cut -d',' -f4 call_log_dump.log.txt | sort | uniq -c | sort -nr # Contagem de quantas vezes cada número aparece
+# grep -i "ssn\|bank\|verify" call_log_dump.log.txt # Extração direta do número do suspeito
+# grep -iE "ssn|bank|verify" call_log_dump.log.txt | cut -d',' -f4 | sort | uniq # Extração direta do número do suspeito retornando somete o número
 
 
 #------------------------------#
@@ -65,8 +86,13 @@ cat call_log_dump.log.txt
 # PART IV - Challenge 5  💬ANSWER: Warning💬
 #### ~/Documents/And_Dos.pcapng
 wireshark ~/Documents/And_Dos.pcapng
-### Analyze → Expert Information
+### PATH: Analyze → Expert Information
 ### INFO: Warning ...
+
+# ⚠️ COMANDOS IMPORTANTES
+#### FILTER: udp || tcp.analysis.retransmission
+#### FILTER: tcp.flags.syn == 1 && tcp.flags.ack == 0
+### PATH: Statistics → IO Graphs
 
 
 #------------------------------#
@@ -75,10 +101,13 @@ wireshark ~/Documents/And_Dos.pcapng
 # PART IV - Challenge 6  💬ANSWER: 50💬
 #### ~/MQTT.pcapng
 wireshark ~/MQTT.pcapng
-### FILTER: mqtt
+### FILTER: mqtt.msgtype == 3
 ### INFO: Info → Publish Message (id=2) [High_humidity]
-### Follow → TCP Stream
+### PATH: Follow → TCP Stream
 ### INFO: High_humidity..Alert for rise in humidity(50 percentage)@...P...b...
+
+# ⚠️ COMANDOS IMPORTANTES
+### FILTER: mqtt
 
 
 #------------------------------#
@@ -132,10 +161,14 @@ cat contacts_dump-2025-12-7-13-38-35.txt
 # PART IV - Challenge 10  💬ANSWER: 16💬
 #### ~/MQTT.pcapng
 wireshark ~/MQTT.pcapng
-### FILTER: mqtt
+### FILTER: mqtt.msgtype == 3
 ### INFO: Info → Publish Message (id=3) [High_temperature]
-#### MQ Telemetry Transport Protocol, Publish Message
-####    Topic Length: 16
+### INFO: MQ Telemetry Transport Protocol, Publish Message
+###           Topic Length: 16
+###           Topic:        High_temperature
+
+# ⚠️ COMANDOS IMPORTANTES
+### FILTER: mqtt
 
 
 #------------------------------#

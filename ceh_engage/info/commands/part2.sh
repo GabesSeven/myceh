@@ -35,9 +35,9 @@ cat ~/anotacoes/2_1.txt
 #### C:\Users\Admin\Downloads\MScredremote.pcapng
 ### FILTER: http.request.method == POST
 #### INFO: POST / HTTP/1.1 (application/x-www-form-urlencoded)
-#### HTML Form URL Encoded: application/x-www-form-urlencoded
-####    Form item: "txtusername" == "kety"
-####    Form item: "txtpwd" == "apple"
+#### INFO: HTML Form URL Encoded: application/x-www-form-urlencoded
+####            Form item: "txtusername" == "kety"
+####            Form item: "txtpwd" == "apple"
 
 # ⚠️ COMANDOS IMPORTANTES
 ### FILTER: http.request.method == "POST" && http contains "pwd"
@@ -230,6 +230,7 @@ ifconfig
 # PART II - Challenge 12 💬ANSWER: 2.87💬
 #### ~/Downloads/Tornado
 sudo apt install ent -y
+### PASSWORD: toor
 ent ~/Downloads/Tornado
 ### INFO: Entropy = 2.878860 bits per byte.
 

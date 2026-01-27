@@ -1,3 +1,6 @@
+#------------------------------#
+
+
 # PART III - Challenge 1  💬ANSWER: 172.30.10.200💬
 #### C:\Users\Documents\$_Jack.pcapng 
 ### FILTER: tcp.flags.reset == 1
@@ -160,7 +163,8 @@ owasp-zap
 
 # PART III - Challenge 11 💬ANSWER: 36💬toor
 sudo su
-nmap -O --osscan-guess --max-os-tries 1 -iL ~/anotacoes/1_2.txt # 192.168.10.111 192.168.10.121 192.168.10.144 192.168.10.222
+### PASSWORD: toor
+nmap -O --osscan-guess --max-os-tries 1 192.168.10.111 192.168.10.121 192.168.10.144 192.168.10.222
 ### INFO: Nmap scan report for 192.168.10.144
 ### INFO: OS details: Microsft Windows Server 2019
 hydra -L users.txt -P rockyou.txt 192.168.10.144 ftp -u -t 4 -w 3
