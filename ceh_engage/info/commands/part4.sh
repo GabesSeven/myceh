@@ -31,9 +31,10 @@ curl "http://172.25.0.10:8000/BCtetx.txt" -o "BCtext.txt"
 
 # PART IV - Challenge 2 💬ANSWER: 53ac614c💬
 #### ~/PhoneSploit-Pro/phonesploitpro.py
-sudo python3 ~/PhoneSploit-Pro/phonesploitpro.py
+sudo su
 ### PASSWORD: toor
-### [Y] Yes → [1] Connect a Device Install an APK → [192.168.10.121] → [N] Next Page → [N] Next Page → [36] Use Keycodes (Control Device) → [1] Select from App List → [2] com.cxinvetor.file.explorer → [0] Exit
+python ~/PhoneSploit-Pro/phonesploitpro.pyPo
+### [Y] Yes → [1] Connect a Device Install an APK → [192.168.10.121] → [N] Next Page → [N] Next Page → [36] Use Keycodes (Control Device) → [1] Select from App List → [2] com.cxinvetor.file.explorer → [Enter] → [0] Exit
 ### INFO: Saving APK file to PhoneSploit-Pro/Downloaded-Files
 ### INFO: Extracting APK... /data/app/com/cxinvector.file.explorer-gXzSE009r9D...d, 0 skipped. 33.7 MB/s (6368578 bytes in 0.180s)
 crc32 ~/PhoneSploit-Pro/Downloaded-Files/com_cxinvector_file_explorer.apk
@@ -115,31 +116,32 @@ wireshark ~/MQTT.pcapng
 
 # ⚠️ PART IV - Challenge 7  💬ANSWER: Twofish/@!ph@|tE*t💬
 #### ~/Documents/Cryt-128-06encr.hex
-sudo apt install ent -y
-ent ~/Documents/Cryt-128-06encr.hex
 stat -c%s ~/Documents/Cryt-128-06encr.hex
-
-python3 -m http.server 8000
 cd ~/Documents
+python3 -m http.server 8000
 
-#### GOOGLE-CHROME - WORKSATION-1: 172.25.0.10:8080 # Baixar Cryt-128-06encr.hex
+#### GOOGLE-CHROME - WORKSATION-1: http://172.25.0.10:8000 # Baixar Cryt-128-06encr.hex
 #### C:\Users\Admin\Downloads\Cryt-128-06encr.hex
-#### E:\CEH-Tools\CEHv13 Module ...\CrypTool\SetupCrypTool_1_4_42_en.exe # Abrir Cryt-128-06encr.hex com essa ferramenta
-### File → Open → C:\Users\Admin\Downloads\Cryt-128-06encr.hex → Encrypt/Decrypt → Key Entry: Twofish → 128 bits → Decrypt
+#### ⚙️JÁ INSTALADO⚙️ E:\CEH-Tools\CEHv13 Module 20 Cryptography\Cryptanalysis Tools\CrypTool\SetupCrypTool_1_4_42_en.exe # Abrir Cryt-128-06encr.hex com essa ferramenta
+### PATH: CrypTool 1.4.42 → Open (📂) → C:\Users\Admin\Downloads\Cryt-128-06encr.hex → Encrypt/Decrypt → Symmetric (modern) → Further Algorithms → Twofish... → Key length: 128 bits → 🔑: 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 → Decrypt
 ### INFO: Twofish decryption of <Cryt-128-06encr.hex>, key <06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06>
 ### INFO: @!ph@|tE*t
+
+# ⚠️ COMANDOS IMPORTANTES
+# sudo apt install ent -y
+# ### PASSWORD: toor
+# ent ~/Documents/Cryt-128-06encr.hex
 
 
 #------------------------------#
 
 
 # PART IV - Challenge 8  💬ANSWER: 4💬
-#### E:\CEH-Tools\CEHv13 Module 20 Cryptography\Disk Encryption ...\VeraCrypt Setup 1.26.7.exe # Abrir Logfile.PML com essa ferramenta
-#### APP WINDOWS: VeraCrypt
-### A: → C:\Users\Admin\Documents\MyVeraCrypt → Mount
+#### ⚙️JÁ INSTALADO⚙️ E:\CEH-Tools\CEHv13 Module 20 Cryptography\Disk Encryption Tools\VeraCrypt\VeraCrypt Setup 1.26.7.exe # Abrir Logfile.PML com essa ferramenta
+### PATH: VeraCrypt → A: → Select File... → C:\Users\Admin\Documents\MyVeraCrypt → Mount → Pasword: veratest → OK
 ### PASSWORD: veratest
-#### A:\s2
-### INFO: daemcrossover.exe  dexterroll.exe  hell.exe  schedupdate.exe
+### PATH: A:\s2 
+### INFO: daemcrossover.exe  dexterroll.exe  hell.exe  schedupdate.exe # Total de 4 arquivos
 
 
 #------------------------------#
@@ -147,11 +149,13 @@ cd ~/Documents
 
 # PART IV - Challenge 9  💬ANSWER: 61💬
 #### ~/PhoneSploit-Pro/phonesploitpro.py
-sudo python ~/PhoneSploit-Pro/phonesploitpro.py
-### 1 → 192.168.10.121 → N → N → 34 → 1 → 2 → 0
+sudo su
+### PASSWORD: toor
+python ~/PhoneSploit-Pro/phonesploitpro.py
+### [Y] Yes → [1] Connect a Device Install an APK → [192.168.10.121] → [N] Next Page → [N] Next Page → [34] Dump All Contacts → [Enter] → [0] Exit
 ### INFO: Saving Contacts file to PhoneSploit-Pro/Downloaded-Files
-cd ~/PhoneSploit-Pro/Downloaded-Files
-cat contacts_dump-2025-12-7-13-38-35.txt
+### INFO: Extracting all Contacts
+cat ~/PhoneSploit-Pro/Downloaded-Files/contacts_dump-2025-12-7-13-38-35.txt
 ### INFO: Low: 2 display_name=Maddy, number=+61 934758565556
 
 
@@ -176,8 +180,10 @@ wireshark ~/MQTT.pcapng
 
 # PART IV - Challenge 11 💬ANSWER: Power Button💬
 #### ~/PhoneSploit-Pro/phonesploitpro.py
-sudo python ~/PhoneSploit-Pro/phonesploitpro.py
-### N → N → 39 → 5 → 0
+sudo su
+### PASSWORD: toor
+python ~/PhoneSploit-Pro/phonesploitpro.py
+### [Y] Yes → [N] Next Page → [N] Next Page → [39] Use Keycodes (Control Device) → [5] Power Button → [0] Exit
 ### INFO: 5. Power Button
 
 

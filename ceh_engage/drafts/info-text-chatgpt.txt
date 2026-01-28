@@ -1,18 +1,28 @@
-Esse é o desafio 6 da part 4
+Esse é o desafio 7 da part 4
 
-Challenge 6:
+Challenge 7:
 
-CEHORG manages multiple IoT devices and sensors to oversee its supply chain fleet. You are tasked with examining the file "MQTT.pcapng," located in the Home directory of the EH Workstation - 2 machine. Analyze the packet containing the "High_humidity" message and determine the alert percentage specified in the message. (Format: NN )
+An attacker had sent a file cryt-128-06encr.hex containing ransom file password, which is located in documents folder of EH-workstation-2. You are assigned a task to decrypt the file using cryp tool. Perform cryptanalysis, Identify the algorithm used for file encryption and hidden text. Note: check filename for key length and hex characters. (Format: Aaaaaaa/**aa**aA*a)
+
 
 Eu resolvi ele da seguinte maneira
 
-# PART IV - Challenge 6  💬ANSWER: 50💬
-#### ~/MQTT.pcapng
-wireshark ~/MQTT.pcapng
-### FILTER: mqtt
-### INFO: Info → Publish Message (id=2) [High_humidity]
-### Follow → TCP Stream
-### INFO: High_humidity..Alert for rise in humidity(50 percentage)@...P...b...
+# ⚠️ PART IV - Challenge 7  💬ANSWER: Twofish/@!ph@|tE*t💬
+#### ~/Documents/Cryt-128-06encr.hex
+sudo apt install ent -y
+### PASSWORD: toor
+ent ~/Documents/Cryt-128-06encr.hex
+stat -c%s ~/Documents/Cryt-128-06encr.hex
+
+python3 -m http.server 8000
+cd ~/Documents
+
+#### GOOGLE-CHROME - WORKSATION-1: 172.25.0.10:8080 # Baixar Cryt-128-06encr.hex
+#### C:\Users\Admin\Downloads\Cryt-128-06encr.hex
+#### E:\CEH-Tools\CEHv13 Module ...\CrypTool\SetupCrypTool_1_4_42_en.exe # Abrir Cryt-128-06encr.hex com essa ferramenta
+### File → Open → C:\Users\Admin\Downloads\Cryt-128-06encr.hex → Encrypt/Decrypt → Key Entry: Twofish → 128 bits → Decrypt
+### INFO: Twofish decryption of <Cryt-128-06encr.hex>, key <06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06>
+### INFO: @!ph@|tE*t
 
 
 Me explique o contexto todo e ve se tem formas mais orimizadas

@@ -607,3 +607,195 @@ Muito comum em:
 ## 🧠 Frase perfeita pra prova CEH
 
 > **CRC32 is a checksum algorithm used to verify data integrity and identify known malicious files through indicators of compromise.**
+
+---
+
+# 🧠 CONTEXTO GERAL DOS DOIS EXERCÍCIOS
+
+Os dois desafios simulam o **mesmo cenário**:
+
+> 🔴 *Ex-funcionário suspeito de insider attack usando um smartphone Android*
+
+Ou seja:
+
+* A ameaça **já esteve dentro da empresa**
+* Pode ter:
+
+  * contatos sensíveis
+  * credenciais
+  * acesso físico ao aparelho
+  * USB debugging ativo
+
+📱 **O celular vira uma prova e um vetor de ataque ao mesmo tempo**
+
+---
+
+# 🔹 EXERCÍCIO 1 — DUMP DE CONTATOS (Challenge 9)
+
+### 🎯 Objetivo explícito
+
+> Encontrar o **código do país** do contato chamado *Maddy*
+
+Resposta: **61**
+
+---
+
+## 🔍 O QUE ESTÁ SENDO TESTADO DE VERDADE
+
+### 1️⃣ Capacidade de **exfiltrar dados pessoais** via Android
+
+* Contatos = dados sensíveis
+* Muito usados em:
+
+  * spear phishing
+  * engenharia social
+  * pivoteamento interno
+
+📌 **Um insider não precisa roubar arquivos — só a agenda já é ouro**
+
+---
+
+### 2️⃣ Uso de ferramentas de pós-exploração móvel
+
+PhoneSploit simula:
+
+* ADB ativo
+* APK malicioso instalado
+* Acesso lógico ao aparelho
+
+➡️ Isso NÃO é hacking remoto
+➡️ É **abuso de confiança / má configuração**
+
+---
+
+### 3️⃣ Leitura e interpretação de dump real
+
+Você não só rodou a ferramenta:
+
+```txt
+display_name=Maddy, number=+61 ...
+```
+
+Você:
+
+* reconheceu o formato E.164
+* extraiu o **country code**
+* ignorou o resto do número
+
+🧠 Isso é análise, não execução cega.
+
+---
+
+### 4️⃣ Entendimento de ameaça interna
+
+O detalhe **61 (Austrália)** indica:
+
+* contato internacional
+* possível:
+
+  * cúmplice
+  * fornecedor externo
+  * canal fora da jurisdição local
+
+💡 **A banca quer que você perceba isso, mesmo sem pedir**
+
+---
+
+## 🧩 SENTIDO REAL DO EXERCÍCIO 1
+
+> **Demonstrar que dados aparentemente simples (contatos) podem ser extraídos e analisados a partir de um smartphone comprometido, viabilizando espionagem corporativa e engenharia social.**
+
+---
+
+# 🔹 EXERCÍCIO 2 — KEYCODE / CONTROLE DO DISPOSITIVO (Challenge 11)
+
+### 🎯 Objetivo explícito
+
+> Identificar o **KEYCODE-5**
+
+Resposta: **Power Button**
+
+---
+
+## 🔍 O QUE ESTÁ SENDO TESTADO DE VERDADE
+
+### 1️⃣ Controle remoto do hardware do celular
+
+Keycodes permitem:
+
+* ligar/desligar tela
+* simular ações físicas
+* burlar bloqueios simples
+
+📌 **Não é só software — é controle físico via software**
+
+---
+
+### 2️⃣ Entendimento de Android Input System
+
+No Android:
+
+* cada botão = **KEYCODE**
+* Power Button = KEYCODE 5
+
+Isso mostra que você entende:
+
+* input injection
+* automação maliciosa
+* controle sem toque humano
+
+---
+
+### 3️⃣ Uso ofensivo de ferramentas administrativas
+
+PhoneSploit aqui atua como:
+
+* **RAT mobile**
+* Ferramenta de **controle remoto**
+
+Exemplos reais:
+
+* desligar tela após roubo de dados
+* impedir vítima de ver atividade
+* simular bloqueio para atrasar resposta
+
+---
+
+### 4️⃣ Insider attack ≠ roubo direto
+
+Um insider pode:
+
+* não copiar nada
+* apenas **controlar o dispositivo**
+* executar ações que parecem legítimas
+
+➡️ KEYCODE = **controle invisível**
+
+---
+
+## 🧩 SENTIDO REAL DO EXERCÍCIO 2
+
+> **Demonstrar como um atacante pode controlar fisicamente um smartphone Android comprometido usando injeção de eventos, sem acesso direto ao dispositivo.**
+
+---
+
+# 🔗 COMO OS DOIS EXERCÍCIOS SE COMPLETAM
+
+| Exercício        | Demonstra                   |
+| ---------------- | --------------------------- |
+| Dump de contatos | **Exfiltração de dados**    |
+| Keycodes         | **Controle do dispositivo** |
+
+🧠 Juntos, eles mostram que o atacante:
+
+* lê dados
+* controla ações
+* permanece invisível
+
+📱➡️ **Smartphone = endpoint corporativo crítico**
+
+---
+
+# 🧠 O QUE A CEH REALMENTE QUER QUE VOCÊ ENTENDA
+
+> ❗ Um insider com acesso a um celular Android mal configurado **não precisa de malware avançado** — ferramentas simples + ADB já são suficientes.
