@@ -120,7 +120,12 @@ cat ~/anotacoes/1_9.txt
 
 # PART I - Challenge 10  💬ANSWER: ns1.bluehost.com, ns2.bluehost.com💬
 dig NS certifiedhacker.com +short
-
+#### ~/PhoneSploit-Pro/phonesploitpro.py
+sudo su
+### PASSWORD: toor
+python ~/PhoneSploit-Pro/phonesploitpro.py
+### [Y] Yes → [N] Next Page → [N] Next Page → [39] Use Keycodes (Control Device) → [5] Power Button → [0] Exit
+### INFO: 5. Power Button
 ## 🗒️ NOTES
 echo -e "certifiedhacker.com (NS):\nns1.bluehost.com\nns2.bluehost.com" > ~/anotacoes/1_10.txt
 cat ~/anotacoes/1_10.txt

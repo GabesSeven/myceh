@@ -796,6 +796,214 @@ Um insider pode:
 
 ---
 
-# 🧠 O QUE A CEH REALMENTE QUER QUE VOCÊ ENTENDA
+# 🧠 CONTEXTO DO EXERCÍCIO 13
 
-> ❗ Um insider com acesso a um celular Android mal configurado **não precisa de malware avançado** — ferramentas simples + ADB já são suficientes.
+O enunciado diz muita coisa em poucas linhas:
+
+> *“An attacker has hacked an employee's Android device and initiated a LOIC attack from the device”*
+
+Ou seja:
+
+* ❌ **não é o atacante usando o próprio PC**
+* ❌ **não é malware sofisticado**
+* ✅ é **abuso de um endpoint legítimo**
+* ✅ o ataque parte de **dentro da empresa**
+* ✅ usando **um celular corporativo**
+
+📱 O celular vira:
+
+* origem de ataque
+* escudo (parece tráfego legítimo)
+* prova forense
+
+---
+
+# 🔥 O QUE É UM LOIC ATTACK
+
+### LOIC = **Low Orbit Ion Cannon**
+
+Apesar do nome “zoeira”, é uma ferramenta **real de DDoS**.
+
+---
+
+## 🔹 Como o LOIC funciona
+
+LOIC:
+
+* envia **grande volume de requisições**
+* geralmente HTTP, TCP ou UDP
+* sem spoofing
+* sem botnet avançada
+
+📌 É **barulhento**, mas eficaz em certos cenários.
+
+---
+
+## 🔹 O que significa “Packets/sec”
+
+No contexto LOIC:
+
+* **Packets/sec = intensidade do ataque**
+* Quanto maior:
+
+  * mais carga no servidor
+  * mais fácil de detectar
+  * mas mais impacto imediato
+
+No print:
+
+```
+Packets/sec: 23
+```
+
+➡️ significa que **23 pacotes HTTP por segundo** estavam sendo disparados a partir do celular.
+
+---
+
+## 🔹 Por que usar LOIC em um celular?
+
+Aqui está o ponto-chave do exercício:
+
+### 🔴 Ataque NÃO vem de:
+
+* IP suspeito
+* servidor estrangeiro
+* VPS
+
+### 🟢 Ataque vem de:
+
+* IP corporativo
+* dispositivo autorizado
+* usuário legítimo
+
+💡 **Isso é insider attack clássico**
+
+---
+
+# 📱 POR QUE O CELULAR É UM VETOR PERIGOSO
+
+Um Android comprometido pode:
+
+* rodar apps em background
+* usar Wi-Fi corporativo
+* gerar tráfego contínuo
+* passar despercebido em SIEM fraco
+
+📌 Um LOIC rodando em celular:
+
+* não precisa derrubar um site
+* só precisa **gerar ruído interno**
+* ou participar de um ataque distribuído
+
+---
+
+# 🛠️ PAPEL DO PHONESPLoit NESSE EXERCÍCIO
+
+⚠️ **Importante**
+O PhoneSploit **não lançou o ataque LOIC**.
+
+Ele foi usado para:
+
+> **pós-exploração / coleta de evidências**
+
+---
+
+## 🔹 O que o PhoneSploit faz aqui
+
+1️⃣ Conecta ao celular via ADB
+
+```bash
+adb connect 192.168.10.121
+```
+
+2️⃣ Acessa o sistema de arquivos
+
+```bash
+adb pull /sdcard/Music/2024-09-11_11-52-05.png
+```
+
+3️⃣ Recupera a evidência visual do ataque
+
+📸 O print mostra:
+
+```
+Packets/sec: 23
+```
+
+➡️ Você **não mediu o tráfego**
+➡️ Você **interpretou a evidência**
+
+Isso é **forense**, não ataque.
+
+---
+
+# 🧪 “Como eu faria do mesmo jeito usando PhoneSploit?”
+
+Exatamente como o exercício pede — **sem inventar ataque**:
+
+### 🔹 Fluxo correto (ética + CEH)
+
+1. Comprometimento do Android (pré-existente)
+2. Ataque já em andamento (LOIC rodando)
+3. App em background tira screenshot
+4. Você usa PhoneSploit para:
+
+   * conectar
+   * navegar no storage
+   * extrair o arquivo
+
+📌 **PhoneSploit = ferramenta de acesso**
+📌 **LOIC = ferramenta ofensiva separada**
+
+---
+
+# 🧠 O QUE A BANCA QUER TESTAR DE VERDADE
+
+## 1️⃣ Entendimento de ataques distribuídos
+
+Mesmo **23 packets/sec**:
+
+* não derruba nada sozinho
+* mas em 1.000 celulares → desastre
+
+---
+
+## 2️⃣ Mobile como origem de DDoS
+
+Isso testa se você entende que:
+
+* DDoS não nasce só em servidor
+* IoT e smartphones são vetores reais
+
+---
+
+## 3️⃣ Cadeia completa de ataque
+
+Este exercício junta TODOS os anteriores:
+
+| Exercício        | Papel                   |
+| ---------------- | ----------------------- |
+| Dump de contatos | Coleta de dados         |
+| Keycodes         | Controle do dispositivo |
+| Screenshot       | Evidência               |
+| LOIC             | Ataque ativo            |
+
+🧠 Isso é **kill chain completa**
+
+---
+
+## 4️⃣ Análise de evidência, não execução
+
+Você:
+
+* não rodou LOIC
+* não sniffou tráfego
+* apenas **leu um print e interpretou**
+
+📌 Hacker ético também **lê provas**
+
+---
+
+# 🧩 SENTIDO REAL DO EXERCÍCIO 13
+
+> **Demonstrar que um dispositivo Android comprometido pode ser usado como origem de ataques DDoS e que o hacker ético deve ser capaz de coletar e interpretar evidências desse ataque a partir do próprio dispositivo.**

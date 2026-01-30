@@ -3,18 +3,20 @@
 
 # PART IV - Challenge 1  💬ANSWER: (ryptD3(0d3💬
 nmap -p 5555 192.168.10.0/24 --open 192.168.10.111 192.168.10.121 192.168.10.144 192.168.10.222
+#### /sdcard/Download/BCtetx.txt
 adb connect 192.168.10.121
 adb pull /sdcard/Download/BCtetx.txt
 python3 -m http.server 8000
 
 #### GOOGLE-CHROME - WORKSATION-1: 172.25.0.10:8080/BCtetx.txt # Selecionar toda chave 
+cd 'C:\Users\Admin\Downloads'
 curl "http://172.25.0.10:8000/BCtetx.txt" -o "BCtext.txt" 
 #### C:\Users\Admin\Documents\pawned.txt
-#### C:\Users\Admin\Documents\BCtext.txt
+#### C:\Users\Admin\Downloads\BCtext.txt
 #### E:\CEH-Tools\CEHv13 Module 20 Cryptography\Cryptography Tools\BCTextEncoder\BCTextEncoder.exe # Abrir Tornado com essa ferramenta
 ### File → Open → C:\Users\Admin\Documents\pawned.txt # Arquivo que contém senha
 ### INFO: Pa$$w0rd
-### File → Open → C:\Users\Admin\Documents\BCtext.txt → Password: Pa$$w0rd → OK # Arquivo que contém hash
+### File → Open → C:\Users\Admin\Downloads\BCtext.txt → Password: Pa$$w0rd → OK # Arquivo que contém hash
 ### INFO: (ryptD3(0d3
 
 # ⚠️ COMANDOS IMPORTANTES
@@ -68,6 +70,7 @@ dir
 
 
 # PART IV - Challenge 4  💬ANSWER: +1 (555) 678-9012💬
+#### /sdcard/Calls/call_log_dump.log.txt
 adb connect 192.168.10.121
 adb pull /sdcard/Calls/call_log_dump.log.txt
 cat call_log_dump.log.txt 
@@ -137,6 +140,7 @@ python3 -m http.server 8000
 
 
 # PART IV - Challenge 8  💬ANSWER: 4💬
+#### C:\Users\Admin\Documents\MyVeraCrypt
 #### ⚙️JÁ INSTALADO⚙️ E:\CEH-Tools\CEHv13 Module 20 Cryptography\Disk Encryption Tools\VeraCrypt\VeraCrypt Setup 1.26.7.exe # Abrir Logfile.PML com essa ferramenta
 ### PATH: VeraCrypt → A: → Select File... → C:\Users\Admin\Documents\MyVeraCrypt → Mount → Pasword: veratest → OK
 ### PASSWORD: veratest
@@ -191,9 +195,10 @@ python ~/PhoneSploit-Pro/phonesploitpro.py
 
 
 # PART IV - Challenge 12 💬ANSWER: 80099889💬
-#### ~/Music/confidential.txt
-find . -type f -name "*.txt"
-cat ~/Music/confidential.txt
+#### /sdcard/Music/confidential.txt
+adb connect 192.168.10.121
+adb pull /sdcard/Music/confidential.txt
+cat confidential.txt
 #### INFO: 80099889
 
 
@@ -201,23 +206,31 @@ cat ~/Music/confidential.txt
 
 
 # PART IV - Challenge 13 💬ANSWER: 23💬
-#### ~/Music/2024-09-11_11-52-05.png
-find . -type f -name "*.png"
-xdg-open ~/Music/2024-09-11_11-52-05.png
+#### /sdcard/Music/2024-09-11_11-52-05.png
+adb connect 192.168.10.121
+adb pull /sdcard/Music/2024-09-11_11-52-05.png
+cat 2024-09-11_11-52-05.png
 #### INFO: Packets/sec:23
+
+# ⚠️ COMANDOS IMPORTANTES
+# #### ~/PhoneSploit-Pro/phonesploitpro.py
+# sudo su
+# ### PASSWORD: toor
+# python ~/PhoneSploit-Pro/phonesploitpro.py
+# ### [Y] Yes → [1] Connect a Device Install an APK → [192.168.10.121] → [N] Next Page → [N] Next Page → [8] File Manager / Download Files → [/sdcard/Music/2024-09-11_11-52-05.png] → [Enter] → [0] Exit
 
 
 #------------------------------#
 
 
 # PART IV - Challenge 14 💬ANSWER: Quotes💬
+#### ~/Documents/Archive/*
 #### ~/Documents/FileHashes.png
-cd ~/Documents
-ls -al 
-md5sum *
-### INFO: ...84bc Quotes.txt
+cd ~/Documents/Archive
+md5sum * 
+### INFO: 659ae0e46907aaef274fc563e64684bc Quotes.txt
 cat ~/Documents/FileHashes.png
-### INFO: Quotes: ...1A24
+### INFO: Quotes: F1A490C46E1B4C49E006DCA625621A24
 
 
 #------------------------------#
@@ -228,11 +241,10 @@ cat ~/Documents/FileHashes.png
 cd ~/Documents
 python3 -m http.server 8000
 
-#### GOOGLE-CHROME - WORKSATION-1: 172.25.0.10:8080 # Baixar secret
+#### GOOGLE-CHROME - WORKSATION-1: 172.25.0.10:8000 # Baixar secret
 #### C:\Users\Admin\Downloads\secret
-#### E:\CEH-Tools\CEHv13 Module 20 Cryptography\Disk Encryption ...\VeraCrypt Setup 1.26.7.exe # Abrir Logfile.PML com essa ferramenta
-#### APP WINDOWS: VeraCrypt
-### B: → C:\Users\Admin\Downloads\secret → Mount
+#### ⚙️JÁ INSTALADO⚙️ E:\CEH-Tools\CEHv13 Module 20 Cryptography\Disk Encryption Tools\VeraCrypt\VeraCrypt Setup 1.26.7.exe # Abrir Logfile.PML com essa ferramenta
+### PATH: VeraCrypt → B: → Select File... → C:\Users\Admin\Downloads\secret → Mount → Pasword: test → OK
 ### PASSWORD: test
-#### B:\
-### INFO: Secret1.txt Secret2.txt Secret3.txt Secret4.txt Secret5.txt Secret6.txt
+### PATH: B:\ 
+### INFO: Secret1.txt Secret2.txt Secret3.txt Secret4.txt Secret5.txt Secret6.txt # Total de 6 arquivos
