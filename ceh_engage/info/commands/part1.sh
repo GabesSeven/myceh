@@ -10,7 +10,10 @@
 dig -x 173.245.59.176 +short
 # dig -x 173.245.59.176
 # host 173.245.59.176
-
+# ping 173.245.59.176
+# nmap -sV 173.245.59.176
+# nmap -O 10 173.245.59.176
+# nmap -O --osscan-guess --max-os-tries 10 173.245.59.176
 
 #------------------------------#
 
@@ -47,11 +50,10 @@ nmap -p 53,88,135,139,389,445 --open -n -T5 --min-rate 1000 192.168.0.222
 ### INFO: 139/tcp  open  netbios-ssn    Microsoft Windows netbios-ssn
 ### INFO: 389/tcp  open  ldap           Microsoft Windows Active Directory LDAP  MIicrosoft Windows Active Directory LDAP (Domain: SKILL.CEH.com0., Site: Default-First-Site-Name)
 ### INFO: 445/tcp  open  microsoft-ds   Microsoft Windows Serve 2008 R2 - 2012 microsoft-ds (workgroup; SKILL.CEH) 
-### INFO: Service Info: Host: SKILL; OS: WIndows; CPE: cpe:/o:microsoft:windows
-
-nmap -p 445 --script smb-os-discovery 192.168.0.222 # 🔘 OPTIONAL
+### INFO: Service Info: Host: SKILL; OS: Windows; CPE: cpe:/o:microsoft:windows
 
 # ⚠️ IMPORTANT COMMANDS
+nmap -p 445 --script smb-os-discovery 192.168.0.222 # 🔘 OPTIONAL
 # nmap -p 53  --open 192.168.0.222 # DNS
 # nmap -p 88  --open 192.168.0.222 # Kerberos
 # nmap -p 135 --open 192.168.0.222 # RPC
@@ -72,9 +74,8 @@ nmap -p 445 --script smb-os-discovery 192.168.0.222
 ### INFO:       Workgroup: : SKILL.CEH\x00
 ### INFO:       System time: 2026-01-17T12:39:02-08:00
 
-nmap -sS -sV -p 389,445 192.168.0.222 # 🔘 OPTIONAL
-
 # ⚠️ IMPORTANT COMMANDS
+nmap -sS -sV -p 389,445 192.168.0.222 # 🔘 OPTIONAL
 # nmap -sS -sV -p 53,88,135,139,389,445 192.168.0.222
 # nmap -O --osscan-limit 192.168.0.222
 # enum4linux -a 192.168.0.222
@@ -101,14 +102,14 @@ nmap -sS -sV -p 389,445 192.168.0.222 # 🔘 OPTIONAL
 # PART I - Challenge 8  💬ANSWER: Ubuntu💬
 nmap -p 3306 --open -T4 172.30.10.0/24
 nmap -p 22 -sV 172.30.10.99
-# ssh -v -o BatchMode=yes -o ConnectTimeout=3 172.30.10.99
+### INFO: 22/tcp  open  ssh  OpenSSH 8.9p1 Ubuntu 3 (Ubuntu Linux; protocol 2.0) 
+### INFO: Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
+# ⚠️ IMPORTANT COMMANDS
+ssh -v -o BatchMode=yes -o ConnectTimeout=3 172.30.10.99 # 🔘 OPTIONAL
 # nmap -p 3306 -sV 172.30.10.99 # BANNER NÃO AUTORIZADO
 # nmap -sV -O -p 3306 172.30.10.99 # APRESENTOU POSSÍVEIS VERSÕES DE KERNEL
-
-## 🗒️ NOTES
-echo -e "172.30.10.99 --> msql --> Ubuntu" > ~/anotacoes/1_4.txt
-cat ~/anotacoes/1_6.txt
+# nmap -sn -PR -T5 -n 172.30.10.0/24
 
 
 #------------------------------#
@@ -118,6 +119,7 @@ cat ~/anotacoes/1_6.txt
 nmap -p 1433 --open -iL ~/anotacoes/1_2.txt # 1433 porta padrão do Microsoft SQL Server (MSSQL)
 nmap -sV --script ms-sql-info,ms-sql-ntlm-info -p 1433 192.168.10.144
 # nmap -T4 -A -p 1433 192.168.10.144
+### INFO:
 
 ## 🗒️ NOTES
 echo -e "192.168.10.144 --> 1433 ms-sql-s" > ~/anotacoes/1_9.txt
@@ -129,12 +131,8 @@ cat ~/anotacoes/1_9.txt
 
 # PART I - Challenge 10  💬ANSWER: ns1.bluehost.com, ns2.bluehost.com💬
 dig NS certifiedhacker.com +short
-#### ~/PhoneSploit-Pro/phonesploitpro.py
-sudo su
-### PASSWORD: toor
-python ~/PhoneSploit-Pro/phonesploitpro.py
-### [Y] Yes → [N] Next Page → [N] Next Page → [39] Use Keycodes (Control Device) → [5] Power Button → [0] Exit
-### INFO: 5. Power Button
+### INFO:
+
 ## 🗒️ NOTES
 echo -e "certifiedhacker.com (NS):\nns1.bluehost.com\nns2.bluehost.com" > ~/anotacoes/1_10.txt
 cat ~/anotacoes/1_10.txt
@@ -145,6 +143,7 @@ cat ~/anotacoes/1_10.txt
 
 # PART I - Challenge 11 💬ANSWER: 172.30.10.200💬
 nmap -p 25,587 --open 172.30.10.0/24 # Portas padrão do SMTP (25 = envio tradicional, 587 = envio autenticado/submit)
+### INFO:
 
 ## 🗒️ NOTES
 echo -e "172.30.10.200 --> 25 smb" > ~/anotacoes/1_11.txt
@@ -156,6 +155,7 @@ cat ~/anotacoes/1_11.txt
 
 # PART I - Challenge 12 💬ANSWER: No💬
 nmap -p 445 --script smb-security-mode,smb-os-discovery,smb2-security-mode 172.30.10.200 
+### INFO:
 
 ## 🗒️ NOTES
 echo -e "SMB signing habilitado mas não requerido (smb relay attack, ntlm relay, mitm)" >> ~/anotacoes/1_11.txt
@@ -168,7 +168,7 @@ cat ~/anotacoes/1_11.txt
 # PART I - Challenge 13 💬ANSWER: Incorrect Default Permissions💬
 cwe 276 site:mitre.org
 #### GOOGLE: cwe.mitre.org/data/definitions/276.html
-
+### INFO:
 
 
 #------------------------------#

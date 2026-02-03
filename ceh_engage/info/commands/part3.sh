@@ -158,6 +158,10 @@ owasp-zap
 ### Alerts → Content Security Policy (CSP) Header Not Set
 ### INFO: Source → Passive (10038 - Content Security Policy (CSP) Header Not Set)
 
+# ⚠️ IMPORTANT COMMANDS
+# nmap -sV 172.30.10.200
+# nmap -O 10 172.30.10.200
+# nmap -O --osscan-guess --max-os-tries 10 172.30.10.200
 
 #------------------------------#
 
