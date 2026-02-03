@@ -15,7 +15,7 @@ sudo arp-scan --interface=eth0 --localnet
 # tcpdump -i eth0 arp # Exibe tráfego ARP
 ## tcpdump -e -n -i eth0 arp
 
-### VERIFICAR DENTRO DA MESMA REDE - OUTROS COMANDOS IMPORTANTES
+### VERIFICAR DENTRO DA MESMA REDE - OUTROS IMPORTANT COMMANDS
 bridge fdb show # Analisa tabela de encaminhamento (FDB – Forwarding Database), usada para saber onde encaminhar frames Ethernet: MAC address → porta/interface → VLAN → estado
 
 ### VERIFICAR DENTRO DE OUTRAS REDES

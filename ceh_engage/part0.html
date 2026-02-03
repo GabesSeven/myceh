@@ -5,14 +5,14 @@
   <title>CEH Engage — Scenario</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="aux/style.css">
 </head>
 
 <body>
   <nav class="sidebar">
     <h2>CEH Engage</h2>
     <ul>
-      <li><a href="part0.html">Introduction</a></li>
+      <li><a href="part0.html" class="active">Introduction</a></li>
       <li><a href="part1.html">Part I — Recon & Scanning</a></li>
       <li><a href="part2.html">Part II — Enumeration & Exploitation</a></li>
       <li><a href="part3.html">Part III — Post-Exploitation</a></li>
@@ -28,63 +28,37 @@
       <h2>Scenario</h2>
 
       <p>
-        You have been hired as a part of the Red Team at CEHORG, an IT and ITES organization
-        that deals with advanced research and development in the field of information security.
-        It has offices all over the country connected in real-time by its network infrastructure.
+        You have been hired as a part of the Red Team at CEHORG, an IT and ITES organization that deals with advanced research and development in the field of information security. It has offices all over the country connected in real-time by its network infrastructure.
       </p>
 
       <p>
-        Your organization is worried about rising cybersecurity incidents and has entrusted you
-        with a comprehensive security audit of the complete infrastructure.
+        Your organization is worried about rising cybersecurity incidents and has entrusted you with a comprehensive security audit of the complete infrastructure.
       </p>
         
       <p>
-        CEHORG's internal network consists of several subnets housing various organizational
-        units like any large organization. The front office is connected to a separate subnet
-        that connects to the company's public-facing computers.
+        CEHORG's internal network consists of several subnets housing various organizational units like any large organization. The front office is connected to a separate subnet that connects to the company's public-facing computers. The company has installed multiple kiosks to help customers understand their products and services. The front office also has Wi-Fi connectivity to cater to the users who carry their smartphones and laptops.
       </p>
 
       <p>
-        The company has installed multiple kiosks to help customers understand their products
-        and services. The front office also has Wi-Fi connectivity to cater to the users who
-        carry their smartphones and laptops.
-      </p>
-
-      <p>
-        The CEHORG's internal network is made up of Militarized and Demilitarized zones.
-        The militarized zone houses the application servers, while the Demilitarized Zone
-        contains public-facing systems such as web and mail servers.
+        The CEHORG's internal network is made up of Militarized and Demilitarized zones. As a security precaution, and by design, all the internal resource zones are configured with different subnet IPs. The militarized zone houses the application servers that provide application frameworks for various departments. The Demilitarized Zone contains public-facing systems of the organization, such as web and mail servers. The headquarter's network topology and protocols are replicated worldwide in all its satellite offices for easy communication with the headquarters.
       </p>
 
       <details class="translation">
         <summary>Ver tradução (PT-BR)</summary>
         <p>
-          Você foi contratado como parte do Red Team na CEHORG, uma organização de TI e ITES
-          que atua com pesquisa e desenvolvimento avançado na área de segurança da informação.
-          A CEHORG possui escritórios por todo o país, conectados em tempo real por sua infraestrutura de rede.
+          Sua organização está preocupada com o aumento de incidentes de segurança cibernética e lhe confiou uma auditoria de segurança abrangente de toda a infraestrutura.
         </p>
             
         <p>
-            Sua organização está preocupada com o aumento de incidentes de cibersegurança
-            e confiou a você uma auditoria de segurança abrangente de toda a infraestrutura.
+          Sua organização está preocupada com o aumento de incidentes de segurança cibernética e lhe confiou uma auditoria de segurança abrangente de toda a infraestrutura.
         </p>
 
         <p>
-            A rede interna da CEHORG consiste em várias sub-redes que abrigam diversas unidades
-            organizacionais, como em qualquer grande organização. A recepção está conectada a
-            uma sub-rede separada que dá acesso aos computadores voltados ao público.
+          A rede interna da CEHERG consiste em várias sub-redes que abrigam diversas unidades organizacionais, como em qualquer grande empresa. O escritório de atendimento ao público está conectado a uma sub-rede separada, que por sua vez se conecta aos computadores da empresa voltados para o público. A empresa instalou diversos totens de autoatendimento para auxiliar os clientes a compreenderem seus produtos e serviços. O escritório de atendimento ao público também possui conexão Wi-Fi para atender aos usuários que utilizam smartphones e laptops.
         </p>
 
         <p>
-            A empresa instalou vários quiosques para ajudar os clientes a entenderem seus produtos
-            e serviços. A recepção também possui conectividade Wi-Fi para atender usuários que
-            utilizam smartphones e laptops.
-        </p>
-
-        <p>
-            A rede interna da CEHORG é composta por zonas Militarizadas e Desmilitarizadas.
-            A zona militarizada abriga os servidores de aplicação, enquanto a DMZ contém
-            sistemas voltados ao público, como servidores web e de e-mail.
+          A rede interna da CEHORD é composta por zonas militarizadas e desmilitarizadas. Como medida de segurança, e por projeto, todas as zonas de recursos internos são configuradas com IPs de sub-rede diferentes. A zona militarizada abriga os servidores de aplicativos que fornecem as estruturas de aplicativos para vários departamentos. A zona desmilitarizada contém os sistemas da organização voltados para o público, como servidores web e de e-mail. A topologia e os protocolos de rede da sede são replicados globalmente em todos os seus escritórios satélites para facilitar a comunicação com a sede.
         </p>
       </details>
     </section>
@@ -113,11 +87,11 @@
       </p>
 
       <p>
-        On the cyber range, you will have access to Ethical Hacker Workstations, EH Workstation - 1 and EH Workstation - 2. EH Workstation - 1 is a Windows 11 machine and EH Workstation - 2 is a Parrot Security machine. You can switch to these machines from the Resources tab.
+        On the cyber range, you will have access to Ethical Hacker Workstations, <strong>EH Workstation - 1</strong> and <strong>EH Workstation - 2</strong>. <strong>EH Workstation - 1</strong> is a Windows 11 machine and <strong>EH Workstation - 2</strong> is a Parrot Security machine. You can switch to these machines from the Resources tab.
       </p>
 
       <p>
-        The credentials to access EH Workstation - 1 (Windows 11) machine are as below:
+        The credentials to access <strong>EH Workstation - 1</strong> (Windows 11) machine are as below:
       </p>
 
       <ul>
@@ -126,7 +100,7 @@
       </ul>
 
       <p>
-        The credentials to access EH Workstation - 2 (Parrot Security) are as below:
+        The credentials to access <strong>EH Workstation - 2</strong> (Parrot Security) are as below:
       </p>
       
       <ul>
@@ -135,7 +109,7 @@
       </ul>
 
       <p>
-        If you want to launch OpenVAS, double-click the Start OpenVAS icon on the desktop in EH Workstation-2 machine.
+        If you want to launch <strong>OpenVAS</strong>, double-click the <strong>Start OpenVAS</strong> icon on the desktop in EH Workstation-2 machine.
       </p>
 
       <ul>
@@ -144,7 +118,7 @@
       </ul>
 
       <p>
-        You can use username.txt and password.txt available on the Desktop of the EH Workstation - 2 (Parrot Security) machine for any credentials/password cracking attempt.
+        You can use username.txt and password.txt available on the Desktop of the <strong>EH Workstation - 2</strong> (Parrot Security) machine for any credentials/password cracking attempt.
       </p>
 
       <details class="translation">
@@ -173,13 +147,13 @@
         </p>
 
         <p>
-          No cyber range, você terá acesso às estações de trabalho do Ethical Hacker, denominadas EH Workstation - 1 e EH Workstation - 2.
-          A EH Workstation - 1 é uma máquina com Windows 11, e a EH Workstation - 2 é uma máquina com Parrot Security.
+          No cyber range, você terá acesso às estações de trabalho do Ethical Hacker, denominadas <strong>EH Workstation - 1</strong> e <strong>EH Workstation - 2</strong>.
+          A <strong>EH Workstation - 1</strong> é uma máquina com Windows 11, e a <strong>EH Workstation - 2</strong> é uma máquina com Parrot Security.
           Você pode alternar entre essas máquinas por meio da aba <strong>Resources</strong>.
         </p>
 
         <p>
-          As credenciais para acessar a EH Workstation - 1 (Windows 11) são as seguintes:
+          As credenciais para acessar a <strong>EH Workstation - 1</strong> (Windows 11) são as seguintes:
         </p>
 
         <ul>
@@ -188,7 +162,7 @@
         </ul>
 
         <p>
-          As credenciais para acessar a EH Workstation - 2 (Parrot Security) são as seguintes:
+          As credenciais para acessar a <strong>EH Workstation - 2</strong> (Parrot Security) são as seguintes:
         </p>
 
         <ul>
@@ -197,7 +171,7 @@
         </ul>
 
         <p>
-          Para iniciar o OpenVAS, dê um duplo clique no ícone <strong>Start OpenVAS</strong> localizado na área de trabalho da EH Workstation - 2.
+          Para iniciar o <strong>OpenVAS</strong>, dê um duplo clique no ícone <strong>Start OpenVAS</strong> localizado na área de trabalho da <strong>EH Workstation - 2</strong>.
         </p>
 
         <ul>
@@ -206,7 +180,7 @@
         </ul>
 
         <p>
-          Você pode utilizar os arquivos <strong>username.txt</strong> e <strong>password.txt</strong>, disponíveis na área de trabalho da EH Workstation - 2 (Parrot Security), para qualquer tentativa de quebra de credenciais ou senhas.
+          Você pode utilizar os arquivos <strong>username.txt</strong> e <strong>password.txt</strong>, disponíveis na área de trabalho da <strong>EH Workstation - 2</strong> (Parrot Security), para qualquer tentativa de quebra de credenciais ou senhas.
         </p>
       </details>
 

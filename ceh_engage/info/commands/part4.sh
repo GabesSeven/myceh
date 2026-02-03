@@ -19,7 +19,7 @@ curl "http://172.25.0.10:8000/BCtetx.txt" -o "BCtext.txt"
 ### File → Open → C:\Users\Admin\Downloads\BCtext.txt → Password: Pa$$w0rd → OK # Arquivo que contém hash
 ### INFO: (ryptD3(0d3
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 # adb devices
 # adb shell
 # adb shell id
@@ -42,7 +42,7 @@ python ~/PhoneSploit-Pro/phonesploitpro.pyPo
 crc32 ~/PhoneSploit-Pro/Downloaded-Files/com_cxinvector_file_explorer.apk
 ### INFO: 53ac614c
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 # adb shell pm list packages
 # adb shell pm path <package>
 # adb pull <path>
@@ -60,7 +60,7 @@ Get-FileHash -Algorithm MD5 *
 dir
 ### INFO: Name → k4.png
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 # Get-ChildItem *.png | Get-FileHash -Algorithm MD5
 # Get-ChildItem *.png | Get-FileHash -Algorithm MD5 | Where-Object { $_.Hash -like "*24CCB" }
 # md5sum *.png | grep 24CCB
@@ -77,7 +77,7 @@ cat call_log_dump.log.txt
 ### INFO: Encontrar solicitação de SSN; Linguagem mal escrita; Urgência implícita
 ### INFO: ... +1 (555) 678-9012,+1 (555) 987-6543,Incoming,Hi mam call World bank cloud you please verify you SSN number. 
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 # cut -d',' -f4 call_log_dump.log.txt | sort | uniq | wc -l # Contagem de mensagens únicas
 # cut -d',' -f4 call_log_dump.log.txt | sort | uniq -c | sort -nr # Contagem de quantas vezes cada número aparece
 # grep -i "ssn\|bank\|verify" call_log_dump.log.txt # Extração direta do número do suspeito
@@ -93,7 +93,7 @@ wireshark ~/Documents/And_Dos.pcapng
 ### PATH: Analyze → Expert Information
 ### INFO: Warning ...
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 #### FILTER: udp || tcp.analysis.retransmission
 #### FILTER: tcp.flags.syn == 1 && tcp.flags.ack == 0
 ### PATH: Statistics → IO Graphs
@@ -110,7 +110,7 @@ wireshark ~/MQTT.pcapng
 ### PATH: Follow → TCP Stream
 ### INFO: High_humidity..Alert for rise in humidity(50 percentage)@...P...b...
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 ### FILTER: mqtt
 
 
@@ -130,7 +130,7 @@ python3 -m http.server 8000
 ### INFO: Twofish decryption of <Cryt-128-06encr.hex>, key <06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06>
 ### INFO: @!ph@|tE*t
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 # sudo apt install ent -y
 # ### PASSWORD: toor
 # ent ~/Documents/Cryt-128-06encr.hex
@@ -175,7 +175,7 @@ wireshark ~/MQTT.pcapng
 ###           Topic Length: 16
 ###           Topic:        High_temperature
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 ### FILTER: mqtt
 
 
@@ -212,7 +212,7 @@ adb pull /sdcard/Music/2024-09-11_11-52-05.png
 cat 2024-09-11_11-52-05.png
 #### INFO: Packets/sec:23
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 # #### ~/PhoneSploit-Pro/phonesploitpro.py
 # sudo su
 # ### PASSWORD: toor

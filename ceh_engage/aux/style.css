@@ -1,0 +1,163 @@
+/* ==================================================
+   RESET / BASE
+================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ==================================================
+   VARIÁVEIS GLOBAIS (TEMA)
+================================================== */
+:root {
+  --ceh-red: #b11217;
+  --ceh-red-dark: #7d0c10;
+  --ceh-black: #0f0f0f;
+
+  --ceh-gray-dark: #1c1c1c;
+  --ceh-gray: #2a2a2a;
+  --ceh-gray-light: #e6e6e6;
+
+  --ceh-text: #111;
+  --ceh-muted: #666;
+
+  --ceh-bg: #ffffff;
+  --ceh-section-bg: #f7f7f7;
+
+  --ceh-border: #d0d0d0;
+  --ceh-pt-bg: #fff3f3;
+}
+
+/* ==================================================
+   ESTILO GLOBAL
+================================================== */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background: var(--ceh-bg);
+  color: var(--ceh-text);
+}
+
+/* ==================================================
+   LAYOUT PRINCIPAL
+================================================== */
+.main-content {
+  margin-left: 300px;   /* acompanha a sidebar maior */
+  padding: 24px;
+}
+
+section {
+  margin-bottom: 22px;
+  padding: 14px 16px;
+  background: var(--ceh-section-bg);
+  border: 1px solid var(--ceh-border);
+  border-radius: 4px;
+}
+
+/* ==================================================
+   SIDEBAR
+================================================== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 300px;         /* AUMENTO DA ÁREA */
+  padding: 20px 16px;
+  background: var(--ceh-black);
+  border-right: 3px solid var(--ceh-red);
+}
+
+.sidebar h2 {
+  margin-bottom: 16px;
+  font-size: 1rem;
+  color: var(--ceh-red);
+}
+
+/* ==================================================
+   MENU
+================================================== */
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 6px;
+}
+
+/* ==================================================
+   LINKS DA SIDEBAR
+================================================== */
+.sidebar a {
+  display: block;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  color: #e6e6e6;
+  text-decoration: none;
+  white-space: nowrap;
+
+  border-left: 4px solid transparent;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sidebar a:hover {
+  background: var(--ceh-red);
+}
+
+.sidebar a.active {
+  background: var(--ceh-red-dark);
+  color: #fff;
+  font-weight: bold;
+  border-left-color: #fff;
+}
+
+.sidebar a.active:hover {
+  background: var(--ceh-red-dark);
+}
+
+/* ==================================================
+   BLOCO DE TRADUÇÃO (details / summary)
+================================================== */
+.translation {
+  margin: 6px 0 14px;
+  padding-left: 12px;
+  border-left: 3px solid var(--ceh-red);
+}
+
+.translation summary {
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--ceh-red);
+  list-style: none;
+}
+
+.translation summary::before {
+  content: "[+] ";
+}
+
+.translation[open] summary::before {
+  content: "[-] ";
+}
+
+.translation p {
+  margin-top: 6px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  color: #333;
+  background: var(--ceh-pt-bg);
+  border-radius: 4px;
+}
+
+/* ==================================================
+   CREDENCIAIS / INTRO
+================================================== */
+.credentials {
+  padding: 12px;
+  background: #fff;
+  border-left: 4px solid var(--ceh-border);
+}

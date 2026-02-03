@@ -17,7 +17,7 @@ get 52012.py
 exit
 grep www 52012.py
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 # nmap -sV -A -p 21 192.168.10.144 192.168.10.222
 # nmap -sV --script ftp-anon,ftp-bounce,ftp-syst -p 21 192.168.10.144 192.168.10.222
 # hydra -l nick -P ~/Desktop/password.txt 192.168.10.111 ftp
@@ -39,7 +39,7 @@ cat ~/anotacoes/2_1.txt
 ####            Form item: "txtusername" == "kety"
 ####            Form item: "txtpwd" == "apple"
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 ### FILTER: http.request.method == "POST" && http contains "pwd"
 ### FILTER: http contains "username" || http contains "password"
 ### PATH: Statistics → Conversations → TCP
@@ -60,7 +60,7 @@ wireshark ~/Downloads/ServerDoS.pcapng
 #### User Datagram Protocol, Src Port: 9850, Dst Port: 26000
 #### GOOGLE: 26000 udp protocol 
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 #### FILTER: udp
 #### FILTER: udp.dstport == 26000
 ### PATH: Statistics → Endpoints → UDP
@@ -78,7 +78,7 @@ wireshark ~/Documents/DD_attack.pcapng
 ### PATH: Statistics → Endpoints → UDP
 ### INFO: 192.168.10.144 # Envio médio de 1000 pacotes em múltiplas portas altas (de 49900 a 49999) utilizadas. UDP Flood com varredura de portas altas.
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 ### FILTER: udp
 #### FILTER: udp && ip.src == 192.168.10.144
 #### FILTER: udp && ip.src == 192.168.10.144 && udp.dstport >= 49900 && udp.dstport <= 49999
@@ -100,7 +100,7 @@ wireshark ~/Downloads/PyD_attack.pcapng
 #### FILTER: tcp.port == 135 && tcp.flags.reset == 1
 ### INFO: 172.30.10.99 # Esse IP é origem na comunição pela porta 135 (inicio de comunicação por RPC) para o destino 192.168.0.222
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 ### FILTER: tcp.port == 135
 #### FILTER: tcp.port == 135 && tcp.flags.syn == 1 && tcp.flags.ack == 0
 #### FILTER: tcp.port == 135 && tcp.flags.syn == 1 && tcp.flags.ack == 1
@@ -174,7 +174,7 @@ exploit;"
 dir 
 ### INFO: Name → MSS.txt, Size → 7
 
-# ⚠️ COMANDOS IMPORTANTES
+# ⚠️ IMPORTANT COMMANDS
 # hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.144 mssql -u -V -t 8 
 # hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.144 mssql
 # mssqlclient.py SKILL.CEH/Server_mssrv:Spidy@192.168.10.144 -port 1433
