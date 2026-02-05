@@ -12,7 +12,7 @@ dig -x 173.245.59.176 +short
 # host 173.245.59.176
 # ping 173.245.59.176
 # nmap -sV 173.245.59.176
-# nmap -O 10 173.245.59.176
+# nmap -O 173.245.59.176
 # nmap -O --osscan-guess --max-os-tries 10 173.245.59.176
 
 #------------------------------#
@@ -23,7 +23,7 @@ nmap -sn -PR -T5 -n 192.168.10.0/24
 ### INFO: IP Address → 192.168.10.1, 192.168.10.101, 192.168.10.111, 192.168.10.121, 192.168.10.144, 192.168.10.222
 
 # ⚠️ IMPORTANT COMMANDS
-# nmap -sn -PR -T5 -n 192.168.10.0/24 -oG - | awk '/Up$/{print $2}' > ~/anotacoes/1_2.txt
+# nmap -sn -PR -T5 -n 192.168.10.0/24 -oG - | awk '/Up$/{print $2}' > ~/output.txt
 # nmap -sn -PR -n --exclude 192.168.10.1 192.168.10.0/24
 
 
@@ -76,6 +76,7 @@ nmap -p 445 --script smb-os-discovery 192.168.0.222
 
 # ⚠️ IMPORTANT COMMANDS
 nmap -sS -sV -p 389,445 192.168.0.222 # 🔘 OPTIONAL
+nmap -sV --script ms-sql-info,ms-sql-ntlm-info 192.168.0.222 # 🔘 OPTIONAL
 # nmap -sS -sV -p 53,88,135,139,389,445 192.168.0.222
 # nmap -O --osscan-limit 192.168.0.222
 # enum4linux -a 192.168.0.222
@@ -92,8 +93,10 @@ ldapsearch -x -H ldap://192.168.0.222 -s base -b "" namingContexts
 ### INFO: namingContexts: DC=DomainDnsZones,DC=SKILL,DC=CEH,DC=com
 ### INFO: namingContexts: DC=ForestDnsZones,DC=SKILL,DC=CEH,DC=com
 
+# ⚠️ IMPORTANT COMMANDS
 nmap -p 445 --script smb-os-discovery 192.168.0.222 # 🔘 OPTIONAL
 nmap -sS -sV -p 389,445 192.168.0.222 # 🔘 OPTIONAL
+nmap -sV --script ms-sql-info,ms-sql-ntlm-info 192.168.0.222 # 🔘 OPTIONAL
 
 
 #------------------------------#
@@ -107,8 +110,8 @@ nmap -p 22 -sV 172.30.10.99
 
 # ⚠️ IMPORTANT COMMANDS
 ssh -v -o BatchMode=yes -o ConnectTimeout=3 172.30.10.99 # 🔘 OPTIONAL
-# nmap -p 3306 -sV 172.30.10.99 # BANNER NÃO AUTORIZADO
-# nmap -sV -O -p 3306 172.30.10.99 # APRESENTOU POSSÍVEIS VERSÕES DE KERNEL
+# nmap -p 3306 -sV 172.30.10.99 # ⚠️ WARNING: Unauthorized banner.
+# nmap -sV -O -p 3306 172.30.10.99 # ⚠️ WARNING: It presented possible kernel versions.
 # nmap -sn -PR -T5 -n 172.30.10.0/24
 
 
@@ -116,14 +119,16 @@ ssh -v -o BatchMode=yes -o ConnectTimeout=3 172.30.10.99 # 🔘 OPTIONAL
 
 
 # PART I - Challenge 9  💬ANSWER: 192.168.10.144💬
-nmap -p 1433 --open -iL ~/anotacoes/1_2.txt # 1433 porta padrão do Microsoft SQL Server (MSSQL)
-nmap -sV --script ms-sql-info,ms-sql-ntlm-info -p 1433 192.168.10.144
-# nmap -T4 -A -p 1433 192.168.10.144
-### INFO:
+nmap -p 1433 --open 192.168.10.101 192.168.10.111 192.168.10.121 192.168.10.144 192.168.10.222 # ⚠️ WARNING: 1433 is the default port for Microsoft SQL Server (MSSQL).
+### INFO: Nmap scan report for 192.168.10.144
+### INFO:       1433/tcp  open  ms-sql-s
 
-## 🗒️ NOTES
-echo -e "192.168.10.144 --> 1433 ms-sql-s" > ~/anotacoes/1_9.txt
-cat ~/anotacoes/1_9.txt
+# ⚠️ IMPORTANT COMMANDS
+nmap -sV --script ms-sql-info,ms-sql-ntlm-info -p 1433 192.168.10.144 # 🔘 OPTIONAL
+# nmap -T4 -A 192.168.10.144
+# nmap -sV 192.168.10.144
+# nmap -O 192.168.10.144
+# nmap -O --osscan-guess --max-os-tries 10 192.168.10.144
 
 
 #------------------------------#
@@ -131,44 +136,46 @@ cat ~/anotacoes/1_9.txt
 
 # PART I - Challenge 10  💬ANSWER: ns1.bluehost.com, ns2.bluehost.com💬
 dig NS certifiedhacker.com +short
-### INFO:
+### INFO: ns1.bluehost.com.
+### INFO: ns2.bluehost.com.
 
-## 🗒️ NOTES
-echo -e "certifiedhacker.com (NS):\nns1.bluehost.com\nns2.bluehost.com" > ~/anotacoes/1_10.txt
-cat ~/anotacoes/1_10.txt
+# ⚠️ IMPORTANT COMMANDS
+# dig A certifiedhacker.com +short
+# dig MX certifiedhacker.com +short
+# whois 162.241.216.11
 
 
 #------------------------------#
 
 
 # PART I - Challenge 11 💬ANSWER: 172.30.10.200💬
-nmap -p 25,587 --open 172.30.10.0/24 # Portas padrão do SMTP (25 = envio tradicional, 587 = envio autenticado/submit)
-### INFO:
-
-## 🗒️ NOTES
-echo -e "172.30.10.200 --> 25 smb" > ~/anotacoes/1_11.txt
-cat ~/anotacoes/1_11.txt
+nmap -p 25,587 --open 172.30.10.0/24 # ⚠️ WARNING: Standard SMTP ports (25 = traditional sending, 587 = authenticated/submit sending)
+### INFO: Nmap scan report for www.goodshopping.com (172.30.10.200)
+### INFO: 25/tcp  open  smtp
 
 
 #------------------------------#
 
 
 # PART I - Challenge 12 💬ANSWER: No💬
-nmap -p 445 --script smb-security-mode,smb-os-discovery,smb2-security-mode 172.30.10.200 
-### INFO:
+nmap -p 445 --script smb2-security-mode 172.30.10.200 
+### INFO: 445/tcp  open  microsoft-ds
+### INFO: Host script results
+### INFO: | smb2-security-mode:
+### INFO: |     3:1:1:
+### INFO: |_        Message signing enabled but not requiredd        
 
-## 🗒️ NOTES
-echo -e "SMB signing habilitado mas não requerido (smb relay attack, ntlm relay, mitm)" >> ~/anotacoes/1_11.txt
-cat ~/anotacoes/1_11.txt
+# ⚠️ IMPORTANT COMMANDS
+# nmap -p 445 --script smb-security-mode,smb-os-discovery,smb2-security-mode 172.30.10.200 
 
 
 #------------------------------#
 
 
 # PART I - Challenge 13 💬ANSWER: Incorrect Default Permissions💬
-cwe 276 site:mitre.org
-#### GOOGLE: cwe.mitre.org/data/definitions/276.html
-### INFO:
+#### MOZILLA FIREFOX: cwe 276 site:mitre.org
+#### MOZILLA FIREFOX: cwe.mitre.org/data/definitions/276.html
+### INFO: CWE-276: Incorrect Default Permissions (4.19)
 
 
 #------------------------------#
@@ -177,7 +184,7 @@ cwe 276 site:mitre.org
 # PART I - Challenge 14 💬ANSWER: 70💬
 # PART I - Challenge 15 💬ANSWER: FTP Unencrypted Cleartext Login💬
 #### ~/Desktop/StartOpenVAS
-#### GOOGLE: http://127.0.0.1/login/login.html  
+#### MOZILLA FIREFOX: http://127.0.0.1/login/login.html  
 ### USERNAME: admin
 ### PASSWORD: admin
 #### Scans → Tasks → ⭐ → New Tasks → (Scan Targets ⭐) → Create → ▶️
@@ -199,14 +206,10 @@ cwe 276 site:mitre.org
 ### INFO:   FTP Unencrypted Cleartext Login → Severity → 4.8 (Medium)
 ### INFO:   FTP Unencrypted Cleartext Login → Host → 192.168.10.144
 
-### Assets → Dashboard --> Host topology
-
+# ⚠️ IMPORTANT COMMANDS
+### Assets → Dashboard → Host topology
 ### Configuration → Targets
 ### Scans → Tasks
 ### Scans → Dashboard
 ### Assets → Hosts
 ### Assets → Dashboard
-
-## 🗒️ NOTES
-echo -e "FTP Unencrypted Cleartext Login = não possui TLS/SSL" > ~/anotacoes/1_15.txt
-cat ~/anotacoes/1_15.txt

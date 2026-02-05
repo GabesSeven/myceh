@@ -58,7 +58,7 @@ cat ~/anotacoes/2_2.txt
 wireshark ~/Downloads/ServerDoS.pcapng
 #### INFO: 9850 → 26000 Len=0  # Muitos pacotes vazios chegando em 26000/UDP
 #### User Datagram Protocol, Src Port: 9850, Dst Port: 26000
-#### GOOGLE: 26000 udp protocol 
+#### MOZILLA FIREFOX: 26000 udp protocol 
 
 # ⚠️ IMPORTANT COMMANDS
 #### FILTER: udp

