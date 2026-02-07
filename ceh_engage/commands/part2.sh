@@ -2,9 +2,8 @@
 
 
 # PART II - Challenge 1  💬ANSWER: https://www.crushftp.com/💬
-nmap -p 21 --open -iL ~/anotacoes/1_2.txt
-nmap -sV -p 21 192.168.10.144 192.168.10.222
-find ~ -type f -iname 'passwords.txt'
+nmap -p 21 --open 192.168.10.101 192.168.10.111 192.168.10.121 192.168.10.144 192.168.10.222
+nmap -sV -p 21 192.168.10.101 192.168.10.111 192.168.10.144 192.168.10.222
 hydra -l nick -P ~/rockyou.txt 192.168.10.111 ftp
 ### INFO: [21] [ftp] host: 192.168.10.111 login: nick password: apple
 
@@ -18,21 +17,16 @@ exit
 grep www 52012.py
 
 # ⚠️ IMPORTANT COMMANDS
-# nmap -sV -A -p 21 192.168.10.144 192.168.10.222
 # nmap -sV --script ftp-anon,ftp-bounce,ftp-syst -p 21 192.168.10.144 192.168.10.222
 # hydra -l nick -P ~/Desktop/password.txt 192.168.10.111 ftp
 # ftp ftp://nick:apple@192.168.10.111
-
-## 🗒️ NOTES
-echo -e "https://www.crushftp.com\nUSER: nick\nPASS: apple" > ~/anotacoes/2_1.txt
-cat ~/anotacoes/2_1.txt
 
 
 #------------------------------#
 
 
 # PART II - Challenge 2 💬ANSWER: kety/apple💬
-#### C:\Users\Admin\Downloads\MScredremote.pcapng
+#### EH Workstation-1: C:\Users\Admin\Downloads\MScredremote.pcapng
 ### FILTER: http.request.method == POST
 #### INFO: POST / HTTP/1.1 (application/x-www-form-urlencoded)
 #### INFO: HTML Form URL Encoded: application/x-www-form-urlencoded
@@ -40,14 +34,10 @@ cat ~/anotacoes/2_1.txt
 ####            Form item: "txtpwd" == "apple"
 
 # ⚠️ IMPORTANT COMMANDS
-### FILTER: http.request.method == "POST" && http contains "pwd"
-### FILTER: http contains "username" || http contains "password"
+#### FILTER: http.request.method == "POST" && http contains "pwd"
+#### FILTER: http contains "username" || http contains "password"
 ### PATH: Statistics → Conversations → TCP
 ### PATH: Follow → HTTP Stream
-
-## 🗒️ NOTES
-echo -e "Mscredremote.pcapng\nUSER: kety\nPASS: apple" > ~/anotacoes/2_2.txt
-cat ~/anotacoes/2_2.txt
 
 
 #------------------------------#
@@ -56,17 +46,17 @@ cat ~/anotacoes/2_2.txt
 # PART II - Challenge 3  💬ANSWER: Quake Network Protocol💬
 #### ~/Downloads/ServerDoS.pcapng
 wireshark ~/Downloads/ServerDoS.pcapng
-#### INFO: 9850 → 26000 Len=0  # Muitos pacotes vazios chegando em 26000/UDP
+#### FILTER: udp
+#### INFO: 9850 → 26000 Len=0  # ⚠️ WARNING: Many empty packages arriving at 26000/UDP.
 #### User Datagram Protocol, Src Port: 9850, Dst Port: 26000
 #### MOZILLA FIREFOX: 26000 udp protocol 
 
 # ⚠️ IMPORTANT COMMANDS
-#### FILTER: udp
 #### FILTER: udp.dstport == 26000
 ### PATH: Statistics → Endpoints → UDP
 ### PATH: Statistics → Conversations → UDP
 ### PATH: Statistics → IO Graphs
-### PATH: <BOTÃO DIREITO MOUSE NO PACOTE> → Decode As...
+### PATH: <RIGHT-CLICK ON THE PACKAGE> → Decode As...
 
 
 #------------------------------#
@@ -75,14 +65,13 @@ wireshark ~/Downloads/ServerDoS.pcapng
 # PART II - Challenge 4  💬ANSWER: 192.168.10.144💬
 #### ~/Documents/DD_attack.pcapng
 wireshark ~/Documents/DD_attack.pcapng
+#### FILTER: udp
 ### PATH: Statistics → Endpoints → UDP
-### INFO: 192.168.10.144 # Envio médio de 1000 pacotes em múltiplas portas altas (de 49900 a 49999) utilizadas. UDP Flood com varredura de portas altas.
+### INFO: 192.168.10.144 # ⚠️ WARNING: Average transmission of 1000 packets across multiple high ports (from 49900 to 49999). UDP Flood with high port scanning.
 
 # ⚠️ IMPORTANT COMMANDS
-### FILTER: udp
 #### FILTER: udp && ip.src == 192.168.10.144
 #### FILTER: udp && ip.src == 192.168.10.144 && udp.dstport >= 49900 && udp.dstport <= 49999
-### PATH: Statistics → Endpoints → UDP
 ### PATH: Statistics → Conversations → UDP
 ### PATH: Statistics → IO Graphs
 
@@ -95,30 +84,25 @@ wireshark ~/Documents/DD_attack.pcapng
 wireshark ~/Downloads/PyD_attack.pcapng
 ### FILTER: tcp.port == 135
 ### PATH: Statistics → Endpoints → TCP
-#### FILTER: tcp.port == 135 && tcp.flags.syn == 1 && tcp.flags.ack == 0
-#### FILTER: tcp.port == 135 && tcp.flags.syn == 1 && tcp.flags.ack == 1
-#### FILTER: tcp.port == 135 && tcp.flags.reset == 1
-### INFO: 172.30.10.99 # Esse IP é origem na comunição pela porta 135 (inicio de comunicação por RPC) para o destino 192.168.0.222
+### INFO: 172.30.10.99 # ⚠️ WARNING: This IP address is the source of communication via port 135 (RPC communication initiation) to the destination 192.168.0.222.
 
 # ⚠️ IMPORTANT COMMANDS
-### FILTER: tcp.port == 135
-#### FILTER: tcp.port == 135 && tcp.flags.syn == 1 && tcp.flags.ack == 0
+#### FILTER: tcp.port == 135 && cp.flags.syn == 1 && tcp.flags.ack == 0
 #### FILTER: tcp.port == 135 && tcp.flags.syn == 1 && tcp.flags.ack == 1
 #### FILTER: tcp.port == 135 && tcp.flags.reset == 1
-### PATH: Statistics → Endpoints → TCP
-### PATH: Statistics → Conversations → TCP
+### PATH: Statistics → Conversations → TCPt
 
 
 #------------------------------#
 
 
 # PART II - Challenge 6  💬ANSWER: 192.168.10.222💬 
-#### C:\Users\Admin\Documents\Anti-DDoS\report export.txt
-#### C:\Users\Admin\Documents\Anti-DDoS\rec001.txt
-#### C:\Users\Admin\Documents\Anti-DDoS\rec002.txt  
+#### EH Workstation-1: C:\Users\Admin\Documents\Anti-DDoS\report export.txt
+#### EH Workstation-1: C:\Users\Admin\Documents\Anti-DDoS\rec001.txt
+#### EH Workstation-1: C:\Users\Admin\Documents\Anti-DDoS\rec002.txt  
 cd 'C:\Users\Admin\Documents\Anti-DDoS\'
 notepad '.\rec001.txt' # CONFIRMAÇÃO DO VOLUME (COMPORTAMENTO)
-notepad '.\rec002.txt' # CONTEXTO DO ATAQUE (COMO FOI FEITO) # Mostra diversos cabeçalho, todos com Hosts: 192.168.10.144:135 (RPC)
+notepad '.\rec002.txt' # CONTEXTO DO ATAQUE (COMO FOI FEITO) # ⚠️ WARNING: Mostra diversos cabeçalho, todos com Hosts: 192.168.10.144:135 (RPC)
 notepad '.\report export.txt' # VISÃO MACRO (QUEM MAIS ATACOU)
 ### INFO: No. → 37, Outgoing bytes → 741444(Blocked), Incoming bytes → 13481074(Blocked)
 ### INFO: Local IP Address → 192.168.10.144, Port → 135
@@ -210,7 +194,7 @@ python3 -m http.server 8000
 ifconfig
 
 #### GOOGLE-CHROME - WORKSATION-1: http://172.25.0.10:8000 # Baixar Logfile.PML
-#### C:\Users\Admin\Downloads\Logfile.PML
+#### EH Workstation-1: C:\Users\Admin\Downloads\Logfile.PML
 #### E:\CEH-Tools\CEHv13 Module 07 Malware Threats\Malware Analysis Tools\Dynamic Malware Analysis Tools\Process Monitoring Tools\ProcessMonitor\Procmon.exe # Abrir Logfile.PML com essa ferramenta
 ### PATH: Procmon.exe → File → Open → C:\Users\Admin\Downloads\Logfile.PML
 ### PATH: Filter → Filter... (Ctrl + L) → 
@@ -237,7 +221,7 @@ ent ~/Downloads/Tornado
 # cd ~/Downloads
 # python3 -m http.server 8000
 #### GOOGLE-CHROME - WORKSATION-1: http://172.25.0.10:8000 # Baixar Tornado
-#### C:\Users\Admin\Downloads\Tornado
+#### EH Workstation-1: C:\Users\Admin\Downloads\Tornado
 #### E:\CEH-Tools\CEHv13 Module 07 Malware Threats\Malware Analysis Tools\Static Malware Analysis Tools\Packaging and Obfuscation Tools\DIE\die.exe # Abrir Tornado com essa ferramenta
 ### File name → ... → Open file... → C:\Users\Admin\Downloads\Tornado → Entropy
 ### INFO: Total → 2.87903

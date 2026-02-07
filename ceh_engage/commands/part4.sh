@@ -11,8 +11,8 @@ python3 -m http.server 8000
 #### GOOGLE-CHROME - WORKSATION-1: 172.25.0.10:8080/BCtetx.txt # Selecionar toda chave 
 cd 'C:\Users\Admin\Downloads'
 curl "http://172.25.0.10:8000/BCtetx.txt" -o "BCtext.txt" 
-#### C:\Users\Admin\Documents\pawned.txt
-#### C:\Users\Admin\Downloads\BCtext.txt
+#### EH Workstation-1: C:\Users\Admin\Documents\pawned.txt
+#### EH Workstation-1: C:\Users\Admin\Downloads\BCtext.txt
 #### E:\CEH-Tools\CEHv13 Module 20 Cryptography\Cryptography Tools\BCTextEncoder\BCTextEncoder.exe # Abrir Tornado com essa ferramenta
 ### File → Open → C:\Users\Admin\Documents\pawned.txt # Arquivo que contém senha
 ### INFO: Pa$$w0rd
@@ -52,7 +52,7 @@ crc32 ~/PhoneSploit-Pro/Downloaded-Files/com_cxinvector_file_explorer.apk
 
 
 # PART IV - Challenge 3  💬ANSWER: k4.png💬
-#### C:\Users\Admin\Documents\signature.zip # Descompactar arquivo
+#### EH Workstation-1: C:\Users\Admin\Documents\signature.zip # Descompactar arquivo
 ### Extract All... → C:\Users\Admin\Documents\signature → Extract 
 cd C:\Users\Admin\Documents\signature\signature krish
 Get-FileHash -Algorithm MD5 *
@@ -124,7 +124,7 @@ cd ~/Documents
 python3 -m http.server 8000
 
 #### GOOGLE-CHROME - WORKSATION-1: http://172.25.0.10:8000 # Baixar Cryt-128-06encr.hex
-#### C:\Users\Admin\Downloads\Cryt-128-06encr.hex
+#### EH Workstation-1: C:\Users\Admin\Downloads\Cryt-128-06encr.hex
 #### ⚙️JÁ INSTALADO⚙️ E:\CEH-Tools\CEHv13 Module 20 Cryptography\Cryptanalysis Tools\CrypTool\SetupCrypTool_1_4_42_en.exe # Abrir Cryt-128-06encr.hex com essa ferramenta
 ### PATH: CrypTool 1.4.42 → Open (📂) → C:\Users\Admin\Downloads\Cryt-128-06encr.hex → Encrypt/Decrypt → Symmetric (modern) → Further Algorithms → Twofish... → Key length: 128 bits → 🔑: 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 → Decrypt
 ### INFO: Twofish decryption of <Cryt-128-06encr.hex>, key <06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06>
@@ -140,7 +140,7 @@ python3 -m http.server 8000
 
 
 # PART IV - Challenge 8  💬ANSWER: 4💬
-#### C:\Users\Admin\Documents\MyVeraCrypt
+#### EH Workstation-1: C:\Users\Admin\Documents\MyVeraCrypt
 #### ⚙️JÁ INSTALADO⚙️ E:\CEH-Tools\CEHv13 Module 20 Cryptography\Disk Encryption Tools\VeraCrypt\VeraCrypt Setup 1.26.7.exe # Abrir Logfile.PML com essa ferramenta
 ### PATH: VeraCrypt → A: → Select File... → C:\Users\Admin\Documents\MyVeraCrypt → Mount → Pasword: veratest → OK
 ### PASSWORD: veratest
@@ -242,7 +242,7 @@ cd ~/Documents
 python3 -m http.server 8000
 
 #### GOOGLE-CHROME - WORKSATION-1: 172.25.0.10:8000 # Baixar secret
-#### C:\Users\Admin\Downloads\secret
+#### EH Workstation-1: C:\Users\Admin\Downloads\secret
 #### ⚙️JÁ INSTALADO⚙️ E:\CEH-Tools\CEHv13 Module 20 Cryptography\Disk Encryption Tools\VeraCrypt\VeraCrypt Setup 1.26.7.exe # Abrir Logfile.PML com essa ferramenta
 ### PATH: VeraCrypt → B: → Select File... → C:\Users\Admin\Downloads\secret → Mount → Pasword: test → OK
 ### PASSWORD: test

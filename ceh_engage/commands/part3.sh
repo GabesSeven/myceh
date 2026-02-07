@@ -2,7 +2,7 @@
 
 
 # PART III - Challenge 1  💬ANSWER: 172.30.10.200💬
-#### C:\Users\Documents\$_Jack.pcapng 
+#### EH Workstation-1: C:\Users\Documents\$_Jack.pcapng 
 ### FILTER: tcp.flags.reset == 1
 ### PATH: Statistics → Conversations → TCP
 ### INFO: Source → 172.30.10.200
@@ -17,7 +17,7 @@
 
 
 # PART III - Challenge 2 💬ANSWER: lee/test💬
-#### C:\Users\Downloads\Intercep_$niffer.pcapng 
+#### EH Workstation-1: C:\Users\Downloads\Intercep_$niffer.pcapng 
 ### FILTER: http.request.method == POST
 #### INFO: POST /login.aspx HTTP/1.1 (application/x-www-form-urlencoded)
 #### HTML Form URL Encoded: application/x-www-form-urlencoded
@@ -124,7 +124,7 @@ smbclient -L //192.168.10.101 -U Martin # Listar shares
 smbclient //192.168.10.101/Users -U Martin # Conectar
 ### PASSWORD: qwerty1234
 
-# #### C:\Users\Martin\Music\webpent.txt
+#### EH Workstation-1: C:\Users\Martin\Music\webpent.txt
 cd Martin\Music # CONECTADO VIA SSH
 get webpent.txt
 exit
@@ -231,7 +231,7 @@ wpscan --url http://www.cehorg.com:8080/CEH/ -U adam -P rockyou.txt
 
 
 # PART III - Challenge 13 💬ANSWER: 3💬
-#### C:\Users\Admin\Videos\www.moviescope.com_09112024_0538.html
+#### EH Workstation-1: C:\Users\Admin\Videos\www.moviescope.com_09112024_0538.html
 #### GOOGLE: file:///C:\Users\Admin\Videos\www.moviescope.com_09112024_0538.html
 ### INFO: Category → Content Security Policy Configuration     Number of vulnerabilities → 1
 ### INFO: Category → Clickjacing Protection                    Number of vulnerabilities → 1
