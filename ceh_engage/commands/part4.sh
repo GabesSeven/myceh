@@ -1,7 +1,11 @@
 #------------------------------#
 
 
+
 # PART IV - Challenge 1  💬ANSWER: (ryptD3(0d3💬
+
+# *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
+
 nmap -p 5555 192.168.10.0/24 --open 192.168.10.111 192.168.10.121 192.168.10.144 192.168.10.222
 #### /sdcard/Download/BCtetx.txt
 adb connect 192.168.10.121
@@ -19,7 +23,10 @@ curl "http://172.25.0.10:8000/BCtetx.txt" -o "BCtext.txt"
 ### File → Open → C:\Users\Admin\Downloads\BCtext.txt → Password: Pa$$w0rd → OK # Arquivo que contém hash
 ### INFO: (ryptD3(0d3
 
+
+
 # *** ⚠️ IMPORTANT EXTRA COMMANDS ⚠️ ***
+
 # adb devices
 # adb shell
 # adb shell id
@@ -28,10 +35,15 @@ curl "http://172.25.0.10:8000/BCtetx.txt" -o "BCtext.txt"
 # exit
 
 
+
 #------------------------------#
 
 
+
 # PART IV - Challenge 2 💬ANSWER: 53ac614c💬
+
+# *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
+
 #### ~/PhoneSploit-Pro/phonesploitpro.py
 sudo su
 ### PASSWORD: toor
@@ -42,16 +54,24 @@ python ~/PhoneSploit-Pro/phonesploitpro.pyPo
 crc32 ~/PhoneSploit-Pro/Downloaded-Files/com_cxinvector_file_explorer.apk
 ### INFO: 53ac614c
 
+
+
 # *** ⚠️ IMPORTANT EXTRA COMMANDS ⚠️ ***
+
 # adb shell pm list packages
 # adb shell pm path <package>
 # adb pull <path>
 
 
+
 #------------------------------#
 
 
+
 # PART IV - Challenge 3  💬ANSWER: k4.png💬
+
+# *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
+
 #### EH Workstation-1: C:\Users\Admin\Documents\signature.zip # Descompactar arquivo
 ### Extract All... → C:\Users\Admin\Documents\signature → Extract 
 cd C:\Users\Admin\Documents\signature\signature krish
@@ -60,16 +80,24 @@ Get-FileHash -Algorithm MD5 *
 dir
 ### INFO: Name → k4.png
 
+
+
 # *** ⚠️ IMPORTANT EXTRA COMMANDS ⚠️ ***
+
 # Get-ChildItem *.png | Get-FileHash -Algorithm MD5
 # Get-ChildItem *.png | Get-FileHash -Algorithm MD5 | Where-Object { $_.Hash -like "*24CCB" }
 # md5sum *.png | grep 24CCB
 
 
+
 #------------------------------#
 
 
+
 # PART IV - Challenge 4  💬ANSWER: +1 (555) 678-9012💬
+
+# *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
+
 #### /sdcard/Calls/call_log_dump.log.txt
 adb connect 192.168.10.121
 adb pull /sdcard/Calls/call_log_dump.log.txt
@@ -77,32 +105,48 @@ cat call_log_dump.log.txt
 ### INFO: Encontrar solicitação de SSN; Linguagem mal escrita; Urgência implícita
 ### INFO: ... +1 (555) 678-9012,+1 (555) 987-6543,Incoming,Hi mam call World bank cloud you please verify you SSN number. 
 
+
+
 # *** ⚠️ IMPORTANT EXTRA COMMANDS ⚠️ ***
+
 # cut -d',' -f4 call_log_dump.log.txt | sort | uniq | wc -l # Contagem de mensagens únicas
 # cut -d',' -f4 call_log_dump.log.txt | sort | uniq -c | sort -nr # Contagem de quantas vezes cada número aparece
 # grep -i "ssn\|bank\|verify" call_log_dump.log.txt # Extração direta do número do suspeito
 # grep -iE "ssn|bank|verify" call_log_dump.log.txt | cut -d',' -f4 | sort | uniq # Extração direta do número do suspeito retornando somete o número
 
 
+
 #------------------------------#
 
 
+
 # PART IV - Challenge 5  💬ANSWER: Warning💬
+
+# *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
+
 #### ~/Documents/And_Dos.pcapng
 wireshark ~/Documents/And_Dos.pcapng
 ### PATH: Analyze → Expert Information
 ### INFO: Warning ...
 
+
+
 # *** ⚠️ IMPORTANT EXTRA COMMANDS ⚠️ ***
+
 #### FILTER: udp || tcp.analysis.retransmission
 #### FILTER: tcp.flags.syn == 1 && tcp.flags.ack == 0
 ### PATH: Statistics → IO Graphs
 
 
+
 #------------------------------#
 
 
+
 # PART IV - Challenge 6  💬ANSWER: 50💬
+
+# *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
+
 #### ~/MQTT.pcapng
 wireshark ~/MQTT.pcapng
 ### FILTER: mqtt.msgtype == 3
@@ -110,14 +154,22 @@ wireshark ~/MQTT.pcapng
 ### PATH: Follow → TCP Stream
 ### INFO: High_humidity..Alert for rise in humidity(50 percentage)@...P...b...
 
+
+
 # *** ⚠️ IMPORTANT EXTRA COMMANDS ⚠️ ***
+
 ### FILTER: mqtt
+
 
 
 #------------------------------#
 
 
+
 # ⚠️ PART IV - Challenge 7  💬ANSWER: Twofish/@!ph@|tE*t💬
+
+# *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
+
 #### ~/Documents/Cryt-128-06encr.hex
 stat -c%s ~/Documents/Cryt-128-06encr.hex
 cd ~/Documents
@@ -130,16 +182,24 @@ python3 -m http.server 8000
 ### INFO: Twofish decryption of <Cryt-128-06encr.hex>, key <06 06 06 06 06 06 06 06 06 06 06 06 06 06 06 06>
 ### INFO: @!ph@|tE*t
 
+
+
 # *** ⚠️ IMPORTANT EXTRA COMMANDS ⚠️ ***
+
 # sudo apt install ent -y
 # ### PASSWORD: toor
 # ent ~/Documents/Cryt-128-06encr.hex
 
 
+
 #------------------------------#
 
 
+
 # PART IV - Challenge 8  💬ANSWER: 4💬
+
+# *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
+
 #### EH Workstation-1: C:\Users\Admin\Documents\MyVeraCrypt
 #### ⚙️JÁ INSTALADO⚙️ E:\CEH-Tools\CEHv13 Module 20 Cryptography\Disk Encryption Tools\VeraCrypt\VeraCrypt Setup 1.26.7.exe # Abrir Logfile.PML com essa ferramenta
 ### PATH: VeraCrypt → A: → Select File... → C:\Users\Admin\Documents\MyVeraCrypt → Mount → Pasword: veratest → OK
@@ -148,10 +208,15 @@ python3 -m http.server 8000
 ### INFO: daemcrossover.exe  dexterroll.exe  hell.exe  schedupdate.exe # Total de 4 arquivos
 
 
+
 #------------------------------#
 
 
+
 # PART IV - Challenge 9  💬ANSWER: 61💬
+
+# *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
+
 #### ~/PhoneSploit-Pro/phonesploitpro.py
 sudo su
 ### PASSWORD: toor
@@ -163,10 +228,15 @@ cat ~/PhoneSploit-Pro/Downloaded-Files/contacts_dump-2025-12-7-13-38-35.txt
 ### INFO: Low: 2 display_name=Maddy, number=+61 934758565556
 
 
+
 #------------------------------#
 
 
+
 # PART IV - Challenge 10  💬ANSWER: 16💬
+
+# *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
+
 #### ~/MQTT.pcapng
 wireshark ~/MQTT.pcapng
 ### FILTER: mqtt.msgtype == 3
@@ -175,14 +245,22 @@ wireshark ~/MQTT.pcapng
 ###           Topic Length: 16
 ###           Topic:        High_temperature
 
+
+
 # *** ⚠️ IMPORTANT EXTRA COMMANDS ⚠️ ***
+
 ### FILTER: mqtt
+
 
 
 #------------------------------#
 
 
+
 # PART IV - Challenge 11 💬ANSWER: Power Button💬
+
+# *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
+
 #### ~/PhoneSploit-Pro/phonesploitpro.py
 sudo su
 ### PASSWORD: toor
@@ -191,10 +269,15 @@ python ~/PhoneSploit-Pro/phonesploitpro.py
 ### INFO: 5. Power Button
 
 
+
 #------------------------------#
 
 
+
 # PART IV - Challenge 12 💬ANSWER: 80099889💬
+
+# *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
+
 #### /sdcard/Music/confidential.txt
 adb connect 192.168.10.121
 adb pull /sdcard/Music/confidential.txt
@@ -202,17 +285,25 @@ cat confidential.txt
 #### INFO: 80099889
 
 
+
 #------------------------------#
 
 
+
 # PART IV - Challenge 13 💬ANSWER: 23💬
+
+# *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
+
 #### /sdcard/Music/2024-09-11_11-52-05.png
 adb connect 192.168.10.121
 adb pull /sdcard/Music/2024-09-11_11-52-05.png
 cat 2024-09-11_11-52-05.png
 #### INFO: Packets/sec:23
 
+
+
 # *** ⚠️ IMPORTANT EXTRA COMMANDS ⚠️ ***
+
 # #### ~/PhoneSploit-Pro/phonesploitpro.py
 # sudo su
 # ### PASSWORD: toor
@@ -220,10 +311,15 @@ cat 2024-09-11_11-52-05.png
 # ### [Y] Yes → [1] Connect a Device Install an APK → [192.168.10.121] → [N] Next Page → [N] Next Page → [8] File Manager / Download Files → [/sdcard/Music/2024-09-11_11-52-05.png] → [Enter] → [0] Exit
 
 
+
 #------------------------------#
 
 
+
 # PART IV - Challenge 14 💬ANSWER: Quotes💬
+
+# *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
+
 #### ~/Documents/Archive/*
 #### ~/Documents/FileHashes.png
 cd ~/Documents/Archive
@@ -233,10 +329,15 @@ cat ~/Documents/FileHashes.png
 ### INFO: Quotes: F1A490C46E1B4C49E006DCA625621A24
 
 
+
 #------------------------------#
 
 
+
 # PART IV - Challenge 15 💬ANSWER: 6💬
+
+# *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
+
 #### ~/Documents/secret
 cd ~/Documents
 python3 -m http.server 8000
@@ -248,3 +349,7 @@ python3 -m http.server 8000
 ### PASSWORD: test
 ### PATH: B:\ 
 ### INFO: Secret1.txt Secret2.txt Secret3.txt Secret4.txt Secret5.txt Secret6.txt # Total de 6 arquivos
+
+
+
+#------------------------------#
