@@ -5,7 +5,7 @@
 
 # *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
 
-#### EH Workstation-1: C:\Users\Admin\Documents\Dumpster.xlsx # Abrir ele com MS Excel
+#### EH Workstation-1: C:\Users\Admin\Documents\Dumpster.xlsx # 🛑 TODO: Open it with MS Excel.
 ### INFO: IP Address → 173.245.59.176
 ### INFO: Hostname → henry.ns.cloudflare.com
 
@@ -84,7 +84,7 @@ nmap -p 53,88,135,139,389,445 --open -n -T5 --min-rate 1000 192.168.0.222
 
 # *** ⚠️ IMPORTANT EXTRA COMMANDS ⚠️ ***
 
-nmap -p 445 --script smb-os-discovery 192.168.0.222 # 🔘 OPTIONAL
+# nmap -p 445 --script smb-os-discovery 192.168.0.222 # 🔘 OPTIONAL
 # nmap -p 53  --open 192.168.0.222 # DNS
 # nmap -p 88  --open 192.168.0.222 # Kerberos
 # nmap -p 135 --open 192.168.0.222 # RPC
@@ -114,8 +114,8 @@ nmap -p 445 --script smb-os-discovery 192.168.0.222
 
 # *** ⚠️ IMPORTANT EXTRA COMMANDS ⚠️ ***
 
-nmap -sS -sV -p 389,445 192.168.0.222 # 🔘 OPTIONAL
-nmap -sV --script ms-sql-info,ms-sql-ntlm-info 192.168.0.222 # 🔘 OPTIONAL
+# nmap -sS -sV -p 389,445 192.168.0.222 # 🔘 OPTIONAL
+# nmap -sV --script ms-sql-info,ms-sql-ntlm-info 192.168.0.222 # 🔘 OPTIONAL
 # nmap -sS -sV -p 53,88,135,139,389,445 192.168.0.222
 # nmap -O --osscan-limit 192.168.0.222
 # enum4linux -a 192.168.0.222

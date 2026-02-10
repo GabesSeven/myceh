@@ -15,8 +15,8 @@ hydra -l nick -P ~/rockyou.txt 192.168.10.111 ftp
 ftp 192.168.10.111 
 ### USERNAME: nick
 ### PASSWORD: apple
-#### ~/Desktop/52012.py
-ls  # CONECTADO VIA FTP
+#### Remote Connection: ~/Desktop/52012.py
+ls  # 🛑 TODO: Connected via FTP
 get 52012.py
 exit
 grep www 52012.py
@@ -69,7 +69,7 @@ grep www 52012.py
 #### EH Workstation-2: ~/Downloads/ServerDoS.pcapng
 wireshark ~/Downloads/ServerDoS.pcapng
 #### FILTER: udp
-#### INFO: 9850 → 26000 Len=0  # ⚠️ WARNING: Many empty packages arriving at 26000/UDP.
+#### INFO: 9850 → 26000 Len=0 # ⚠️ WARNING: Many empty packages arriving at 26000/UDP.
 #### User Datagram Protocol, Src Port: 9850, Dst Port: 26000
 #### MOZILLA FIREFOX: 26000 udp protocol 
 
@@ -221,8 +221,10 @@ show payloads;
 show targets;
 show advanced;
 exploit;"
+
+#### Remote Connection: C:\\Users\\Public\\Downloads\\MSS.txt
 # cd C:\\Users\\Public\\Downloads\\
-dir 
+dir # 🛑 TODO: Connected via MSSQL
 ### INFO: Mode              Size    Type    Last modified               Name
 ### INFO: 100666/rw-rw-rw   7       fil     2024-09-02 08:50:07 -0400   MSS.txt
 
@@ -297,7 +299,7 @@ cd ~/Pictures
 python3 -m http.server 8000
 ifconfig
 
-#### GOOGLE-CHROME - WORKSATION-1: http://172.25.0.10:8000 # Baixar Logfile.PML
+#### GOOGLE-CHROME - WORKSATION-1: http://172.25.0.10:8000 # 🛑 TODO: Download Logfile.PML
 #### EH Workstation-1: C:\Users\Admin\Downloads\Logfile.PML
 #### E:\CEH-Tools\CEHv13 Module 07 Malware Threats\Malware Analysis Tools\Dynamic Malware Analysis Tools\Process Monitoring Tools\ProcessMonitor\Procmon.exe # Abrir Logfile.PML com essa ferramenta
 ### PATH: Procmon.exe → File → Open → C:\Users\Admin\Downloads\Logfile.PML
@@ -334,7 +336,7 @@ ent ~/Downloads/Tornado
 
 # cd ~/Downloads
 # python3 -m http.server 8000
-#### GOOGLE-CHROME - WORKSATION-1: http://172.25.0.10:8000 # Baixar Tornado
+#### GOOGLE-CHROME - WORKSATION-1: http://172.25.0.10:8000 # 🛑 TODO: Download Tornado
 #### EH Workstation-1: C:\Users\Admin\Downloads\Tornado
 #### E:\CEH-Tools\CEHv13 Module 07 Malware Threats\Malware Analysis Tools\Static Malware Analysis Tools\Packaging and Obfuscation Tools\DIE\die.exe # Abrir Tornado com essa ferramenta
 ### PATH: File name → ... → Open file... → C:\Users\Admin\Downloads\Tornado → Entropy
